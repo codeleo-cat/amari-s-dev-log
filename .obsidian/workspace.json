@@ -4,35 +4,49 @@
     "type": "split",
     "children": [
       {
-        "id": "14c87cdd1bc1268c",
-        "type": "tabs",
+        "id": "1c366c5f2c9be27a",
+        "type": "split",
         "children": [
           {
-            "id": "4327bf53113210a2",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Daily/2024-01-03.md",
-                "mode": "source",
-                "source": false
+            "id": "14c87cdd1bc1268c",
+            "type": "tabs",
+            "dimension": 64.81164383561644,
+            "children": [
+              {
+                "id": "4327bf53113210a2",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "Kubernetes.md",
+                    "mode": "source",
+                    "source": false
+                  }
+                }
               }
-            }
+            ]
           },
           {
-            "id": "c413de7efbff3772",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Untitled.md",
-                "mode": "source",
-                "source": false
+            "id": "60f3eb4f113037e7",
+            "type": "tabs",
+            "dimension": 35.18835616438356,
+            "children": [
+              {
+                "id": "1ce236799132e606",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "Daily/2024-01-03.md",
+                    "mode": "source",
+                    "source": false
+                  }
+                }
               }
-            }
+            ]
           }
         ],
-        "currentTab": 1
+        "direction": "horizontal"
       }
     ],
     "direction": "vertical"
@@ -82,7 +96,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "5c7f9b2cde138cbe",
@@ -98,7 +113,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Untitled.md",
+                "file": "Daily/2024-01-03.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +130,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Untitled.md",
+                "file": "Daily/2024-01-03.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +153,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Untitled.md"
+                "file": "Daily/2024-01-03.md"
               }
             }
           },
@@ -170,20 +185,20 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "c413de7efbff3772",
+  "active": "1ce236799132e606",
   "lastOpenFiles": [
+    "Kubernetes.md",
+    "Motivation.md",
+    "Goals/2024 Goals.md",
+    "Goals/2023 Goals.md",
+    "Daily/2024-01-03.md",
     "Untitled.md",
     "햐.md",
-    "Daily/2024-01-03.md",
-    "Kubernetes.md",
     "Docker.md",
     "Excalidraw/Switch & OSI 7 layer.md",
     "amari_s_sea",
     "Daily/2024-01-02.md",
     "IT Terms.md",
-    "Goals/2024 Goals.md",
-    "Motivation.md",
-    "Goals/2023 Goals.md",
     "Daily",
     "Goals/Routine.md",
     "Excalidraw/Drawing 2024-01-02 11.22.19.excalidraw.md",
