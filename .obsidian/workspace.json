@@ -13,13 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Kubernetes.md",
+                "file": "Daily/2024-01-03.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "c413de7efbff3772",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Untitled.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Kubernetes.md",
+                "file": "Untitled.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Kubernetes.md",
+                "file": "Untitled.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Kubernetes.md"
+                "file": "Untitled.md"
               }
             }
           },
@@ -157,15 +170,17 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "4327bf53113210a2",
+  "active": "c413de7efbff3772",
   "lastOpenFiles": [
+    "Untitled.md",
+    "햐.md",
+    "Daily/2024-01-03.md",
+    "Kubernetes.md",
     "Docker.md",
     "Excalidraw/Switch & OSI 7 layer.md",
-    "Daily/2024-01-03.md",
     "amari_s_sea",
     "Daily/2024-01-02.md",
     "IT Terms.md",
-    "Kubernetes.md",
     "Goals/2024 Goals.md",
     "Motivation.md",
     "Goals/2023 Goals.md",
