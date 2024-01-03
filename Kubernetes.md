@@ -6,10 +6,14 @@
 - [책-그림과 실습으로 배우는 도커 & 쿠버네티스](https://www.yes24.com/Product/Goods/108431011)
 
 
-Master Node와 Worker Node로 구성됨.
+- Master Node와 Worker Node로 구성됨.
+
+# Kubernetes(K8s)
+- open source orchestration system (컨테이너를 자동으로 관리해주는 Tool)
 
 ## Pods
 - K8s의 가장 기본이 되는 단위
+- container를 담는 그릇
 
 
 ## Service
