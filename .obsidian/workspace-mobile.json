@@ -4,19 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "487e9dd0eb8b1f1c",
+        "id": "670426a6b497585c",
         "type": "tabs",
         "children": [
           {
-            "id": "469be222c6b693f5",
+            "id": "887bdb9e474534ee",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Daily/2024-01-02.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ],
@@ -86,7 +82,6 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "Daily/2024-01-02.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -103,7 +98,6 @@
         "state": {
           "type": "outgoing-link",
           "state": {
-            "file": "Daily/2024-01-02.md",
             "linksCollapsed": false,
             "unlinkedCollapsed": true
           }
@@ -114,9 +108,7 @@
         "type": "leaf",
         "state": {
           "type": "outline",
-          "state": {
-            "file": "Daily/2024-01-02.md"
-          }
+          "state": {}
         }
       }
     ],
@@ -134,14 +126,14 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "469be222c6b693f5",
+  "active": "887bdb9e474534ee",
   "lastOpenFiles": [
+    "Daily/2024-01-02.md",
     "Motivation.md",
     "Kubernetes.md",
     "IT Terms.md",
     "Goals/2024 Goals.md",
     "Docker.md",
-    "Daily/2024-01-02.md",
     "Excalidraw/Switch & OSI 7 layer.md",
     "Goals/2023 Goals.md",
     "Goals"
