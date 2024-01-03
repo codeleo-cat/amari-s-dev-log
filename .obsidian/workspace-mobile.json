@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "28fa8b5ad679d531",
+        "id": "5860ed16477c4b4e",
         "type": "tabs",
         "children": [
           {
-            "id": "ceacc4fcaec0d915",
+            "id": "f6a5ecb8101d9c98",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -134,8 +134,9 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "ceacc4fcaec0d915",
+  "active": "f6a5ecb8101d9c98",
   "lastOpenFiles": [
+    "Excalidraw/Switch & OSI 7 layer.md",
     "인상깊은이력서.png",
     "Daily/2024-01-03.md",
     "Daily/2024-01-02.md",
@@ -144,7 +145,6 @@
     "IT Terms.md",
     "Goals/2024 Goals.md",
     "Docker.md",
-    "Excalidraw/Switch & OSI 7 layer.md",
     "Goals/2023 Goals.md",
     "Goals"
   ]
