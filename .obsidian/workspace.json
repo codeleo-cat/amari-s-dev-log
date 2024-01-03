@@ -10,7 +10,7 @@
           {
             "id": "14c87cdd1bc1268c",
             "type": "tabs",
-            "dimension": 64.81164383561644,
+            "dimension": 52.170212765957444,
             "children": [
               {
                 "id": "4327bf53113210a2",
@@ -29,7 +29,7 @@
           {
             "id": "60f3eb4f113037e7",
             "type": "tabs",
-            "dimension": 35.18835616438356,
+            "dimension": 47.829787234042556,
             "children": [
               {
                 "id": "1ce236799132e606",
@@ -188,10 +188,10 @@
   "active": "1ce236799132e606",
   "lastOpenFiles": [
     "Kubernetes.md",
+    "Daily/2024-01-03.md",
     "Motivation.md",
     "Goals/2024 Goals.md",
     "Goals/2023 Goals.md",
-    "Daily/2024-01-03.md",
     "Untitled.md",
     "햐.md",
     "Docker.md",
