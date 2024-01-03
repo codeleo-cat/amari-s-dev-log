@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "5860ed16477c4b4e",
+        "id": "1feb32ed22991030",
         "type": "tabs",
         "children": [
           {
-            "id": "f6a5ecb8101d9c98",
+            "id": "ff6ceaafbaef39b9",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -134,18 +134,21 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "f6a5ecb8101d9c98",
+  "active": "5b023fea4761e672",
   "lastOpenFiles": [
+    "Goals/2023 Goals.md",
+    "Kubernetes.md",
+    "Motivation/인상깊은이력서.png",
+    "Motivation/Motivation.md",
+    "Motivation",
     "Excalidraw/Switch & OSI 7 layer.md",
     "인상깊은이력서.png",
     "Daily/2024-01-03.md",
     "Daily/2024-01-02.md",
     "Motivation.md",
-    "Kubernetes.md",
     "IT Terms.md",
     "Goals/2024 Goals.md",
     "Docker.md",
-    "Goals/2023 Goals.md",
     "Goals"
   ]
 }

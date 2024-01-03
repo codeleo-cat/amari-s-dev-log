@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Daily/2024-01-03.md",
+                "file": "Service.md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Daily/2024-01-03.md",
+                "file": "Service.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Daily/2024-01-03.md",
+                "file": "Service.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Daily/2024-01-03.md"
+                "file": "Service.md"
               }
             }
           },
@@ -170,11 +170,11 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "3003d022a7a01cf1",
+  "active": "1bf99e2f4fa5f95b",
   "lastOpenFiles": [
-    "IT Terms.md",
     "Daily/2024-01-03.md",
     "Kubernetes.md",
+    "IT Terms.md",
     "Docker.md",
     "Service.md",
     "Excalidraw/K8s 기본구조.md",
