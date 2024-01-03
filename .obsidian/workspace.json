@@ -96,8 +96,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "5c7f9b2cde138cbe",
@@ -187,6 +186,7 @@
   },
   "active": "1ce236799132e606",
   "lastOpenFiles": [
+    "인상깊은이력서.png",
     "Kubernetes.md",
     "Daily/2024-01-03.md",
     "Motivation.md",
