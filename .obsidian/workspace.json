@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Daily/2024-01-03.md",
+                "file": "Docker.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Daily/2024-01-03.md",
+                "file": "Docker.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Daily/2024-01-03.md",
+                "file": "Docker.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Daily/2024-01-03.md"
+                "file": "Docker.md"
               }
             }
           },
@@ -159,11 +159,11 @@
   },
   "active": "4327bf53113210a2",
   "lastOpenFiles": [
+    "Excalidraw/Switch & OSI 7 layer.md",
+    "Daily/2024-01-03.md",
     "amari_s_sea",
     "Daily/2024-01-02.md",
-    "Excalidraw/Switch & OSI 7 layer.md",
     "IT Terms.md",
-    "Daily/2024-01-03.md",
     "Kubernetes.md",
     "Goals/2024 Goals.md",
     "Docker.md",
