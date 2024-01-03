@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "670426a6b497585c",
+        "id": "28fa8b5ad679d531",
         "type": "tabs",
         "children": [
           {
-            "id": "887bdb9e474534ee",
+            "id": "ceacc4fcaec0d915",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -110,9 +110,17 @@
           "type": "outline",
           "state": {}
         }
+      },
+      {
+        "id": "ea5b5b6b36742ecc",
+        "type": "leaf",
+        "state": {
+          "type": "advanced-tables-toolbar",
+          "state": {}
+        }
       }
     ],
-    "currentTab": 0
+    "currentTab": 3
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -126,8 +134,10 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "887bdb9e474534ee",
+  "active": "ceacc4fcaec0d915",
   "lastOpenFiles": [
+    "인상깊은이력서.png",
+    "Daily/2024-01-03.md",
     "Daily/2024-01-02.md",
     "Motivation.md",
     "Kubernetes.md",
