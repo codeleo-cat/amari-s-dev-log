@@ -10,7 +10,7 @@
           {
             "id": "14c87cdd1bc1268c",
             "type": "tabs",
-            "dimension": 52.170212765957444,
+            "dimension": 49.044056525353284,
             "children": [
               {
                 "id": "4327bf53113210a2",
@@ -18,7 +18,7 @@
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "Kubernetes.md",
+                    "file": "Docker.md",
                     "mode": "source",
                     "source": false
                   }
@@ -29,7 +29,7 @@
           {
             "id": "60f3eb4f113037e7",
             "type": "tabs",
-            "dimension": 47.829787234042556,
+            "dimension": 50.955943474646716,
             "children": [
               {
                 "id": "1ce236799132e606",
@@ -186,15 +186,16 @@
   },
   "active": "1ce236799132e606",
   "lastOpenFiles": [
-    "인상깊은이력서.png",
+    "Docker.md",
+    "Motivation/Motivation.md",
+    "Motivation",
     "Kubernetes.md",
     "Daily/2024-01-03.md",
-    "Motivation.md",
+    "Motivation/인상깊은이력서.png",
     "Goals/2024 Goals.md",
     "Goals/2023 Goals.md",
     "Untitled.md",
     "햐.md",
-    "Docker.md",
     "Excalidraw/Switch & OSI 7 layer.md",
     "amari_s_sea",
     "Daily/2024-01-02.md",
