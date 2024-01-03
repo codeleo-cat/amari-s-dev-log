@@ -1,5 +1,6 @@
 $$Detail$$
 - [[Docker]]
+- [[Kubernetes]]
 
 ---
 
@@ -43,7 +44,7 @@ $$Detail$$
 	- **Switch : 교차로**  ✅ 네트워크 내에서 **packet을 받아 필요한 곳으로 보내주는 역할**
 		- Switch는 기본적으로 L2 장비
 		- Learning : Source MAC address를 기반으로 MAC address table을 만드는 기능
-		- Forwarding : Destination MAC Address가 연결되어 있는 port로 프레임을 전달하는 기능
+		- Forwarding : Destination MAC Address가 연결되어 있는 port로 프임을 전달하는 기능
 		- Filtering : 프레임이 유입된 port로 다시 frame을 전송하지 않는 기능
 		- #Flooding : MAC 주소 테이블에 목적지에 MAC에 대한 정보가 없을 경우 frame을 모든 port로 전송하는 기능 = 테이블에 없는 도착지 주소를 가진 패킷이 들어오면 스위치는 전체 포트로 패킷을 전송한다.
 	- Switching : 경로 선택

@@ -1,3 +1,7 @@
+# Docker
+
+- 리눅스의 응용 프로그램들을 프로세스 격리 기술들을 사용해 컨테이너로 실행하고 관리하는 s/w 플랫폼.
+
 ## Docker 최적화 방법
 
 - 
@@ -15,3 +19,4 @@
 - **배포 관리 용이성**
 	- 여러 컨테이너로 구성된 애플리케이션을 쉽게 관리 가능하다. ex) docker compose
 
+![docker vs vm](https://d1.awsstatic.com/Developer%20Marketing/containers/monolith_2-VM-vs-Containers.78f841efba175556d82f64d1779eb8b725de398d.png)
