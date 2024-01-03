@@ -4,24 +4,6 @@
     "type": "split",
     "children": [
       {
-        "id": "68cab50bfe0d357a",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "3d1b78a6a0359f9f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Kubernetes.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          }
-        ]
-      },
-      {
         "id": "af56eb0e49ccf0e1",
         "type": "tabs",
         "children": [
@@ -103,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Kubernetes.md",
+                "file": "Books/15단계로 배우는 도커와 쿠버네티스.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Kubernetes.md",
+                "file": "Books/15단계로 배우는 도커와 쿠버네티스.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -143,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Kubernetes.md"
+                "file": "Books/15단계로 배우는 도커와 쿠버네티스.md"
               }
             }
           },
@@ -175,24 +157,27 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "3d1b78a6a0359f9f",
+  "active": "1bf99e2f4fa5f95b",
   "lastOpenFiles": [
+    "Daily/2024-01-03.md",
+    "Daily/생각.md",
     "Books/15단계로 배우는 도커와 쿠버네티스.md",
     "Excalidraw/K8s 기본구조.md",
-    "Kubernetes.md",
-    "Docker.md",
+    "Excalidraw/Switch & OSI 7 layer.excalidraw",
     "Excalidraw/K8s 기본구조.excalidraw",
-    "Daily/2024-01-03.md",
-    "Service.md",
+    "Excalidraw/K8s 기본구조.png.excalidraw",
     "IT Terms.md",
+    "().md",
+    "Kubernetes.md",
+    "Excalidraw/Switch & OSI 7 layer.md",
+    "Docker.md",
+    "Service.md",
     "Nginx.md",
     "Motivation/책-15단계로 배우는 도커와 쿠버네티스.md",
     "Books",
-    "Daily/생각.md",
     "Daily/Untitled.md",
     "Motivation/인상깊은이력서.png",
     "Motivation/Motivation.md",
-    "Excalidraw/Switch & OSI 7 layer.md",
     "Excalidraw/K8s 기본 구조.md",
     "Goals/2023 Goals.md",
     "Goals/2024 Goals.md",

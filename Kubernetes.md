@@ -2,8 +2,7 @@
 # Kubernetes(K8s)
 
 - open source orchestration system (컨테이너를 자동으로 관리해주는 Tool)
-- [[K8s 기본구조]]
-- 
+- ![K8s 기본구조]()
 	- 개발자 kubecli -----> kube-api server----> worker node에 **kubelet** 명령 ---> Pod 관리
 	- kubelet(각 컨테이너의 실행을 보장하는 서비스) - 지정된 컨테이너를 실행하도록 Docker에 명령
 
