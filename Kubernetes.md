@@ -27,7 +27,7 @@
 - 하나의 pod 안에 여러 개의 컨테이너가 들어갈 수 있다.
 - 동적으로 생성되고, 장애가 생기면 자동 restart되면서 IP가 변경됨.
 
-[![pod](https://i0.wp.com/bespin-wordpress-bucket.s3.ap-northeast-2.amazonaws.com/wp-content/uploads/2022/06/%EA%B7%B8%EB%A6%BC62.png?resize=378%2C301&ssl=1)
+![pod](https://i0.wp.com/bespin-wordpress-bucket.s3.ap-northeast-2.amazonaws.com/wp-content/uploads/2022/06/%EA%B7%B8%EB%A6%BC62.png?resize=378%2C301&ssl=1)
 
 ## [[Service]]
 

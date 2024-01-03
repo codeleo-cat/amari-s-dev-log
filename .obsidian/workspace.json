@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Service.md",
+                "file": "Kubernetes.md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Service.md",
+                "file": "Kubernetes.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Service.md",
+                "file": "Kubernetes.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Service.md"
+                "file": "Kubernetes.md"
               }
             }
           },
@@ -170,13 +170,13 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "1bf99e2f4fa5f95b",
+  "active": "3003d022a7a01cf1",
   "lastOpenFiles": [
+    "Service.md",
     "Daily/2024-01-03.md",
     "Kubernetes.md",
     "IT Terms.md",
     "Docker.md",
-    "Service.md",
     "Excalidraw/K8s 기본구조.md",
     "Excalidraw/Switch & OSI 7 layer.md",
     "Excalidraw/K8s 기본 구조.md",
