@@ -1,14 +1,15 @@
+#docker 
 # Docker
 
 - 리눅스의 응용 프로그램들을 프로세스 격리 기술들을 사용해 컨테이너로 실행하고 관리하는 s/w 플랫폼.
 
 ## Docker 최적화 방법
 
-- 
+- alpine 
 
 ## Docker run VS Docker exec
 
-- debug
+- docker run - 이미지 > 컨테이너로 변환되어 하나의 인스턴스화
 
 ## Docker 사용 시 장점
 

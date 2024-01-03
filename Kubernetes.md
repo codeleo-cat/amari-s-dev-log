@@ -1,6 +1,9 @@
+#kubernetes 
 # Kubernetes(K8s)
+
 - open source orchestration system (컨테이너를 자동으로 관리해주는 Tool)
 - [[K8s 기본구조]]
+- 
 	- 개발자 kubecli -----> kube-api server----> worker node에 **kubelet** 명령 ---> Pod 관리
 	- kubelet(각 컨테이너의 실행을 보장하는 서비스) - 지정된 컨테이너를 실행하도록 Docker에 명령
 
@@ -37,7 +40,7 @@
 ## Namespace
 
 - 쿠버네티스 클러스터 내의 논리적인 분리 단위
-
+- 컨테이너가 하나의 독립된 서버와 같이 동작할 수 있게 한다.
 
 ## Ingress Controller
 
@@ -60,4 +63,5 @@
 - [쿠버네티스 네트워킹 이해하기#1: Pods](https://coffeewhale.com/k8s/network/2019/04/19/k8s-network-01/)
 - [클라우드 시장의 대세, 쿠버네티스란 무엇인가?]( https://www.youtube.com/watch?v=JNc11rxLtmE)
 - [책-그림과 실습으로 배우는 도커 & 쿠버네티스](https://www.yes24.com/Product/Goods/108431011)
-- [책-15단계로 배우는 도커와 쿠버네티스](https://m.yes24.com/Goods/Detail/93317828)
+- [[15단계로 배우는 도커와 쿠버네티스]]
+Docker

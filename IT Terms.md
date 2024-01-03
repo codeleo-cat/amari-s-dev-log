@@ -1,6 +1,6 @@
-$$Detail$$
-- [[Docker]]
-- [[Kubernetes]]
+
+| [[Docker]] | [[kubernetes]] | [[Nginx]] |
+| ------ | ---------- | ----- |
 
 ---
 

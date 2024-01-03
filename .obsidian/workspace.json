@@ -4,23 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "5a41e26a85047e37",
+        "id": "68cab50bfe0d357a",
         "type": "tabs",
         "children": [
           {
-            "id": "1e9ff9b7fc214e10",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Kubernetes.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "3003d022a7a01cf1",
+            "id": "3d1b78a6a0359f9f",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -31,8 +19,25 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
+      },
+      {
+        "id": "af56eb0e49ccf0e1",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f636378ce94c7ed3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Books/15단계로 배우는 도커와 쿠버네티스.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
       }
     ],
     "direction": "vertical"
@@ -170,24 +175,30 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "3003d022a7a01cf1",
+  "active": "3d1b78a6a0359f9f",
   "lastOpenFiles": [
-    "Service.md",
-    "Daily/2024-01-03.md",
-    "Kubernetes.md",
-    "IT Terms.md",
-    "Docker.md",
+    "Books/15단계로 배우는 도커와 쿠버네티스.md",
     "Excalidraw/K8s 기본구조.md",
+    "Kubernetes.md",
+    "Docker.md",
+    "Excalidraw/K8s 기본구조.excalidraw",
+    "Daily/2024-01-03.md",
+    "Service.md",
+    "IT Terms.md",
+    "Nginx.md",
+    "Motivation/책-15단계로 배우는 도커와 쿠버네티스.md",
+    "Books",
+    "Daily/생각.md",
+    "Daily/Untitled.md",
+    "Motivation/인상깊은이력서.png",
+    "Motivation/Motivation.md",
     "Excalidraw/Switch & OSI 7 layer.md",
     "Excalidraw/K8s 기본 구조.md",
     "Goals/2023 Goals.md",
     "Goals/2024 Goals.md",
-    "Daily/Untitled.md",
     "Untitled.canvas",
     "Daily",
-    "Motivation/Motivation.md",
     "Motivation",
-    "Motivation/인상깊은이력서.png",
     "햐.md",
     "amari_s_sea",
     "Daily/2024-01-02.md",

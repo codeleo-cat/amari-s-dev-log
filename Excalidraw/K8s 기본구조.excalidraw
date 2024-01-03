@@ -1,66 +1,3 @@
----
-
-excalidraw-plugin: parsed
-tags: [excalidraw]
-
----
-==⚠  Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
-
-
-# Text Elements
-K8s 기본 구조 ^ZLezDLu9
-
-Master ^1w1ezYe7
-
-Worker Node 1 ^4YNRyvt0
-
-API server ^KoVK3mnf
-
-kubectl ^fuvGnpxY
-
-scheduler ^rtxkX4Of
-
-etcd ^xoLCLvdh
-
-control 관리 ^TLW7TUNz
-
-kube-proxy ^H8sZYPe6
-
-kubelet ^kpzbEoeL
-
-Pod 1 ^NNNASbet
-
-container ^ipYQ1FfY
-
-Pod 2 ^iu7caFHV
-
-container ^wFOjGFnE
-
-container ^2OtkBcsk
-
-Worker Node 2 ^EB6yyClI
-
-kube-proxy ^QiEvJ2Zd
-
-kubelet ^igeBOUtv
-
-Pod 1 ^kDArFX3x
-
-container ^75iOrV2a
-
-Pod 2 ^QGH8fIHZ
-
-container ^qJ4Z4zMF
-
-container ^RhRpqJ3p
-
-Docker ^BMD1fcUY
-
-Docker ^lKPZe1BJ
-
-%%
-# Drawing
-```json
 {
 	"type": "excalidraw",
 	"version": 2,
@@ -574,8 +511,8 @@ Docker ^lKPZe1BJ
 		},
 		{
 			"type": "arrow",
-			"version": 1001,
-			"versionNonce": 954098871,
+			"version": 1004,
+			"versionNonce": 1071880249,
 			"isDeleted": false,
 			"id": "5A-0suS-y0K3yHGuDM495",
 			"fillStyle": "solid",
@@ -599,13 +536,13 @@ Docker ^lKPZe1BJ
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1704270085401,
+			"updated": 1704270209025,
 			"link": null,
 			"locked": false,
 			"startBinding": {
 				"elementId": "aj4ucZ6iebc1NzvMCfQ_8",
-				"focus": -0.4205887014847073,
-				"gap": 1
+				"gap": 1,
+				"focus": -0.4205887014847073
 			},
 			"endBinding": null,
 			"lastCommittedPoint": null,
@@ -624,8 +561,8 @@ Docker ^lKPZe1BJ
 		},
 		{
 			"type": "arrow",
-			"version": 1016,
-			"versionNonce": 184302583,
+			"version": 1028,
+			"versionNonce": 485565049,
 			"isDeleted": false,
 			"id": "56VXOe-9lG8l_5y7DRHem",
 			"fillStyle": "solid",
@@ -649,7 +586,7 @@ Docker ^lKPZe1BJ
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1704270085413,
+			"updated": 1704270209024,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -678,8 +615,8 @@ Docker ^lKPZe1BJ
 		},
 		{
 			"type": "arrow",
-			"version": 940,
-			"versionNonce": 1993239575,
+			"version": 943,
+			"versionNonce": 192441177,
 			"isDeleted": false,
 			"id": "sW6zUbAIfR1pdqNUiq290",
 			"fillStyle": "solid",
@@ -689,11 +626,11 @@ Docker ^lKPZe1BJ
 			"opacity": 100,
 			"angle": 0,
 			"x": -309.7198895671254,
-			"y": -106.08159641469952,
+			"y": -106.08159641469953,
 			"strokeColor": "#1e1e1e",
 			"backgroundColor": "#ffec99",
 			"width": 6.896794061865421,
-			"height": 54.29430986628502,
+			"height": 54.29430986628503,
 			"seed": 1247057561,
 			"groupIds": [
 				"XFVHLARAUvjCcFTUBdnxF"
@@ -703,13 +640,13 @@ Docker ^lKPZe1BJ
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1704270085402,
+			"updated": 1704270209025,
 			"link": null,
 			"locked": false,
 			"startBinding": {
 				"elementId": "0ETS1G7sQEMmbibqbc-er",
-				"focus": -0.04552267561931535,
-				"gap": 1
+				"gap": 1,
+				"focus": -0.04552267561931535
 			},
 			"endBinding": null,
 			"lastCommittedPoint": null,
@@ -722,14 +659,14 @@ Docker ^lKPZe1BJ
 				],
 				[
 					6.896794061865421,
-					54.29430986628502
+					54.29430986628503
 				]
 			]
 		},
 		{
 			"type": "arrow",
-			"version": 631,
-			"versionNonce": 1149185911,
+			"version": 637,
+			"versionNonce": 2011992601,
 			"isDeleted": false,
 			"id": "zN9htr-eUpm-WOG3nDWcZ",
 			"fillStyle": "solid",
@@ -738,11 +675,11 @@ Docker ^lKPZe1BJ
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": -571.3203745762686,
+			"x": -571.3203745762687,
 			"y": -148.94981022265696,
 			"strokeColor": "#e03131",
 			"backgroundColor": "#ffec99",
-			"width": 203.55324074074076,
+			"width": 203.55324074074088,
 			"height": 136.8142361111111,
 			"seed": 1357429721,
 			"groupIds": [
@@ -753,13 +690,13 @@ Docker ^lKPZe1BJ
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1704270085413,
+			"updated": 1704270209024,
 			"link": null,
 			"locked": false,
 			"startBinding": {
 				"elementId": "8exComyRK5oS6uZHvjC1m",
-				"focus": 0.18017659905445363,
-				"gap": 3.750992952263829
+				"gap": 3.750992952263829,
+				"focus": 0.18017659905445363
 			},
 			"endBinding": {
 				"elementId": "TDYY8tVGnGXH-6lIoZPJx",
@@ -775,19 +712,19 @@ Docker ^lKPZe1BJ
 					0
 				],
 				[
-					63.49247685185196,
+					63.492476851852075,
 					96.43807870370367
 				],
 				[
-					203.55324074074076,
+					203.55324074074088,
 					136.8142361111111
 				]
 			]
 		},
 		{
 			"type": "arrow",
-			"version": 940,
-			"versionNonce": 604320119,
+			"version": 943,
+			"versionNonce": 471214361,
 			"isDeleted": false,
 			"id": "95-gp4GO3UiqKd2H-dKPc",
 			"fillStyle": "hachure",
@@ -809,7 +746,7 @@ Docker ^lKPZe1BJ
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1704270071423,
+			"updated": 1704270209025,
 			"link": null,
 			"locked": false,
 			"startBinding": null,
@@ -838,8 +775,8 @@ Docker ^lKPZe1BJ
 		},
 		{
 			"type": "arrow",
-			"version": 705,
-			"versionNonce": 607527127,
+			"version": 711,
+			"versionNonce": 2038668793,
 			"isDeleted": false,
 			"id": "NPXPRgSudZEOUyP5W_QV3",
 			"fillStyle": "hachure",
@@ -861,18 +798,18 @@ Docker ^lKPZe1BJ
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1704270109299,
+			"updated": 1704270209025,
 			"link": null,
 			"locked": false,
 			"startBinding": {
 				"elementId": "TDYY8tVGnGXH-6lIoZPJx",
-				"focus": 0.10681030378088137,
-				"gap": 1.0000000000000142
+				"gap": 1.0000000000000142,
+				"focus": 0.10681030378088137
 			},
 			"endBinding": {
 				"elementId": "feNBT-mfEUPAw2wbQP_fI",
-				"focus": 0.7057505211123649,
-				"gap": 1
+				"gap": 1,
+				"focus": 0.7057505211123649
 			},
 			"lastCommittedPoint": null,
 			"startArrowhead": null,
@@ -888,7 +825,7 @@ Docker ^lKPZe1BJ
 				],
 				[
 					461.90693729829405,
-					18.193764509318125
+					18.19376450931812
 				]
 			]
 		},
@@ -2103,8 +2040,8 @@ Docker ^lKPZe1BJ
 		},
 		{
 			"type": "rectangle",
-			"version": 1642,
-			"versionNonce": 1734829689,
+			"version": 1643,
+			"versionNonce": 1630946807,
 			"isDeleted": false,
 			"id": "WXWFi6i2WyFmog5azNK2S",
 			"fillStyle": "solid",
@@ -2113,7 +2050,7 @@ Docker ^lKPZe1BJ
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": -63.78965607593162,
+			"x": -63.78965607593159,
 			"y": -222.71528428159084,
 			"strokeColor": "#1971c2",
 			"backgroundColor": "transparent",
@@ -2131,14 +2068,14 @@ Docker ^lKPZe1BJ
 					"id": "lKPZe1BJ"
 				}
 			],
-			"updated": 1704270075580,
+			"updated": 1704270198425,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 1656,
-			"versionNonce": 914763609,
+			"version": 1657,
+			"versionNonce": 1284009751,
 			"isDeleted": false,
 			"id": "lKPZe1BJ",
 			"fillStyle": "solid",
@@ -2147,7 +2084,7 @@ Docker ^lKPZe1BJ
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": 124.48997177002809,
+			"x": 124.48997177002815,
 			"y": -217.71528428159084,
 			"strokeColor": "#1971c2",
 			"backgroundColor": "transparent",
@@ -2158,7 +2095,7 @@ Docker ^lKPZe1BJ
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1704270075580,
+			"updated": 1704270198425,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -2188,10 +2125,10 @@ Docker ^lKPZe1BJ
 		"currentItemTextAlign": "left",
 		"currentItemStartArrowhead": null,
 		"currentItemEndArrowhead": "triangle",
-		"scrollX": 660.4468485202773,
-		"scrollY": 428.3002165493828,
+		"scrollX": 678.224626298055,
+		"scrollY": 508.474222231201,
 		"zoom": {
-			"value": 1.1
+			"value": 0.9
 		},
 		"currentItemRoundness": "round",
 		"gridSize": null,
@@ -2208,7 +2145,6 @@ Docker ^lKPZe1BJ
 			"outline": true
 		}
 	},
+	"prevTextMode": "parsed",
 	"files": {}
 }
-```
-%%
