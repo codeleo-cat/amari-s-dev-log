@@ -1,0 +1,180 @@
+{
+  "main": {
+    "id": "c5573caeac004f75",
+    "type": "split",
+    "children": [
+      {
+        "id": "14c87cdd1bc1268c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4327bf53113210a2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Daily/2024-01-03.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "d84febb2c87f0622",
+    "type": "split",
+    "children": [
+      {
+        "id": "1879a88ea4a2ed9c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1bf99e2f4fa5f95b",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabeticalReverse"
+              }
+            }
+          },
+          {
+            "id": "5e93e3927c1b270d",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "ec0f9fd83bb4a0af",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "5c7f9b2cde138cbe",
+    "type": "split",
+    "children": [
+      {
+        "id": "38b66633daa99a3e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0247c9faddd37063",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Daily/2024-01-03.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "8f9fa46efa742a5b",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Daily/2024-01-03.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "d077f3c792ad5d23",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": false
+              }
+            }
+          },
+          {
+            "id": "b3caccbc3c0a336d",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Daily/2024-01-03.md"
+              }
+            }
+          },
+          {
+            "id": "5d8b02e93d4f868e",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": true,
+      "command-palette:Open command palette": true,
+      "obsidian-excalidraw-plugin:Create new drawing": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
+    }
+  },
+  "active": "4327bf53113210a2",
+  "lastOpenFiles": [
+    "amari_s_sea",
+    "Daily/2024-01-02.md",
+    "Excalidraw/Switch & OSI 7 layer.md",
+    "IT Terms.md",
+    "Daily/2024-01-03.md",
+    "Kubernetes.md",
+    "Goals/2024 Goals.md",
+    "Docker.md",
+    "Motivation.md",
+    "Goals/2023 Goals.md",
+    "Daily",
+    "Goals/Routine.md",
+    "Excalidraw/Drawing 2024-01-02 11.22.19.excalidraw.md",
+    "Excalidraw",
+    "2024 Goals.md",
+    "2023 Goals.md",
+    "Goals"
+  ]
+}
