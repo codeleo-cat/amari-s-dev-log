@@ -1,6 +1,6 @@
 
-| [[Docker]] | [[kubernetes]] | [[Nginx]] |
-| ------ | ---------- | ----- |
+| [[Docker]] | [[kubernetes]] | [[Nginx]] | [[GCP]] |
+| ---- | ---- | ---- | ---- |
 
 ---
 
@@ -79,7 +79,7 @@
 	- 장점 
 		- db 연결을 맺고 해제하는 과정 -> 고 비용. connection pool을 통해 **이미 생성된 연결을 재사용함**으로써 연결을 맺고 해제하는 데 필요한 overhead를 줄일 수 있음. 
 		- 여러 client 요청에 대해 동시에 여러 연결을 효과적으로 처리할 수 있음.(***scaling***)
-	- [connnection pool이란?](https://shuu.tistory.com/130)
+	- [connection pool이란?](https://shuu.tistory.com/130)
 
 #NAT
 	- 네트워크 주소 변환
@@ -105,3 +105,5 @@
 		- Amazon ECS에 프로비저닝하기 전에 컨테이너를 로컬에서 테스트하여 컨테이너 상태 확인을 통과하는지 확인 ex) Dockerfile health check
 	- 2. Log를 확인
 		- Amazon ECS 작업이 오랜 시간 동안 계속 실행되는 경우 애플리케이션 로그와 Amazon CloudWatch Logs를 확인
+
+#SLO #SLA #SLI

@@ -1,8 +1,8 @@
-#kubernetes 
+#kubernetes #HelmChart
 # Kubernetes(K8s)
 
-- open source orchestration system (컨테이너를 자동으로 관리해주는 Tool)
-- ![K8s 기본구조]()
+- open source orchestration system (컨테이너를 쉽고 빠르게 배포, 관리해주는 Tool)
+- 기본 아키텍처 ![[K8s 기본구조.png]]
 	- 개발자 kubecli -----> kube-api server----> worker node에 **kubelet** 명령 ---> Pod 관리
 	- kubelet(각 컨테이너의 실행을 보장하는 서비스) - 지정된 컨테이너를 실행하도록 Docker에 명령
 
