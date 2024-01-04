@@ -63,4 +63,3 @@
 - [클라우드 시장의 대세, 쿠버네티스란 무엇인가?]( https://www.youtube.com/watch?v=JNc11rxLtmE)
 - [책-그림과 실습으로 배우는 도커 & 쿠버네티스](https://www.yes24.com/Product/Goods/108431011)
 - [[15단계로 배우는 도커와 쿠버네티스]]
-Docker
