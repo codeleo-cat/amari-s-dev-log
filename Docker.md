@@ -8,7 +8,7 @@
 
 ## Docker run VS Docker exec
 
-- docker run - 이미지 > 컨테이너로 변환되어 하나의 인스턴스화
+- docker run - 이미지 &rarr; 컨테이너로 변환되어 하나의 인스턴스화
 
 ## Docker 사용 시 장점
 
