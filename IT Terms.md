@@ -3,6 +3,40 @@
 | ---- | ---- | ---- | ---- |
 
 ---
+##### Type vs Interface
+- Type
+	- data의 구조적인 특성을 나타낸다. 
+	- & 기호를 이용해 확장할 수 있다.
+	- 원시 값, tuple, union 타입 선언이 가능하다.
+	- computed value 사용 가능
+- Interface
+	- 클래스나 객체의 행동에 대한 추상적인 계약을 정의한다.
+	- **선언적 확장**(같은 이름의 interface 선언 시, 자동으로 확장)이 가능하다. 
+	- extends 키워드를 이용해 확장할 수 있다.
+	- **Object type**을 설정할 때 사용 가능하다.
+- [type vs interface](https://velog.io/@hmmhmmhm/%ED%95%98%EB%A3%A8%EB%A7%8C%EC%97%90-%ED%98%BC%EC%9E%90-3D-%EB%A1%9C-%EC%8B%A0%EB%85%84%EC%B9%B4%EB%93%9C-%EC%9B%B9%EC%95%B1%EC%9D%84-%ED%95%AD%ED%95%B4-%EC%BD%94%EC%9C%A1%EB%8C%80-2%ED%9A%8C-%ED%9A%8C%EA%B3%A0)
+##### Const vs Let
+- Const는 재할당이 불가능
+- let은 재할당이 가능
+
+```
+const name = 'monkey'
+name = 'cat'  
+// error ! (Uncaught TypeError)
+
+let name = 'monkey'
+nmae = 'cat'
+// console.log(name) => cat
+
+```
+#serverless
+BaaS (**Backend as a Service**)나 FaaS (**Function as a Service** / AWS Lambda, Azure Functions) 등에 의존하여 앱이 동작하는 것을 의미한다.
+실제 '물리적' 서버가 없는 것으로 이해해야 한다. on-demand 방식이라는 장점이 있지만 검색 엔진처럼 속도가 생명인 application에 이상적인 방법은 아니다. 항시 실행 중이 아니라 trigger에 의해 서버를 실행하고 종료하기 때문에 대기 시간이 오래 걸린다.
+
+### Warm start vs Cold start in Lambda
+
+- Warm start : 이미 실행 준비가 완료된 상태
+- Cold start : 배포 패키지의 크기와 코드의 초기화 시간에 따라 새 실행환경으로 호출을 라우팅할 때 **지연 시간**이 발생하는 현상.
 
 #Enum ✅ 열거형 변수
 	TypeScript가 자체적으로 구현하는 기능(JS not support)
@@ -46,9 +80,9 @@
 		- Filtering : 프레임이 유입된 port로 다시 frame을 전송하지 않는 기능
 		- #Flooding : MAC 주소 테이블에 목적지에 MAC에 대한 정보가 없을 경우 frame을 모든 port로 전송하는 기능 = 테이블에 없는 도착지 주소를 가진 패킷이 들어오면 스위치는 전체 포트로 패킷을 전송한다.
 
-#Switching : 경로 선택
-	Router : 기본적으로 L3 Switch. Internet은 router의 집합체
-	Packet이 Router에 도착하면, 이 Router들 간 특정 프로토콜로 통신하며 최적화된 경로를 찾는데, 이 경로 선택의 base가 되는 것이 ⭐️ Routing Table (이정표)
+#Router ✅ 최적 경로 선택 
+- 기본적으로 L3 Switch. Internet은 router의 집합체
+- Packet이 Router에 도착하면, 이 Router들 간 특정 프로토콜로 통신하며 최적화된 경로를 찾는데, 이 경로 선택의 base가 되는 것이 ⭐️ Routing Table (이정표)
 
 #Broadcast #Unicast #Multicast ✅ 네트워크 통신에서 사용되는 데이터 전송 방식
 	브로드캐스트 : 네트워크 상에 연결된 모든 장치에 데이터를 전송하는 방식. 주로 소규모 네트워크
