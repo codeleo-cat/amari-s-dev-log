@@ -31,7 +31,18 @@ nmae = 'cat'
 ```
 #serverless
 BaaS (**Backend as a Service**)나 FaaS (**Function as a Service** / AWS Lambda, Azure Functions) 등에 의존하여 앱이 동작하는 것을 의미한다.
-실제 '물리적' 서버가 없는 것으로 이해해야 한다. on-demand 방식이라는 장점이 있지만 검색 엔진처럼 속도가 생명인 application에 이상적인 방법은 아니다. 항시 실행 중이 아니라 trigger에 의해 서버를 실행하고 종료하기 때문에 대기 시간이 오래 걸린다.
+실제 '물리적' 서버가 없는 것으로 이해해야 한다. 
+- 장점 : on-demand 방식이라는 장점이다.
+- 단점 : 검색 엔진처럼 속도가 생명인 application에 이상적인 방법은 아니다. 항시 실행 중이 아니라 trigger에 의해 서버를 실행하고 종료하기 때문에 대기 시간이 오래 걸린다.
+
+#NFS
+네트워크에서 파일 시스템을 공유. K8s의 pod에서 persistent 볼륨 학습 환경으로 사용.
+
+#vagrant
+virtual box와 연계하여 가상 머신 관리를 자동화해 주는 도구.
+
+#virtual_box
+windows, mac, linux 서버에서 사용 가능한 hyper visor, vagrant의 백엔드로서 학습용 가상 환경 구축에 사용.
 
 ### Warm start vs Cold start in Lambda
 

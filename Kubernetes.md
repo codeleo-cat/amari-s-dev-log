@@ -48,6 +48,10 @@
 
 - **Rolling update** 
 
+### Managed By CSP
+AWS - #EKS (Amazon Elastic Kubernetes Service)
+Azure - #AKS (Azure Kubernetes Service)
+GCP - #GKE (Google kubernetes Engine)
 
 ## Minikube
 
