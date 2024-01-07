@@ -17,14 +17,14 @@ extends 키워드를 이용해 확장할 수 있다.
 **Object type**을 설정할 때 사용 가능하다.
 
 #Const vs #Let
-&rarr; Const는 재할당이 불가능
-&rarr; let은 재할당이 가능
+- Const는 재할당이 불가능
+- let은 재할당이 가능
 
 #Serverless
-&rarr; BaaS (**Backend as a Service**)나 FaaS (**Function as a Service** / AWS Lambda, Azure Functions) 등에 의존하여 앱이 동작하는 것을 의미한다.
+-  BaaS (**Backend as a Service**)나 FaaS (**Function as a Service** / AWS Lambda, Azure Functions) 등에 의존하여 앱이 동작하는 것을 의미한다.
 실제 '물리적' 서버가 없는 것으로 이해해야 한다. 
-*장점* - on-demand 방식이라는 장점이다.
-*단점* - 검색 엔진처럼 속도가 생명인 application에 이상적인 방법은 아니다. 항시 실행 중이 아니라 trigger에 의해 서버를 실행하고 종료하기 때문에 대기 시간이 오래 걸린다.
+- *장점* - on-demand 방식이라는 장점이다.
+- *단점* - 검색 엔진처럼 속도가 생명인 application에 이상적인 방법은 아니다. 항시 실행 중이 아니라 trigger에 의해 서버를 실행하고 종료하기 때문에 대기 시간이 오래 걸린다.
 
 #NFS
 &rarr; 네트워크에서 파일 시스템을 공유. K8s의 pod에서 persistent 볼륨 학습 환경으로 사용.
@@ -36,11 +36,11 @@ extends 키워드를 이용해 확장할 수 있다.
 &rarr; windows, mac, linux 서버에서 사용 가능한 hyper visor, vagrant의 백엔드로서 학습용 가상 환경 구축에 사용.
 
 #Warmstart vs #Coldstart in Lambda
-&rarr; Warm start : 이미 실행 준비가 완료된 상태
-&rarr; Cold start : 배포 패키지의 크기와 코드의 초기화 시간에 따라 새 실행환경으로 호출을 라우팅할 때 **지연 시간**이 발생하는 현상.
+- Warm start : 이미 실행 준비가 완료된 상태
+- Cold start : 배포 패키지의 크기와 코드의 초기화 시간에 따라 새 실행환경으로 호출을 라우팅할 때 **지연 시간**이 발생하는 현상.
 
 #Enum ✅ 열거형 변수
-&rarr; TypeScript가 자체적으로 구현하는 기능(JS not support)
+- TypeScript가 자체적으로 구현하는 기능(JS not support)
 왜 권장하지 않나? **tree-shaking 불가**. (export했지만 어디에서도 import하지 않은 모듈/코드) 사용하지 않는 코드를 삭제하는 기능. 
 
 #CIDR ✅ 데이터 라우팅 효율성을 향상시키는 IP 주소 할당 방법
@@ -56,8 +56,8 @@ Class A : 0.0.0.0 ~ 127.255.255.255
 Class B :  128.0.0.0 ~ 172.31.255.255 
 Class C : 192.0.0.0 ~ 223.255.255.255 	
 
-#IPv4 vs #IPv6 ✅ IPv6는 IPv4를 대체하도록 설계된 네트워크 주소 지정 시스템
-부족한 주소 문제 해결을 위한 대안이 IPv6
+#IPv4 vs #IPv6 ✅ IPv6는 IPv4를 대체하도록 설계된 네트워크 주소 지정 시스템.
+- 부족한 주소 문제 해결을 위한 대안이 IPv6
 - IPv4 : 32 비트 (2의 32승, 약 43억개)
 - IPv6 : 128 비트 (2의 128승, 340간 개) &rarr; DHCP 서버가 없어도 IP 주소를 자동 할당 가능함.
 
@@ -116,7 +116,7 @@ Packet이 Router에 도착하면, 이 Router들 간 특정 프로토콜로 통�
 Spanning Tree Protocol 
 특정 Port를 차단 상태로 바꾸어 놓음
 
-#domain 
+#Domain 
 - 컴퓨터에 부여된 계층적인 이름 (사람이 외우기 쉬운 의미가 있는 이름)
 - DNS : **도메인명과 IP 주소를 상호 변환**하는 구조 (Domain Name System)
 	- 구성 : content server, cache server, 컴퓨터 내부의 stub resolver
@@ -143,8 +143,8 @@ db 연결을 맺고 해제하는 과정 -> 고 비용. connection pool을 통해
 
 #NAT  ✅ 네트워크 주소 변환 
 Network Address Translation
-&rarr; private ip를 사용하는 device들을 **공인 IP 주소 하나로 변환**하여 인터넷과 통신할 있게 하는 기술
-IP 주소 부족 문제를 해결 + 방화벽 역할
+- private ip를 사용하는 device들을 **공인 IP 주소 하나로 변환**하여 인터넷과 통신할 있게 하는 기술
+- IP 주소 부족 문제를 해결 + 방화벽 역할
 
 **대칭키 방식 암호화** 
 &rarr; 암호화하고 복호화하는 key가 똑같다.<br/>
@@ -166,9 +166,9 @@ ex) 장애 발생 전인 지난 주 목요일에 백업시켜 둔 복원 시점�
 
 #SLA / #SLI / #SLA ✅ 서비스 레벨과 관련된 용어
 [SLO, SLI, SLA란?](https://newrelic.com/kr/blog/best-practices/what-are-slos-slis-slas)
-* SLO (Service Level Objectives, 서비스 레벨 목표) : 시스템에서 기대되는 가용성을 설정한 목표
-* SLI (Service Level Indicator, 서비스 레벨 지표) : 시스템의 가용성을 파악하기 위한 핵심 측정치와 지표
-* SLA (Service Level Agreements, 서비스 레벨 계약) : 시스템이 SLO를 충족하지 못할 경우 발생하는 상황, 합의된 내용을 설명하는 계약
+* **SLO** (Service Level Objectives, 서비스 레벨 목표) : 시스템에서 기대되는 가용성을 설정한 목표
+* **SLI** (Service Level Indicator, 서비스 레벨 지표) : 시스템의 가용성을 파악하기 위한 핵심 측정치와 지표
+* **SLA** (Service Level Agreements, 서비스 레벨 계약) : 시스템이 SLO를 충족하지 못할 경우 발생하는 상황, 합의된 내용을 설명하는 계약
 
 #SRE
 - Site Reliability Engineering, SRE : 사이트 안정성 엔지니어링
