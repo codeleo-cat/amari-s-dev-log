@@ -54,14 +54,15 @@
 - **Canary** - ver 2.0을 일부 배포하고, 트래픽도 일부만 ver 2.0으로 전환한다. 배포에 문제가 없다면 ver 2.0을 점진적으로 배포 및 트래픽을 전환한다.
 
 ### Managed By CSP
-AWS - #EKS (Amazon Elastic Kubernetes Service)
-Azure - #AKS (Azure Kubernetes Service)
-GCP - #GKE (Google kubernetes Engine)
+- AWS - EKS (Amazon Elastic Kubernetes Service)
+- Azure - AKS (Azure Kubernetes Service)
+- GCP - GKE (Google kubernetes Engine)
 
 ## Minikube
 
 - Mini + kube
 - 쿠버네티스 클러스터 구축을 간단하게 할 수 있도록 만들어주기 위해서 시작된 프로젝트
+- [[ArgoCD + K8s 실습]]
 
 
 ---
