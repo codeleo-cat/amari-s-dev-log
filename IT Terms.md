@@ -2,6 +2,9 @@
 | [[Docker]] | [[kubernetes]] | [[Nginx]] | [[GCP]] |
 | ---- | ---- | ---- | ---- |
 
+#port ✅ 컴퓨터가 data를 어느 process에게 전달해야 되는지를 알려주는 unique한 번호
+- 전송 계층에서 사용되는 기술
+- sender가 data를 보낼 때 + 수신자 컴퓨터의 process의 port 번호
 
 #Type vs #Interface 
 * **Type**
