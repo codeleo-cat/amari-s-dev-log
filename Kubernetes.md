@@ -44,9 +44,14 @@
 
 - 들어오는 요청을 적절한 서비스로 전달해야 하는 역할
 
-## Container 교체가 필요한데?
+## Container 교체가 필요한데? (배포 방식 3가지)
 
-- **Rolling update** 
+- **Rolling update** - 정해진 비율만큼의 파드만 점진적으로 배포
+	최소한의 오버헤드와 다운타임
+- **Blue/Green** - ver 1.0 과 ver 2.0 을 구성하고, 트래픽을 ver 2.0 쪽으로 전환하는 방식
+	구버전(Blue)과 동일한 환경에 신버전(Green)의 배포를 전부 구축하고, LB를 수정하여 Green 을 한꺼번에 가리키게 한다.
+	 *단점* - 잠시라도 신버전을 완전히 새 환경에서 구축해야 되기에 일시적이라도 시스템 자원 2배 필요
+- **Canary** - ver 2.0을 일부 배포하고, 트래픽도 일부만 ver 2.0으로 전환한다. 배포에 문제가 없다면 ver 2.0을 점진적으로 배포 및 트래픽을 전환한다.
 
 ### Managed By CSP
 AWS - #EKS (Amazon Elastic Kubernetes Service)

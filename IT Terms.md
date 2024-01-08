@@ -1,23 +1,27 @@
 
-| [[Docker]] | [[kubernetes]] | [[Nginx]] | [[GCP]] |
-| ---- | ---- | ---- | ---- |
+| [[Docker]] | [[kubernetes]] | [[Nginx]] | [[GCP]] |  |
+| ---- | ---- | ---- | ---- | ---- |
+|  |  |  |  |  |
+#RBAC
+- Role-Based Access Control
+- 역할 별로  액세스 권한을 부여한다.
 
-#port ✅ 컴퓨터가 data를 어느 process에게 전달해야 되는지를 알려주는 unique한 번호
-- 전송 계층에서 사용되는 기술
-- sender가 data를 보낼 때 + 수신자 컴퓨터의 process의 port 번호
+#ABAC
+- Attribute-Based Access Control
+- 사용자 특성, 개체 특성, 작업 유형 등에 따라 액세스를 결정. 보다 세부적인 control이 가능하다
 
 #Type vs #Interface 
-* **Type**
-data의 구조적인 특성을 나타낸다. 
-& 기호를 이용해 확장할 수 있다.
-원시 값, tuple, union 타입 선언이 가능하다.
-computed value 사용 가능
+- **Type**
+	data의 구조적인 특성을 나타낸다. 
+	& 기호를 이용해 확장할 수 있다.
+	원시 값, tuple, union 타입 선언이 가능하다.
+	computed value 사용 가능
 
 * **Interface**
-클래스나 객체의 행동에 대한 추상적인 계약을 정의한다.
-**선언적 확장**(같은 이름의 interface 선언 시, 자동으로 확장)이 가능하다. 
-extends 키워드를 이용해 확장할 수 있다.
-**Object type**을 설정할 때 사용 가능하다.
+	클래스나 객체의 행동에 대한 추상적인 계약을 정의한다.
+	**선언적 확장**(같은 이름의 interface 선언 시, 자동으로 확장)이 가능하다. 
+	extends 키워드를 이용해 확장할 수 있다.
+	**Object type**을 설정할 때 사용 가능하다.
 
 #Const vs #Let
 - Const는 재할당이 불가능
@@ -81,19 +85,29 @@ ex) elancer.co.kr
 ex) https://elancer.co.kr
 
 #L2_Switch
-&rarr; MAC 주소 기반으로 통신한다. MAC 주소는 48bit
+- MAC 주소 기반으로 통신한다. MAC 주소는 48bit
 - L2 Access : endpoint와 직접 맞닿는 스위치 
 - L2 Distribution : Router로 데이터를 보내는 스위치
 - uplink : 상위 계층 스위치로 연결되는 Line (= 더 큰 네트워크로 나가는 역할)
 
-#MAC주소 ✅ 기기에 존재하는 NIC를 특정하는 주소
-&rarr; Media Access Control Address
+#MAC주소 ✅ 기기에 존재하는 NIC를 특정하는 주소 (**NIC에 대한 식별자**)
+-  Media Access Control Address
 PC를 비롯한 각종 단말, 프린터 같은 각종 기기에 존재하는 **NIC를 특정하는 주소** = 이더넷용 주소
 FF:FF:FF:FF:FF:FF는 이더넷에 접속한 모든 NIC를 대상으로 일제히 송신한다 = #Broadcast 주소
 데이터 링크 계층에서 사용되며, 물리적인 네트워크 장비를 식별하는데 사용된다.
+- NIC (= Network Interface Controller, LAN 카드 / Network Interface Card)
+	NIC에 여러 개의 IP를 바인딩 가능
+
+#IP주소 ✅ **Host에 대한 식별자**
+* Host : 네트워크에 연결된 컴퓨터
+
+#port ✅ **Process에 대한 식별자**
+- 컴퓨터가 data를 어느 process에게 전달해야 되는지를 알려주는 unique한 번호
+- 전송 계층에서 사용되는 기술
+- sender가 data를 보낼 때 **+** 수신자 컴퓨터의 process의 port 번호
 
 #Endpoint
-&rarr; API가 server에서 resource에 접근 가능하도록 하는 URL
+- API가 server에서 resource에 접근 가능하도록 하는 URL
 
 #Switching ✅ 네트워크 내부에서 패킷 전송을 담당 (물리적인 전송)
 [스위칭 개념](https://www.youtube.com/watch?v=oAbukpZbpTg) /  [스위치 기능 ](https://www.youtube.com/watch?v=jKCV6s6FKrg) /  [스위치:2계층 장비](https://catsbi.oopy.io/315731e3-1730-4690-ad8f-663e0af7621b)
@@ -126,20 +140,21 @@ Spanning Tree Protocol
 	- 가치가 제대로 발휘될 때 : GSLB (Global Server Load Balancing)
 
 #public_subnet ✅ 외부에서 직접 접근 가능한 서브넷
-public subnet에 속한 리소스는 외부에서 직접 접근이 가능함. 
-리소스 - 웹 서버, 로드 밸런서, CDN 등
-public ip를 통해 직접 인터넷과 통신 가능
-Internet g/w를 포함하여 외부와의 통신을 허용하는 라우팅 규칙을 지님
+- public subnet에 속한 리소스는 외부에서 직접 접근이 가능함. 
+- 리소스 - 웹 서버, 로드 밸런서, CDN 등
+#CDN (Content Delivery Network) - end user에게 더 빠르게 contents 제공 가능, 로드 시간이 빨라진다.
+- public ip를 통해 직접 인터넷과 통신 가능
+- Internet g/w를 포함하여 외부와의 통신을 허용하는 라우팅 규칙을 지님
 
 #private_subnet ✅ 외부에서 직접 접근 불가한 서브넷
-private_subnet에 속한 리소스는 외부에서 직접 접근이 불가능함.
-리소스 - DB 서버, Application 서버
-외부와 통신하기 위해서는 NAT(Network Address Translation) g/w를 사용하여야 함.
+- private_subnet에 속한 리소스는 외부에서 직접 접근이 불가능함.
+- 리소스 - DB 서버, Application 서버
+- 외부와 통신하기 위해서는 NAT(Network Address Translation) g/w를 사용하여야 함.
 
 #connection_pool ✅ 미리 준비된 연결 객체
-&rarr; 여러 client에서 동시에 db에 접근할 수 있도록 하는 메커니즘. 
-원리 - 각 client는 필요할 때 db 연결을 pool에서 가져와 사용하고, 사용이 끝나면 pool에 반환함.
-*장점* 
+- 여러 client에서 동시에 db에 접근할 수 있도록 하는 메커니즘. 
+- 원리 - 각 client는 필요할 때 db 연결을 pool에서 가져와 사용하고, 사용이 끝나면 pool에 반환함.
+- *장점* 
 db 연결을 맺고 해제하는 과정 -> 고 비용. connection pool을 통해 **이미 생성된 연결을 재사용함**으로써 연결을 맺고 해제하는 데 필요한 overhead를 줄일 수 있음. 
 여러 client 요청에 대해 동시에 여러 연결을 효과적으로 처리할 수 있음.(***scaling***)
 [connection pool이란?](https://shuu.tistory.com/130)
@@ -180,8 +195,9 @@ ex) 장애 발생 전인 지난 주 목요일에 백업시켜 둔 복원 시점�
 - 소프트웨어의 내부 구조나 작동 원리를 모르는 상태에서 소프트웨어의 동작을 검사하는 방법
 - A, B, C 요구사항 명세를 보면서 테스트하는 것으로, 주로 구현된 기능을 테스트한다. = (기능 테스트)
 
-#3-tier-architecture 🔑 **P.A.D**
+#3-tier-architecture 🔑 **Presentation.Application.Data**
 ![Client-Server-DB|400](https://www.zirous.com/wp-content/uploads/2022/10/Untitled-5-01.png)
-- Presentation tier = 사용자가 직접 마주하게 되는 계층. GUI / Front-end
-- Application tier = 정보를 처리하고 가공하며 비즈니스 로직을 처리하는 계층. 미들웨어 / Back-end
+- Presentation tier : 사용자가 직접 마주하게 되는 계층. GUI / Front-end
+- Application tier : 정보를 처리하고 가공하며 비즈니스 로직을 처리하는 계층. 
+	ex) 미들웨어 / Back-end. WAS (웹 애플리케이션 서버)
 - Data tier = DB에 접근해서 데이터를 read/write 하는 것. DBMS
