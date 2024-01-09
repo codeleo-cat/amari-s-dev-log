@@ -40,11 +40,13 @@ http://localhost:27017 으로 접속하면 아래의 문구 출력됨 &rarr; 정
 ```
 It looks like you are trying to access MongoDB over HTTP on the native driver port.
 ```
-
+- mongo 6.0 이상 ver &darr;
 ```bash
 $ mongosh
 ```
+- mongo 6.0 이전 ver &darr;
+```bash
+$ brew install mongodb-community-shell
+$ mongo
+```
 
-> mongo 6.0 이전 ver
-brew install mongodb-community-shell
-mongo

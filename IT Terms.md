@@ -50,23 +50,36 @@
 - TypeScript가 자체적으로 구현하는 기능(JS not support)
 왜 권장하지 않나? **tree-shaking 불가**. (export했지만 어디에서도 import하지 않은 모듈/코드) 사용하지 않는 코드를 삭제하는 기능. 
 
-#CIDR ✅ 데이터 라우팅 효율성을 향상시키는 IP 주소 할당 방법
-[What is CIDR](https://aws.amazon.com/ko/what-is/cidr/)
-[CIDR 쉽게 계산하기](https://kim-dragon.tistory.com/154)
+#CIDR ✅ 클래스없는 도메인간 라우팅 기법
+- [What is CIDR](https://aws.amazon.com/ko/what-is/cidr/) / [CIDR 쉽게 계산하기](https://kim-dragon.tistory.com/154) / [CIDR를 통해 알아보는 서브넷마스크](https://hwannny.tistory.com/86)
 &rarr; Classless Inter-Domain Routing (사이더)
-이전에는 IP 주소는 class 기반이었기에 IP 주소 할당이 비효율적+공간 낭비로 이어졌음. 
-CIDR를 사용하면 class 기반이 아닌 네트워크 및 호스트 주소를 검색하여 유연한 IP 주소 할당이 가능함. 
-🔑 IP주소와 subnet mask를 동시에 표기하는 기법. **subnet 분할이 유연해진다**는 장점
+- 이전에는 IP 주소는 class 기반이었기에 IP 주소 할당이 비효율적+공간 낭비로 이어졌음.
+CIDR를 사용하면 class 기반이 아닌 **네트워크 및 호스트 주소**를 검색하여 유연한 IP 주소 할당이 가능함. 
+데이터 라우팅 효율성을 향상시키는 IP 주소 할당 방법
+- 🔑 IP주소와 subnet mask를 동시에 표기하는 기법. **subnet 분할이 유연해진다**는 장점
+	IP - 210.77.8.155, 서브넷 마스크 - 255.255.255.192 일경우
+	210.77.8.155/26와 같이 표기한다.
 
 * *class 기반*
 Class A : 0.0.0.0 ~ 127.255.255.255 
 Class B :  128.0.0.0 ~ 172.31.255.255 
-Class C : 192.0.0.0 ~ 223.255.255.255 	
+Class C : 192.0.0.0 ~ 223.255.255.255
+Class D : 224.0.0.0 ~ 239.255.255.255 &rarr; #Multicast 용으로 실제 IP 주소가 할당 X
+Class E : 240.0.0.0 ~ 255.255.255.255 &rarr; 기타 목적으로 예약되어, 실제 IP 주소가 할당 X
 
 #IPv4 vs #IPv6 ✅ IPv6는 IPv4를 대체하도록 설계된 네트워크 주소 지정 시스템.
 - 부족한 주소 문제 해결을 위한 대안이 IPv6
 - IPv4 : 32 비트 (2의 32승, 약 43억개)
 - IPv6 : 128 비트 (2의 128승, 340간 개) &rarr; DHCP 서버가 없어도 IP 주소를 자동 할당 가능함.
+
+#HTTP vs #HTTPS ✅ https는 http+암호화가 추가된 프로토콜
+ ![200](https://www.cloudflare.com/img/learning/security/glossary/what-is-ssl/http-vs-https.svg)
+- [http vs https](https://aws.amazon.com/ko/compare/the-difference-between-https-and-http/)
+- client와 server 간 통신을 위한 프로토콜
+- HTTP(80)는 암호화되지 않는 데이터를, HTTPS(443)는 암호화된 데이터를 전송한다. <br/> 로드 속도도 더 빠르고 참조 링크도 잘 추적한다.
+- HTTPS(Hypertext Transfer Protocol **Secure**) 🔑 HTTP의 확장 버전. 안전한 버전
+- **Secure** - HTTP 요청 및 응답을 SSL 및 TLS 기술에 결합
+
 
 #DHCP  ✅ 네트워크 설정을 자동으로 해주는 방법
 

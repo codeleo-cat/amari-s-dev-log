@@ -39,7 +39,7 @@ docker exec -it <container_id> bash
 ![vm|350](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F213CAE3D5265549405)
 - **Docker**
 ![docker|350](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F272F203F5265549F04)
-##### ECS 컨테이너 구동이 계속 실패한다면 시도할 수 있는 방법 [AWS docs](https://repost.aws/ko/knowledge-center/ecs-task-container-health-check-failures)
+### ECS 컨테이너 구동이 계속 실패한다면 시도할 수 있는 방법 [AWS docs](https://repost.aws/ko/knowledge-center/ecs-task-container-health-check-failures)
 1. Local에서 돌려본다.
 		Amazon ECS에 프로비저닝하기 전에 컨테이너를 로컬에서 테스트하여 컨테이너 상태 확인을 통과하는지 확인 ex) Dockerfile health check
 2. Log를 확인한다.
