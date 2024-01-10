@@ -22,6 +22,9 @@
 | L3 | 전송 계층 | 데이터를 어떻게 전송하나? | [TCP](https://developer.mozilla.org/ko/docs/Glossary/TCP), UDP | 라우터 | Segment |
 | L2 | 인터넷 계층 | 전화선의 주소를 어떻게 설정해야 하는가? | IP, ARP, RARP | 브릿지 | Packet |
 | L1 | 네트워크 액세스 계층 | 물리적으로 전화선을 어떻게 구성해야 하나? | Ethernet, wifi | 리피터 | Bits, Frame |
+- LDAP(**Lightweight** Directory Access Protocol) 
+네트워크 상에서 조직이나 개인, 파일, 디바이스 등을 찾아볼 수 있게 해주는 s/w 프로토콜
+
 ### OSI 7 Layer
 
 - **네트워크 통신**이 일어나는 과정을 7단계로 나누어 ISO에서 정의한 네트워크 표준 모델
