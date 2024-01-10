@@ -119,6 +119,9 @@ FF:FF:FF:FF:FF:FF는 이더넷에 접속한 모든 NIC를 대상으로 일제히
 - 전송 계층에서 사용되는 기술
 - sender가 data를 보낼 때 **+** 수신자 컴퓨터의 process의 port 번호
 
+#process ✅ 동작 중인 프로그램
+- 프로그램이 실행되어서 메모리에 올라간 상태
+
 #Endpoint
 - API가 server에서 resource에 접근 가능하도록 하는 URL
 
