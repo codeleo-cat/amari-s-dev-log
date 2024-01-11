@@ -83,6 +83,8 @@ Class E : 240.0.0.0 ~ 255.255.255.255 &rarr; 기타 목적으로 예약되어, �
 - HTTPS(Hypertext Transfer Protocol **Secure**) 🔑 HTTP의 확장 버전. 안전한 버전
 - **Secure** - HTTP 요청 및 응답을 SSL 및 TLS 기술에 결합
 
+#SSL vs #TLS
+
 
 #DHCP  ✅ 네트워크 설정을 자동으로 해주는 방법
 

@@ -14,20 +14,20 @@
 
 **Master Node** 🔑 **컨테이너 선단을 지휘하는 통제함** 
 &rarr; 주요 컨트롤 유닛으로서 Worker Nodes를 관리하는 주체
-- Scheduler - **스케줄링**. pod를 적절한 worker node에 배포(할당)하는 component. <br/> 즉, 새로운 컨테이너가 어느 노드에서 실행될 지 결정하는 component.
-- Controller Manager (CM) - **컨트롤러 관리**. node의 상태 모니터링(직접 하는 것은 아니고 API Server로부터 state 값을 전달받음), 로그 확인 가능
+- **Scheduler** - **스케줄링**. pod를 적절한 worker node에 배포(할당)하는 component. <br/> 즉, 새로운 컨테이너가 어느 노드에서 실행될 지 결정하는 component.
+- **Controller Manager (CM)** - **컨트롤러 관리**. node의 상태 모니터링(직접 하는 것은 아니고 API Server로부터 state 값을 전달받음), 로그 확인 가능
 	- Node Controller
 	- Replication Controller
 	- Deployment Controller
-- ETCD - 설정 관리, 서비스 discovery, 스케줄링 등을 위한 데이터를 저장하는 **저장소** 역할 (key-value)
+- **ETCD** - 설정 관리, 서비스 discovery, 스케줄링 등을 위한 데이터를 저장하는 **저장소** 역할 (key-value)
 
 **Worker Node** 🔑 **파드가 배포 및 실행되는 노드. 파드를 생성하고 관리하는 실질적인 주체**
 &rarr; 할당된 task를 요청대로 수행하며, master node와 통신하는 시스템
-- kubelet - 각 노드에서 실행되는 일종의 **agent**. 
-- kube-proxy - 각 노드에서 실행되는 네트워크 프록시. 
+- **kubelet** - 각 노드에서 실행되는 일종의 **agent**. 
+- **kube-proxy** - 각 노드에서 실행되는 네트워크 프록시. 
 	&rarr; 지속적으로 service, pod의 변경 사항을 확인한다.
 	&rarr; worker node로 유입되는 트래픽을 적절한 pod로 라우팅한다.
-- container runtime - pod에서 실행될 컨테이너 엔진. containerd
+- **container runtime** - pod에서 실행될 컨테이너 엔진. containerd
 
 ### Why K8s ?
 
@@ -60,6 +60,16 @@
 ### Ingress Controller
 
 - 들어오는 요청을 적절한 서비스로 전달해야 하는 역할
+
+### Auto Scaling
+
+- HPA (Horizontal Pod Autoscaler)
+- VPA (Vertical Pod Autoscaler)
+- Cluster Autoscaler
+- ##### AWS Fargate와의 비교
+	- Fargate는 serverless 컴퓨팅 환경. K8s에서는 노드 관리가 필요하지만 Fargate에서는 필요 없음. 
+	- K8s에서는 노드 기반의 스케일링이 필요 VS Fargate에서는 컨테이너 기반의 스케일링만 필요
+
 
 ### Container 교체가 필요한데? (배포 방식 3가지)
 

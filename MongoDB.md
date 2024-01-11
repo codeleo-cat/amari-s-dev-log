@@ -14,7 +14,7 @@
 - NoSQL이면서 Index를 지원한다.
 - 특수 쿼리 
 - 가용성
-- 수평적 확장 [[Sharding]]
+- #Scale-out [[Sharding]]
 ### 문법
 
 - database 생성 or 선택 : use db명
