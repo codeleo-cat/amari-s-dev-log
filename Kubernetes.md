@@ -14,7 +14,7 @@
 
 **Master Node** 🔑 **컨테이너 선단을 지휘하는 통제함** 
 &rarr; 주요 컨트롤 유닛으로서 Worker Nodes를 관리하는 주체
-- Scheduler - **스케줄링**. pod를 적절한 worker node에 배포(할당)하는 component
+- Scheduler - **스케줄링**. pod를 적절한 worker node에 배포(할당)하는 component. <br/> 즉, 새로운 컨테이너가 어느 노드에서 실행될 지 결정하는 component.
 - Controller Manager (CM) - **컨트롤러 관리**. node의 상태 모니터링(직접 하는 것은 아니고 API Server로부터 state 값을 전달받음), 로그 확인 가능
 	- Node Controller
 	- Replication Controller
@@ -73,7 +73,7 @@
 ### Managed By CSP
 - AWS - EKS (Amazon Elastic Kubernetes Service)
 - Azure - AKS (Azure Kubernetes Service)
-- GCP - GKE (Google kubernetes Engine)
+- GCP - [[GKE]] (Google kubernetes Engine)
 
 ### Minikube
 

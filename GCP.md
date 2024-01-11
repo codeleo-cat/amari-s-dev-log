@@ -16,12 +16,20 @@ $ gcloud 및 auth login `ACCOUNT`
 
 ```bash
 $ export CLOUDSDK_CORE_PROJECT=**PROJECT_ID**
+
 $ gcloud config get-value compute/region
+
 $ gcloud config get-value compute/zone
+
 $ gcloud compute project-info add-metadata \
    --metadata google-compute-default-region=**REGION**,google-compute-default-zone=**ZONE**
+   
 $ gcloud init
+
 ```
+
+- [[GKE]]
+
 ### Ref
 [GCP 공식문서](https://cloud.google.com/?hl=en)
 [project 선취권 문제로 삭제 안될 때](https://support.google.com/a/thread/74530265/can-t-remove-google-cloud-project-due-to-dialogflow?hl=en)

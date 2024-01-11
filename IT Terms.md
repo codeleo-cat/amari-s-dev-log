@@ -1,14 +1,17 @@
 
 | [[Docker]] | [[kubernetes]] | [[Nginx]] | [[GCP]] |  |
 | ---- | ---- | ---- | ---- | ---- |
-|  |  |  |  |  |
+
 #RBAC
 - Role-Based Access Control
 - 역할 별로  액세스 권한을 부여한다.
 
 #ABAC
 - Attribute-Based Access Control
-- 사용자 특성, 개체 특성, 작업 유형 등에 따라 액세스를 결정. 보다 세부적인 control이 가능하다
+- 사용자 특성, 개체 특성, 작업 유형 등에 따라 액세스를 결정. 보다 세부적인 control이 가능하다.
+
+#MAU
+- Monthly Active User
 
 #Type vs #Interface 
 - **Type**
