@@ -37,3 +37,5 @@ $ gcloud init
 ### Ref
 [GCP 공식문서](https://cloud.google.com/?hl=en)
 [project 선취권 문제로 삭제 안될 때](https://support.google.com/a/thread/74530265/can-t-remove-google-cloud-project-due-to-dialogflow?hl=en)
+[GCP&Terrform 설정](https://developer.hashicorp.com/terraform/tutorials/gcp-get-started/google-cloud-platform-build)
+[서비스계정키생성disabled](https://cloud.google.com/resource-manager/docs/organization-policy/restricting-service-accounts#disable_service_account_key_creation)
