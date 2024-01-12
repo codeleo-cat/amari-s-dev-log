@@ -15,3 +15,6 @@ $ gcloud services enable compute.googleapis.com container.googleapis.com
 	- auto scaling
 	- 간편한 배포
 	- 보안 및 격리
+
+### Ref
+[컨테이너화된 웹 애플리케이션 배포](https://cloud.google.com/kubernetes-engine/docs/tutorials/hello-app?hl=ko#cloud-shell)

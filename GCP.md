@@ -17,16 +17,18 @@ $ gcloud projects create example-foo-bar-1 --name="Happy project" --labels=type=
 
 $ export CLOUDSDK_CORE_PROJECT=$PROJECT_ID
 
-$ gcloud config set compute/region $REGION
+$ gcloud config set project PROJECT_ID
 
-$ gcloud config set compute/zone $ZONE
+$ gcloud config set compute/region REGION
+
+$ gcloud config set compute/zone ZONE
 
 $ gcloud config get-value compute/region
 
 $ gcloud config get-value compute/zone
 
 $ gcloud compute project-info add-metadata \
-   --metadata google-compute-default-region=$REGION,google-compute-default-zone=$ZONE
+   --metadata google-compute-default-region=REGION,google-compute-default-zone=ZONE
    
 $ gcloud init
 

@@ -1,5 +1,5 @@
 
-| [[Docker]] | [[kubernetes]] | [[Nginx]] | [[GCP]] |  |
+| [[Docker]] | [[Kubernetes]] | [[Nginx]] | [[GCP]] |  |
 | ---- | ---- | ---- | ---- | ---- |
 #DevOps
 - 인프라 구축(세팅)부터 배포, 운영까지의 과정을 최적화하는 업무를 하는 사람
@@ -89,11 +89,14 @@ Class E : 240.0.0.0 ~ 255.255.255.255 &rarr; 기타 목적으로 예약되어, �
 
 #SSL vs #TLS
 
+#Busybox
+- 경량의 리눅스 배포 중 하나로, 여러 유틸리티와 명령줄 도구를 제공하는 **작은 이미지**.
+- 많은 일반적인 UNIX 유틸리티의 작은 버전을 하나의 작은 실행 파일로 결합한다.
 
 #DHCP  ✅ 네트워크 설정을 자동으로 해주는 방법
 
 ![[DHCP.png|400]]
-Dynamic Host Configuration Protocol
+[Dynamic Host Configuration Protocol](https://learn.microsoft.com/ko-kr/windows-server/networking/technologies/dhcp/dhcp-top)
 공유기에 보통 DHCP server가 내장되어 있고, 컴퓨터에는 보통 DHCP client가 있다.
 broadcast와 변칙적인 UDP를 사용해서 DHCP server - DHCP client 사이 필요한 정보를 교환한다.
 

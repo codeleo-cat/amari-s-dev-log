@@ -1,6 +1,5 @@
 #kubernetes #ArgoCD
-# ArgoCD
-- 쿠버네티스를 위한 GitOps CD tool
+# 쿠버네티스 환경에서의 Application 배포와 관리를 지원하는 GitOps CD tool
 
 
 Mac OS 기준
@@ -55,6 +54,5 @@ $ argocd account update-password
 	kubectl config delete-context <context-name>
 
 
-
-
+### Ref
 [Tanzu Developer Center](https://tanzu.vmware.com/developer/guides/argocd-gs/)

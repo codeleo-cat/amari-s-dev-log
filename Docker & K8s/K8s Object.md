@@ -1,6 +1,6 @@
 #kubernetes 
 # Object
-쿠버네티스 시스템에서 영속성을 가지는 오브젝트
+[[Kubernetes]] 시스템에서 영속성을 가지는 오브젝트
 
 - 오브젝트 spec
 - 오브젝트 status
@@ -31,9 +31,6 @@ spec:
 - `kind` - 어떤 종류의 오브젝트를 생성하고자 하는지
 - `metadata` - `이름` 문자열, `UID`, 그리고 선택적인 #namespace 를 포함하여 오브젝트를 유일하게 구분지어 줄 데이터
 - `spec` - 오브젝트에 대해 어떤 상태를 의도하는지
-
-### Replicas
-
 
 
 [쿠버네티스 오브젝트 이해하기](https://kubernetes.io/ko/docs/concepts/overview/working-with-objects/kubernetes-objects/)

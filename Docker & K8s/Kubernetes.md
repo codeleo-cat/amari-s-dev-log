@@ -38,24 +38,32 @@
 ### [[K8s Object]]
 
 - 쿠버네티스 시스템에서 영속성을 가지는 Object
-
-### Pods
-
+- 포드(Pod), 레플리카셋(Replica Set), 서비스([[Service]]), 디플로이먼트(Deployment)
+ #### Pods
 - container를 실행하기 위한 object
 - K8s의 가장 기본이 되는 단위
 - 하나의 pod 안에 여러 개의 컨테이너가 들어갈 수 있다.
 - 동적으로 생성되고, 장애가 생기면 자동 restart되면서 IP가 변경됨.
 
 ![pod](https://i0.wp.com/bespin-wordpress-bucket.s3.ap-northeast-2.amazonaws.com/wp-content/uploads/2022/06/%EA%B7%B8%EB%A6%BC62.png?resize=378%2C301&ssl=1)
-
-### [[Service]]
+#### [[Service]]
 
 - 요청 트래픽을 지정된 파드로 전송한다.
 - 서로 다른 Pod가 동일한 서버에 있든, 다른 서버에 위치하든 상관 없이 통신할 수 있게 한다.
-### Namespace
-#namespace
+#### Replica Set
+-  Container의 집합(Pods)를 관리하는 **컨트롤러**
+- 정해진 개수의 pod를 유지해주는 도구.
+
+
+
+
+
+### Namespace 🔑 K8s 객체 들을 **격리**해주는 공간
 - 쿠버네티스 클러스터( #Cluster; 쿠버네티스가 구성된 환경) 내의 논리적인 분리 단위
 - 컨테이너가 하나의 독립된 서버와 같이 동작할 수 있게 한다.
+### Lable
+
+- Pod를 포함한 각종 K8s Object를 관리하기 위한 = 태그와 유사하다.
 
 ### Ingress Controller
 
@@ -76,8 +84,8 @@
 - **Rolling update** - 정해진 비율만큼의 파드만 점진적으로 배포
 	최소한의 오버헤드와 다운타임
 - **Blue/Green** - ver 1.0 과 ver 2.0 을 구성하고, 트래픽을 ver 2.0 쪽으로 전환하는 방식
-	구버전(Blue)과 동일한 환경에 신버전(Green)의 배포를 전부 구축하고, LB를 수정하여 Green 을 한꺼번에 가리키게 한다.
-	 *단점* - 잠시라도 신버전을 완전히 새 환경에서 구축해야 되기에 일시적이라도 시스템 자원 2배 필요
+	구 버전(Blue)과 동일한 환경에 신 버전(Green)의 배포를 전부 구축하고, LB를 수정하여 Green 을 한꺼번에 가리키게 한다.
+	 *단점* - 잠시라도 신 버전을 완전히 새 환경에서 구축해야 되기에 일시적이라도 시스템 자원 2배 필요
 - **Canary** - ver 2.0을 일부 배포하고, 트래픽도 일부만 ver 2.0으로 전환한다. 배포에 문제가 없다면 ver 2.0을 점진적으로 배포 및 트래픽을 전환한다.
 
 ### Managed By CSP
@@ -100,3 +108,4 @@
 - [클라우드 시장의 대세, 쿠버네티스란 무엇인가?]( https://www.youtube.com/watch?v=JNc11rxLtmE)
 - [책-그림과 실습으로 배우는 도커 & 쿠버네티스](https://www.yes24.com/Product/Goods/108431011)
 - [[15단계로 배우는 도커와 쿠버네티스]]
+- [예제로 배우는 쿠버네티스](https://essem-dev.medium.com/%EC%98%88%EC%A0%9C%EB%A1%9C-%EB%B0%B0%EC%9A%B0%EB%8A%94-%EC%BF%A0%EB%B2%84%EB%84%A4%ED%8B%B0%EC%8A%A4-4b9751b23962)
