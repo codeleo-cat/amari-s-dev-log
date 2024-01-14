@@ -115,7 +115,7 @@ ex) https://elancer.co.kr
 - L2 Distribution : Router로 데이터를 보내는 스위치
 - uplink : 상위 계층 스위치로 연결되는 Line (= 더 큰 네트워크로 나가는 역할)
 
-#MAC주소 ✅ 기기에 존재하는 NIC를 특정하는 주소 (**NIC에 대한 식별자**)
+#MAC Adress  ✅ 기기에 존재하는 NIC를 특정하는 주소 (**NIC에 대한 식별자**)
 -  Media Access Control Address
 PC를 비롯한 각종 단말, 프린터 같은 각종 기기에 존재하는 **NIC를 특정하는 주소** = 이더넷용 주소
 FF:FF:FF:FF:FF:FF는 이더넷에 접속한 모든 NIC를 대상으로 일제히 송신한다 = #Broadcast 주소
@@ -150,6 +150,28 @@ FF:FF:FF:FF:FF:FF는 이더넷에 접속한 모든 NIC를 대상으로 일제히
 #Router ✅ 최적 경로 선택 
 기본적으로 L3 Switch. Internet은 router의 집합체
 Packet이 Router에 도착하면, 이 Router들 간 특정 프로토콜로 통신하며 최적화된 경로를 찾는데, 이 경로 선택의 base가 되는 것이 ⭐️ Routing Table (이정표)
+
+#Routing Protocol  ✅ 라우터가 패킷을 식별하고 네트워크 경로를 선택하는 프로세스
+- [# 라우팅이란 무엇입니까?](https://aws.amazon.com/ko/what-is/routing/)
+- #Todo 구조 정리
+- 라우팅 및 스위칭(MPLS, BGP, OSPF, SR, VXLAN 등)
+	- MPLS (Multi Protocol **Label** Switching) 
+	 IP 주소가 아닌 레이블을 사용하여 네트워크 트래픽을 라우팅하는 기술
+	- BGP (**Border** Gateway Protocol) 
+	유일한 외부 Gateway 프로토콜
+	**규모가 큰** 망을 지원할 수 있는 Path Vector 기반 라우팅 프로토콜
+	가장 가까운 ASN을 추적하고 대상 주소를 해당 ASN에 매핑하는 방식으로 작동한다.
+	- OSPF (Open Shortest Path First) 
+	여러 경로 중 최소 link cost인 경로를 선택
+	- SR (Segment Routing) 
+	라우터가 packet header를 알아서 읽어서, 이를 목적지까지 전송해준다.
+	- [VXLAN](https://atthis.tistory.com/6)
+	VLAN을 확장한 개념.  VLAN + X(**eXtensible**) 
+	기존 VLAN이 제공할 수 있는 규모 이상으로 네트워크 segmentation을 수행하는 데 사용된다.
+
+
+#Overlay_Network  ✅  물리 네트워크 위에 성립되는 가상의 컴퓨터 네트워크
+- #MAC Over IP/UDP 기술 기반
 
 #Broadcast / #Unicast / #Multicast ✅ 네트워크 통신에서 사용되는 데이터 전송 방식
 * 브로드캐스트 : 네트워크 상에 연결된 모든 장치에 데이터를 전송하는 방식. 주로 소규모 네트워크
