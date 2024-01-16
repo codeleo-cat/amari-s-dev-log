@@ -251,3 +251,9 @@ ex) 장애 발생 전인 지난 주 목요일에 백업시켜 둔 복원 시점�
 - Application tier : 정보를 처리하고 가공하며 비즈니스 로직을 처리하는 계층. 
 	ex) 미들웨어 / Back-end. WAS (웹 애플리케이션 서버)
 - Data tier = DB에 접근해서 데이터를 read/write 하는 것. DBMS
+
+#webRTC 🔑 브라우저에서 P2P 통신을 가능하게 해주는 기술 [[Network]]
+- Web_ Real-Time Communication
+- 실시간으로 웹에서 데이터를 교환할 수 있는 기술.
+- UDP 위에서 동작한다. 데이터의 빠른 전송은 가능하지만, 데이터 손실이 발생할 수도 있다.
+- [Ref](https://wormwlrm.github.io/2021/01/24/Introducing-WebRTC.html)
