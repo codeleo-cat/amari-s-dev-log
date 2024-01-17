@@ -33,4 +33,5 @@ spec:
 - `spec` - 오브젝트에 대해 어떤 상태를 의도하는지
 
 
+### Ref
 [쿠버네티스 오브젝트 이해하기](https://kubernetes.io/ko/docs/concepts/overview/working-with-objects/kubernetes-objects/)

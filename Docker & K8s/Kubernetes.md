@@ -12,7 +12,7 @@
 
 ### Master Node & Worker Node
 
-**Master Node** 🔑 **컨테이너 선단을 지휘하는 통제함** 
+**Master Node** 🔑 컨테이너 선단을 지휘하는 통제함 
 &rarr; 주요 컨트롤 유닛으로서 Worker Nodes를 관리하는 주체
 - **Scheduler** - **스케줄링**. pod를 적절한 worker node에 배포(할당)하는 component. <br/> 즉, 새로운 컨테이너가 어느 노드에서 실행될 지 결정하는 component.
 - **Controller Manager (CM)** - **컨트롤러 관리**. node의 상태 모니터링(직접 하는 것은 아니고 API Server로부터 state 값을 전달받음), 로그 확인 가능
@@ -21,7 +21,7 @@
 	- Deployment Controller
 - **ETCD** - 설정 관리, 서비스 discovery, 스케줄링 등을 위한 데이터를 저장하는 **저장소** 역할 (key-value)
 
-**Worker Node** 🔑 **파드가 배포 및 실행되는 노드. 파드를 생성하고 관리하는 실질적인 주체**
+**Worker Node** 🔑 파드가 배포 및 실행되는 노드. 파드를 생성하고 관리하는 실질적인 주체
 &rarr; 할당된 task를 요청대로 수행하며, master node와 통신하는 시스템
 - **kubelet** - 각 노드에서 실행되는 일종의 **agent**. 
 - **kube-proxy** - 각 노드에서 실행되는 네트워크 프록시. 
@@ -35,35 +35,51 @@
 - 쿠버네티스는 컨테이너를 pod로 분류해서 이 문제를 해결한다.
 - [[Docker]]는 **단일 호스트**에서 동작하는 컨테이너 실행 및 관리를 위한 도구라면 K8s는 **여러 호스트** 및 클러스터 환경에서 컨테이너화된 애플리케이션을 자동으로 배포하고 운영하는 데에 중점을 둔다는 점이 차이점이다. 이 둘은 각각의 강점을 가지고 있어, 적절한 상황에서 조합하여 사용하는 것이 일반적인 모던 컨테이너 기반 애플리케이션 개발 및 운영의 접근 방식이다.
 
-### [[K8s Object]]
+## [[K8s Object]]
 
 - 쿠버네티스 시스템에서 영속성을 가지는 Object
 - 포드(Pod), 레플리카셋(Replica Set), 서비스([[Service]]), 디플로이먼트(Deployment)
- #### Pods
+ 
+### Pod
+
 - container를 실행하기 위한 object
 - K8s의 가장 기본이 되는 단위
 - 하나의 pod 안에 여러 개의 컨테이너가 들어갈 수 있다.
 - 동적으로 생성되고, 장애가 생기면 자동 restart되면서 IP가 변경됨.
 
 ![pod](https://i0.wp.com/bespin-wordpress-bucket.s3.ap-northeast-2.amazonaws.com/wp-content/uploads/2022/06/%EA%B7%B8%EB%A6%BC62.png?resize=378%2C301&ssl=1)
-#### [[Service]]
+### [[Service]]
 
 - 요청 트래픽을 지정된 파드로 전송한다.
 - 서로 다른 Pod가 동일한 서버에 있든, 다른 서버에 위치하든 상관 없이 통신할 수 있게 한다.
-#### Replica Set
+### Replica Set
 -  Container의 집합(Pods)를 관리하는 **컨트롤러**
 - 정해진 개수의 pod를 유지해주는 도구.
 
 ### [[Namespace]] 🔑 K8s 객체 들을 **격리**해주는 공간
 - 쿠버네티스 클러스터( #Cluster; 쿠버네티스가 구성된 환경) 내의 논리적인 분리 단위
 - 컨테이너가 하나의 독립된 서버와 같이 동작할 수 있게 한다.
-### Lable
+### Label
 
 - Pod를 포함한 각종 K8s Object를 관리하기 위한 = 태그와 유사하다.
 
 ### Ingress Controller
 
 - 들어오는 요청을 적절한 서비스로 전달해야 하는 역할
+
+### Pattern
+- [K8s Pod 구성 패턴](https://rection34.tistory.com/137) | [K8s Multi Container Design Pattern](https://waspro.tistory.com/775)
+- **Side Car pattern**
+	기본 컨테이너의 기능을 확장 or 보조하는 용도의 컨테이너를 **추가**하는 패턴
+	ex) 로깅 목적의 컨테이너를 따로 side car로 추가한다.
+	![300](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FccgdcF%2FbtrFT2YqujL%2FmiN0IvhlfJRNJKOKG01B0K%2Fimg.png)
+- Ambassador pattern
+	파드 안에서 #proxy 역할을 하는 컨테이너를 추가하는 패턴
+	![300](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F72sMC%2FbtrFTOF7GrA%2FJGmTNSHx6qm7KsPd0kf191%2Fimg.png)
+- Adapter pattern
+	파드 외부로 노출되는 정보를 표준화하는 Adapter 컨테이너를 사용하는 패턴
+	(adatper container를 통해 데이터를 변환)
+	![300](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbNncKa%2FbtrFVULU9Bk%2F125IN14ld61lO0SsF9XR3k%2Fimg.png)
 
 ### Auto Scaling
 
