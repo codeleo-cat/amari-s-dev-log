@@ -1,11 +1,8 @@
 #kubernetes #ArgoCD
 # 쿠버네티스 환경에서의 Application 배포와 관리를 지원하는 GitOps CD tool
 
-
-Mac OS 기준
+### Mac OS Set up
 - 2개의 클러스터 생성할 건데, 하나는 for ArgoCD, 다른 하나는 for application push & run
-
-
 ```bash
 $ brew install minikube
 $ minikube start -p target-k8s
@@ -49,5 +46,10 @@ $ argocd account update-password
 
 
 ---
+
+### Options
+- Redis cache를 거의 필수적으로 사용한다.
+
 ### Ref
 [Tanzu Developer Center](https://tanzu.vmware.com/developer/guides/argocd-gs/)
+[딜라이트룸 DevOps](https://medium.com/delightroom/%EB%94%9C%EB%9D%BC%EC%9D%B4%ED%8A%B8%EB%A3%B8-devops-1%ED%83%84-argo-cd-%EB%84%8C-%EB%AD%90%EB%8B%88-59f453ceb590)

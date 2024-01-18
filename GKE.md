@@ -16,5 +16,8 @@ $ gcloud services enable compute.googleapis.com container.googleapis.com
 	- 간편한 배포
 	- 보안 및 격리
 
+### Using GKE with Terraform
+- [Terraform Docs](https://registry.terraform.io/providers/hashicorp/google/latest/docs/guides/using_gke_with_terraform)
+
 ### Ref
 [컨테이너화된 웹 애플리케이션 배포](https://cloud.google.com/kubernetes-engine/docs/tutorials/hello-app?hl=ko#cloud-shell)

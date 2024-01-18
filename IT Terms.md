@@ -153,21 +153,17 @@ Packet이 Router에 도착하면, 이 Router들 간 특정 프로토콜로 통�
 
 #Routing Protocol  ✅ 라우터가 패킷을 식별하고 네트워크 경로를 선택하는 프로세스
 - [# 라우팅이란 무엇입니까?](https://aws.amazon.com/ko/what-is/routing/)
-- #Todo 구조 정리
-- 라우팅 및 스위칭(MPLS, BGP, OSPF, SR, VXLAN 등)
-	- MPLS (Multi Protocol **Label** Switching) 
-	 IP 주소가 아닌 레이블을 사용하여 네트워크 트래픽을 라우팅하는 기술
-	- BGP (**Border** Gateway Protocol) 
-	유일한 외부 Gateway 프로토콜
-	**규모가 큰** 망을 지원할 수 있는 Path Vector 기반 라우팅 프로토콜
-	가장 가까운 ASN을 추적하고 대상 주소를 해당 ASN에 매핑하는 방식으로 작동한다.
-	- OSPF (Open Shortest Path First) 
-	여러 경로 중 최소 link cost인 경로를 선택
-	- SR (Segment Routing) 
-	라우터가 packet header를 알아서 읽어서, 이를 목적지까지 전송해준다.
-	- [VXLAN](https://atthis.tistory.com/6)
-	VLAN을 확장한 개념.  VLAN + X(**eXtensible**) 
-	기존 VLAN이 제공할 수 있는 규모 이상으로 네트워크 segmentation을 수행하는 데 사용된다.
+- 라우팅 및 스위칭(MPLS, BGP, OSPF, SR, VXLAN 등)                                                  
+	-  **OSPF** (Open Shortest Path First)  
+	여러 경로 중 최소 link cost인 경로를 선택 
+	-  [VXLAN](https://atthis.tistory.com/6)  VLAN + X(**eXtensible**) 
+	기존 VLAN이 제공할 수 있는 규모 이상으로 네트워크 segmentation을 수행하는 데 사용된다. 
+	-  **SR** (Segment Routing) 
+	라우터가 packet header를 알아서 읽어서, 이를 목적지까지 전송 
+	-  **BGP** (Border Gateway Protocol)
+	유일한 외부 Gateway 프로토콜. 규모가 큰 망을 지원
+	- **MPLS** (Multi Protocol Label Switching) 
+	IP 주소가 아닌 레이블을 사용하여 네트워크 트래픽을 라우팅하는 기술 
 
 
 #Overlay_Network  ✅  물리 네트워크 위에 성립되는 가상의 컴퓨터 네트워크
