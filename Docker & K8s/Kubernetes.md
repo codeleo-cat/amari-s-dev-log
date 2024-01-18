@@ -40,23 +40,26 @@
 - 쿠버네티스 시스템에서 영속성을 가지는 Object
 - 포드(Pod), 레플리카셋(Replica Set), 서비스([[Service]]), 디플로이먼트(Deployment)
  
-### Pod
+### #Pod
 
 - container를 실행하기 위한 object
-- K8s의 가장 기본이 되는 단위
+- K8s의 **가장 기본이** 되는 단위
 - 하나의 pod 안에 여러 개의 컨테이너가 들어갈 수 있다.
 - 동적으로 생성되고, 장애가 생기면 자동 restart되면서 IP가 변경됨.
 
 ![pod](https://i0.wp.com/bespin-wordpress-bucket.s3.ap-northeast-2.amazonaws.com/wp-content/uploads/2022/06/%EA%B7%B8%EB%A6%BC62.png?resize=378%2C301&ssl=1)
-### [[Service]]
+### #Service [[Service|👉]]
 
-- 요청 트래픽을 지정된 파드로 전송한다.
+- 요청 트래픽을 지정된 파드로 **전송**한다.
 - 서로 다른 Pod가 동일한 서버에 있든, 다른 서버에 위치하든 상관 없이 통신할 수 있게 한다.
-### Replica Set
+
+### #ReplicaSet
+
 -  Container의 집합(Pods)를 관리하는 **컨트롤러**
 - 정해진 개수의 pod를 유지해주는 도구.
 
-### [[Namespace]] 🔑 K8s 객체 들을 **격리**해주는 공간
+### #Namespace [[Namespace|👉]] 
+- 🔑 K8s 객체 들을 **격리**해주는 공간
 - 쿠버네티스 클러스터( #Cluster; 쿠버네티스가 구성된 환경) 내의 논리적인 분리 단위
 - 컨테이너가 하나의 독립된 서버와 같이 동작할 수 있게 한다.
 ### Label
@@ -91,7 +94,7 @@
 	- K8s에서는 노드 기반의 스케일링이 필요 VS Fargate에서는 컨테이너 기반의 스케일링만 필요
 
 
-### Container 교체가 필요한데? (배포 방식 3가지)
+### Container 교체가 필요한데? #Deployment
 
 - **Rolling update** - 정해진 비율만큼의 파드만 점진적으로 배포
 	최소한의 오버헤드와 다운타임

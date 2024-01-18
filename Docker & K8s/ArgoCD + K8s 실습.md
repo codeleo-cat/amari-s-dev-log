@@ -47,12 +47,7 @@ $ argocd account update-password
 ```
 
 
-- 클러스터 정보 확인
-	kubectl config get-contexts
 
-- 특정 클러스터 context 삭제
-	kubectl config delete-context <context-name>
-
-
+---
 ### Ref
 [Tanzu Developer Center](https://tanzu.vmware.com/developer/guides/argocd-gs/)
