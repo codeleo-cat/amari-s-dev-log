@@ -43,8 +43,6 @@ https://localhost:8080/applications
 $ argocd account update-password
 ```
 
-
-
 ---
 
 ### Options
