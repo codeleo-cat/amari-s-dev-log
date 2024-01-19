@@ -1,6 +1,13 @@
 #kubernetes #ArgoCD
 # 쿠버네티스 환경에서의 Application 배포와 관리를 지원하는 GitOps CD tool
 
+🔑 ==ArgoCD로 K8s 클러스터 내 리소스를 관리한다.==
+(yaml 파일 작성 &rarr; application 세팅이 선행되어야 한다.)
+
+이 yaml 파일을 Manifest라고 하는데, ArgoCD는 이 파일의 변경사항을 감시하여 ==현재 배포된 환경의 상태와 Manifest에 정의된 상태==를 동일하게 유지한다.
+
+observe
+
 ### Mac OS Set up
 - 2개의 클러스터 생성할 건데, 하나는 for ArgoCD, 다른 하나는 for application push & run
 ```bash
@@ -45,8 +52,8 @@ $ argocd account update-password
 
 ---
 
-### Options
-- Redis cache를 거의 필수적으로 사용한다.
+
+
 
 ### Ref
 [Tanzu Developer Center](https://tanzu.vmware.com/developer/guides/argocd-gs/)

@@ -58,16 +58,28 @@ annotations:
 
 - Helm get manifest `Release Name`
 - Helm status `Release Name`
+- Helm install  `Release Name`
 - Helm uninstall  `Release Name`
 - Helm repo add `Release Name`
 - Helm repo update
 - Helm repo list
 
-
 ### Helm upgrade & Helm rollback
 
 - **upgrade** - 새로운 버전의 차트가 release 되었을 때, release의 구성을 변경하고자 할 때
 - **rollback**
+
+### Helm으로 ArgoCD install
+[Argo-Helm](https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd)
+```
+brew install minikube
+minikube start
+
+kubectl create ns argocd
+helm repo add argo https://argoproj.github.io/argo-helm
+
+```
+
 
 Helm v3 vs v2
 - Tiller가 v3에서는 사라졌다.

@@ -116,6 +116,10 @@
 - [[ArgoCD]]
 
 
+### Kubectl (CLI)
+- kubectl create ns `namespace`
+- kubectl delete ns `namespace`
+
 ---
 ## Ref
 
