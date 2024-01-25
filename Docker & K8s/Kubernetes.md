@@ -57,6 +57,7 @@
 
 -  Container의 집합(Pods)를 관리하는 **컨트롤러**
 - 정해진 개수의 pod를 유지해주는 도구.
+- 이 replica set이 삭제 되지 않아 pod를 지워도 다시 살아나는 문제가 발생할 수 있다.
 
 ### #Namespace [[Namespace|👉]] 
 
@@ -119,6 +120,8 @@
 ### Kubectl (CLI)
 - kubectl create ns `namespace`
 - kubectl delete ns `namespace`
+- kubectl get po `pod`
+- kubectl delete po `pod`
 
 ---
 ## Ref
