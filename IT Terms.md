@@ -115,10 +115,13 @@ ex) https://elancer.co.kr
 - L2 Distribution : Router로 데이터를 보내는 스위치
 - uplink : 상위 계층 스위치로 연결되는 Line (= 더 큰 네트워크로 나가는 역할)
 
-#MAC Adress  ✅ 기기에 존재하는 NIC를 특정하는 주소 (**NIC에 대한 식별자**)
--  Media Access Control Address
-PC를 비롯한 각종 단말, 프린터 같은 각종 기기에 존재하는 **NIC를 특정하는 주소** = 이더넷용 주소
+#MAC주소  ✅ 기기에 존재하는 NIC를 특정하는 주소 (**NIC에 대한 식별자**)
+-  **M**edia **A**ccess **C**ontrol Address
+- 48 bit
+- 데이터링크 계층에서 이용된다.
+PC를 비롯한 각종 단말, 프린터 같은 각종 기기에 존재하는 **NIC를 특정하는 주소** <br/> = 이더넷용 주소
 FF:FF:FF:FF:FF:FF는 이더넷에 접속한 모든 NIC를 대상으로 일제히 송신한다 = #Broadcast 주소
+= h/w의 address
 데이터 링크 계층에서 사용되며, 물리적인 네트워크 장비를 식별하는데 사용된다.
 - NIC (= Network Interface Controller, LAN 카드 / Network Interface Card)
 	NIC에 여러 개의 IP를 바인딩 가능
@@ -165,6 +168,11 @@ Packet이 Router에 도착하면, 이 Router들 간 특정 프로토콜로 통�
 	- **MPLS** (Multi Protocol Label Switching) 
 	IP 주소가 아닌 레이블을 사용하여 네트워크 트래픽을 라우팅하는 기술 
 
+#CSMA (**C**arrier **S**ense **M**ultiple **A**ccess)
+- 반송파 감지 다중 접근
+- 전송하기 이전에 먼저 매체의 상태를 확인 (전송 이전에 감지)
+- #CSMA/CD (Carrier Sense Multiple Access *with Collision Detection*) : 반송파가 감지되지 않으면 컴퓨터가 전송 매체를 사용하지 않는 것으로 판단하여 데이터를 전송한다.
+- #CSMA/CA (Carrier Sense Multiple Access *with Collision Avoidance*)
 
 #Overlay_Network  ✅  물리 네트워크 위에 성립되는 가상의 컴퓨터 네트워크
 - #MAC Over IP/UDP 기술 기반
@@ -181,7 +189,7 @@ Spanning Tree Protocol
 
 #Domain 
 - 컴퓨터에 부여된 계층적인 이름 (사람이 외우기 쉬운 의미가 있는 이름)
-- DNS : **도메인명과 IP 주소를 상호 변환**하는 구조 (Domain Name System)
+- #DNS : **도메인명과 IP 주소를 상호 변환**하는 구조 (Domain Name System)
 	- 구성 : content server, cache server, 컴퓨터 내부의 stub resolver
 	- 가치가 제대로 발휘될 때 : GSLB (Global Server Load Balancing)
 
@@ -205,7 +213,7 @@ db 연결을 맺고 해제하는 과정 -> 고 비용. connection pool을 통해
 여러 client 요청에 대해 동시에 여러 연결을 효과적으로 처리할 수 있음.(***scaling***)
 [connection pool이란?](https://shuu.tistory.com/130)
 
-#NAT  ✅ 네트워크 주소 변환 
+#NAT  ✅ 네트워크 주소 변환 (사설 IP &rarr; 공인 IP)
 Network Address Translation
 - private ip를 사용하는 device들을 **공인 IP 주소 하나로 변환**하여 인터넷과 통신할 있게 하는 기술
 - IP 주소 부족 문제를 해결 + 방화벽 역할
