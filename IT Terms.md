@@ -6,6 +6,11 @@
 - 탈중앙 - 블록체인의 핵심. #Web3
 - 내가 만든 서비스를 많은 고객들이 이용해주었으면 좋겠다. 
 
+#PWA
+- Progressive Web Apps
+- 네이티브 앱과 유사하다. 
+- 사용자가 앱을 다운로드하거나 업데이트 할 필요 없이 웹 브라우저를 통해 앱을 바로 사용 가능.
+
 #RBAC
 - Role-Based Access Control
 - 역할 별로  액세스 권한을 부여한다.
@@ -157,16 +162,11 @@ Packet이 Router에 도착하면, 이 Router들 간 특정 프로토콜로 통�
 #Routing Protocol  ✅ 라우터가 패킷을 식별하고 네트워크 경로를 선택하는 프로세스
 - [# 라우팅이란 무엇입니까?](https://aws.amazon.com/ko/what-is/routing/)
 - 라우팅 및 스위칭(MPLS, BGP, OSPF, SR, VXLAN 등)                                                  
-	-  **OSPF** (Open Shortest Path First)  
-	여러 경로 중 최소 link cost인 경로를 선택 
-	-  [VXLAN](https://atthis.tistory.com/6)  VLAN + X(**eXtensible**) 
-	기존 VLAN이 제공할 수 있는 규모 이상으로 네트워크 segmentation을 수행하는 데 사용된다. 
-	-  **SR** (Segment Routing) 
-	라우터가 packet header를 알아서 읽어서, 이를 목적지까지 전송 
-	-  **BGP** (Border Gateway Protocol)
-	유일한 외부 Gateway 프로토콜. 규모가 큰 망을 지원
-	- **MPLS** (Multi Protocol Label Switching) 
-	IP 주소가 아닌 레이블을 사용하여 네트워크 트래픽을 라우팅하는 기술 
+	-  **OSPF** (Open Shortest Path First) : 여러 경로 중 최소 link cost인 경로를 선택 
+	-  [VXLAN](https://atthis.tistory.com/6)  VLAN + X(**eXtensible**) : 기존 VLAN이 제공할 수 있는 규모 이상으로 네트워크 segmentation을 수행하는 데 사용된다. 
+	-  **SR** (Segment Routing) : 라우터가 packet header를 알아서 읽어서, 이를 목적지까지 전송 
+	-  **BGP** (Border Gateway Protocol) : 유일한 외부 Gateway 프로토콜. 규모가 큰 망을 지원
+	- **MPLS** (Multi Protocol Label Switching) : IP 주소가 아닌 레이블을 사용하여 네트워크 트래픽을 라우팅하는 기술 
 
 #CSMA (**C**arrier **S**ense **M**ultiple **A**ccess)
 - 반송파 감지 다중 접근
