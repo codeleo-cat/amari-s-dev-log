@@ -52,15 +52,14 @@ _PostgreSQL_ deployment on a Kubernetes cluster using the _Helm_ package mana
 
 
 ```
+helm version
 helm repo add bitnami https://charts.bitnami.com/bitnami
 helm repo list
 
 kubectl create ns database
-```
-helm install <name> bitnami/postgresql -–namespace <namespace>
 
-```
-helm install <name> bitnami/postgresql -–namespace <namespace>
+# helm install <name> bitnami/postgresql -–namespace <namespace>
+helm install postgresql bitnami/postgresql -–namespace database
 export POSTGRES_PASSWORD=$(kubectl get secret --namespace database postgresql -o jsonpath="{.data.postgres-password}" | base64 -d)
 echo $POSTGRES_PASSWORD
 azFVFQ4NT0
@@ -79,6 +78,7 @@ kubectl port-forward --namespace database svc/postgresql 5432:5432 &
 exit
 
 kubectl get po -n database
+
 ```
 
 ---
