@@ -35,22 +35,8 @@ kubectl port-forward mysql-0 3306:3306 -n database
 mysql -u root -h 127.0.0.1 -p
 
 ```
-## Application deploy through Github Actions & Secret 적용
-
-- [Github Actions by ARC](https://tech.buzzvil.com/blog/%EC%BF%A0%EB%B2%84%EB%84%A4%ED%8B%B0%EC%8A%A4%EC%97%90%EA%B2%8C-github-actions-%EC%84%A4%EC%B9%98%EC%97%90-%EB%8C%80%ED%95%B4-%EB%AC%BB%EB%8B%A4/)
-- https://velog.io/@alli-eunbi/Git-EKS-ARC-세팅-방법
-- https://ykarma1996.tistory.com/195
-
-- vm처럼 단일 instance에 github action runner를 설치할 수도 있지만, #ARC 를 사용해 K8s 위에 설치할 수 있다. (= 쿠버네티스 파드로 러너 실행 가능.)
-	- 장점 : 비용 효율성 & 확장성 & 속도
-```
-helm install arc --namespace arc --create-namespace \ oci://ghcr.io/actions/actions-runner-controller-charts/gha-runner-scale-set-controller
-
-```
 # PostgreSQL
 _PostgreSQL_ deployment on a Kubernetes cluster using the _Helm_ package manager
-
-
 ```
 helm version
 helm repo add bitnami https://charts.bitnami.com/bitnami
@@ -80,9 +66,7 @@ exit
 kubectl get po -n database
 
 ```
-
 ---
-
 # Redis
 
 # Qdrant

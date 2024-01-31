@@ -12,6 +12,9 @@
 #Heap_Memory
 - 힙 메모리는 프로그램에서 동적으로 할당된 메모리를 관리하는 데 사용되는 영역
 
+#TPS (Transaction Per Second)
+- 초당 트랜잭션의 개수
+
 #PWA
 - Progressive Web Apps
 - 네이티브 앱과 유사하다. 
