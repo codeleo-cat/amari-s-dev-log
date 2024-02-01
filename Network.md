@@ -13,6 +13,9 @@ https://wormwlrm.github.io/2021/01/24/Introducing-WebRTC.html 참조하여 정�
 	네트워크 미디어를 중개하는 서버를 이용하는 것.
 	STUN 서버를 통해 자기 자신의 주소를 못 찾아냈을 경우, 대안으로 이용한다.
 
+- SNAT (Source NAT) - 출발지 주소를 변경하는 NAT
+- DNAT (Destination NAT) - 도착지 주소를 변경하는 NAT
+
 ### Signaling
 
 - 간단히 말해, 두 장치의 제어 정보를 교환하는 과정

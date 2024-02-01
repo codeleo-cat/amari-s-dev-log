@@ -14,6 +14,7 @@
 
 **Master Node** 🔑 컨테이너 선단을 지휘하는 통제함 
 &rarr; 주요 컨트롤 유닛으로서 Worker Nodes를 관리하는 주체
+- API Server - 쿠버네티스 [컨트롤 플레인](https://kubernetes.io/ko/docs/reference/glossary/?all=true#term-control-plane)의 핵심. 최종 사용자, 클러스터의 다른 부분 그리고 외부 컴포넌트가 서로 통신할 수 있도록 HTTP API를 제공한다.
 - **Scheduler** - **스케줄링**. pod를 적절한 worker node에 배포(할당)하는 component. <br/> 즉, 새로운 컨테이너가 어느 노드에서 실행될 지 결정하는 component.
 - **Controller Manager (CM)** - **컨트롤러 관리**. node의 상태 모니터링(직접 하는 것은 아니고 API Server로부터 state 값을 전달받음), 로그 확인 가능
 	- Node Controller
@@ -65,8 +66,12 @@
 - 쿠버네티스 클러스터( #Cluster; 쿠버네티스가 구성된 환경) 내의 논리적인 분리 단위
 - 컨테이너가 하나의 독립된 서버와 같이 동작할 수 있게 한다.
 ### Label
-
 - Pod를 포함한 각종 K8s Object를 관리하기 위한 = 태그와 유사하다.
+#### DaemonSet
+- 모든 Node 또는 특정 label을 가진 node에 하나씩의 동일한 pod를 배포해주는 resource
+#### StatefulSet
+- Pod의 상태를 저장하고 관리하는 Resource
+- Deployment와 거의 동일한 특성을 갖지만, 각 Pod의 순서와 고유성을 보장한다.
 
 ### Ingress Controller
 
@@ -131,3 +136,4 @@
 - [[15단계로 배우는 도커와 쿠버네티스]]
 - [예제로 배우는 쿠버네티스](https://essem-dev.medium.com/%EC%98%88%EC%A0%9C%EB%A1%9C-%EB%B0%B0%EC%9A%B0%EB%8A%94-%EC%BF%A0%EB%B2%84%EB%84%A4%ED%8B%B0%EC%8A%A4-4b9751b23962)
 - [End to end devops](https://blog.devops.dev/end-to-end-devsecops-kubernetes-project-4259f90722ef)
+- [Service Type Comparison](https://stackoverflow.com/questions/41509439/whats-the-difference-between-clusterip-nodeport-and-loadbalancer-service-types)
