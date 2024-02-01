@@ -95,7 +95,6 @@
 	- Fargate는 serverless 컴퓨팅 환경. K8s에서는 노드 관리가 필요하지만 Fargate에서는 필요 없음. 
 	- K8s에서는 노드 기반의 스케일링이 필요 VS Fargate에서는 컨테이너 기반의 스케일링만 필요
 
-
 ### Container 교체가 필요한데? #Deployment
 
 - **Rolling update** - 정해진 비율만큼의 파드만 점진적으로 배포
@@ -111,17 +110,16 @@
 - GCP - [[GKE]] (Google kubernetes Engine)
 
 ### Minikube
-
 - Mini + kube
 - 쿠버네티스 클러스터 구축을 간단하게 할 수 있도록 만들어주기 위해서 시작된 프로젝트
 - [[ArgoCD]]
-
-
 ### Kubectl (CLI)
 - kubectl create ns `namespace`
 - kubectl delete ns `namespace`
 - kubectl get po `pod`
 - kubectl delete po `pod`
+- kubectl edit po `pod`
+- kubectl describe deploy `deployment`
 
 ---
 ## Ref
