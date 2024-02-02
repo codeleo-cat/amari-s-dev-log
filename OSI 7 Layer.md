@@ -19,5 +19,7 @@
 	- 데이터의 전달 경로를 설정하고 관리, 데이터 전송 중 발생하는 **오류**를 검출하고 수정함.
 	- #Packet
 - 세션 계층 (L5) : 호스트 간에 데이터 전송 순서를 제어, 중단된 세션을 재개 (**대화제어**, **동기화**)
+
+- GSLB (**G**lobal **S**erver **L**oad **B**alancing) : DNS를 기반으로 로드밸런싱을 하는 방법
 ## Ref
 - [# [10분 테코톡] 🔮 히히의 OSI 7 Layer](https://www.youtube.com/watch?v=1pfTxp25MA8)
