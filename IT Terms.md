@@ -151,6 +151,8 @@ FF:FF:FF:FF:FF:FF는 이더넷에 접속한 모든 NIC를 대상으로 일제히
 #process ✅ 동작 중인 프로그램
 - 프로그램이 실행되어서 메모리에 올라간 상태
 
+#CRM
+
 #Endpoint
 - API가 server에서 resource에 접근 가능하도록 하는 URL
 

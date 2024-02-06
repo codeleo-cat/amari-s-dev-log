@@ -76,6 +76,8 @@
 ### Ingress Controller
 
 - 들어오는 요청을 적절한 서비스로 전달해야 하는 역할
+- L7
+- url 기반 routing
 
 ### Pattern
 - [K8s Pod 구성 패턴](https://rection34.tistory.com/137) | [K8s Multi Container Design Pattern](https://waspro.tistory.com/775)

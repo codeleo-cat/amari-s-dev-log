@@ -39,7 +39,6 @@ jobs:
 	- Repository access 는 특정 repo만 설정
 	- Permissions는 Actions, Administration, Contents, Secrets, Webhooks, Pull requests 설정
 # K8s cluster
-
 ```
 NAMESPACE="arc-systems"
 echo $NAMESPACE
@@ -60,6 +59,9 @@ helm install "${INSTALLATION_NAME}" \
     --set githubConfigSecret.github_token="${GITHUB_PAT}" \
     oci://ghcr.io/actions/actions-runner-controller-charts/gha-runner-scale-set
 
+```
+```yaml
+kubectl patch service kubernetes -n default  -p "{\"metadata\":{\"finalizers\":null}}"
 ```
 ### Ref
 ---

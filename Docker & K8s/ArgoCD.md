@@ -51,8 +51,11 @@ $ argocd account update-password
 ```
 
 ---
+curl 로 설치 필요
+https://medium.com/google-cloud/configuring-argocd-on-gke-with-ingress-and-github-sso-bf7868942403
 
-
+kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "LoadBalancer"}}'
+external IP로 접속
 
 
 ### Ref
