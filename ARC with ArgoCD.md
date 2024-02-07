@@ -46,3 +46,44 @@ spec:
 *note:- Replace “mumoshu/actions-runner-controller-ci” with your repository name.
 
 kubectl apply -f runnerdeployment.yaml
+
+
+helm upgrade --install --namespace actions-runner-system \
+--create-namespace --wait actions-runner-controller \
+actions-runner-controller/actions-runner-controller -f values.yaml
+
+```shell
+./run.sh --check --url https://github.com/everchloe97/argocd-example-apps --pat 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
+```
+
+
+kubectl get pod -n actions-runner | grep -i "k8s-action-runner"
+
+
+kubectl create secret generic controller-manager -n actions-runner-system --from-literal=github_token=$GITHUB_TOKEN
+
+ actions-runner-controller
+LAST DEPLOYED: Tue Feb  6 06:18:26 2024
+NAMESPACE: actions-runner-system
+STATUS: deployed
+REVISION: 2
+TEST SUITE: None
+NOTES:
+1. Get the application URL by running these commands:
+  export POD_NAME=$(kubectl get pods --namespace actions-runner-system -l "app.kubernetes.io/name=actions-runner-controller,app.kubernetes.io/instance=actions-runner-controller" -o jsonpath="{.items[0].metadata.name}")
+  export CONTAINER_PORT=$(kubectl get pod --namespace actions-runner-system $POD_NAME -o jsonpath="{.spec.containers[0].ports[0].containerPort}")
+  echo "Visit http://127.0.0.1:8080 to use your application"
+  kubectl --namespace actions-runner-system port-forward $POD_NAME 8080:$CONTAINER_PORT
+
+
+
+
+
+
+
+```bash
+> mkdir actions-runner && cd actions-runner
+> curl -O -L https://github.com/actions/runner/releases/download/v2.312.0/actions-runner-linux-x64-2.312.2.tar.gz
+> tar xzf ./actions-runner-linux-x64-2.312.2.tar.gz
+
+./config.sh --url https://github.com/everchloe97/argocd-example-apps --token ANYIA6EQ75WOAV32EDF3G7TFYHUVO
