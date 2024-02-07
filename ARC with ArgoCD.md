@@ -1,9 +1,35 @@
-**Owned by:** [@everchloe97](https://github.com/everchloe97)
-**App ID:** 813630
-**Client ID:** Iv1.f8405baecba4d4e1
+## Create Github App for Organization & Personal User
 
-mkdir github-key && cd github-key
-vi k8s-test-app.pem
+**Owned by:** [@hnyeom](https://github.com/hnyeom)
+**App ID:** 819851
+**Client ID:** Iv1.318404186a5de9ec
+**INSTALLATION_ID** : 47016647
+
+APP_ID=819851
+INSTALLATION_ID=47016647
+PRIVATE_KEY_FILE_PATH=
+kubectl create secret generic controller-manager \
+    -n actions-runner-system \
+    --from-literal=github_app_id=${APP_ID} \
+    --from-literal=github_app_installation_id=${INSTALLATION_ID} \
+    --from-file=github_app_private_key=${PRIVATE_KEY_FILE_PATH}
+
+mkdir arc && cd arc
+## Installing ARC
+
+*Install cert manager* 
+(https://cert-manager.io/docs/installation/helm/)
+
+kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.8.2/cert-manager.yaml
+
+helm repo add actions-runner-controller https://actions-runner-controller.github.io/actions-runner-controller
+helm upgrade --install --namespace actions-runner-system --create-namespace \
+             --wait actions-runner-controller actions-runner-controller/actions-runner-controller
+
+확인
+helm repo list
+helm list -A
+
 ### [Install ARC](https://github.com/actions/actions-runner-controller/blob/master/docs/installing-arc.md)
 - (default) / install cert manager
 - install ARC by **Kubectl**
@@ -13,21 +39,6 @@ kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/
 kubectl create -f https://github.com/actions/actions-runner-controller/releases/download/v0.25.2/actions-runner-controller.yaml
 ```
 ### Authenticating to the GitHub API - [Deploying Using GitHub App Authentication](https://github.com/actions/actions-runner-controller/blob/master/docs/authenticating-to-the-github-api.md)
-APP_ID=813630
-INSTALLATION_ID=46831345
-PRIVATE_KEY_FILE_PATH=github-key/k8s-test-app.pem
-```bash
-$ kubectl create secret generic controller-manager \
-    -n actions-runner-system \
-    --from-literal=github_app_id=${APP_ID} \
-    --from-literal=github_app_installation_id=${INSTALLATION_ID} \
-    --from-file=github_app_private_key=${PRIVATE_KEY_FILE_PATH}
-```
-
-$ kubectl create secret generic controller-manager \
-    --from-literal=github_app_id=${APP_ID} \
-    --from-literal=github_app_installation_id=${INSTALLATION_ID} \
-    --from-file=github_app_private_key=${PRIVATE_KEY_FILE_PATH}
 
 ### [choosing-runner-destination](https://github.com/actions/actions-runner-controller/blob/master/docs/choosing-runner-destination.md)
 runnerdeployment.yaml
@@ -62,21 +73,9 @@ kubectl get pod -n actions-runner | grep -i "k8s-action-runner"
 
 kubectl create secret generic controller-manager -n actions-runner-system --from-literal=github_token=$GITHUB_TOKEN
 
- actions-runner-controller
-LAST DEPLOYED: Tue Feb  6 06:18:26 2024
-NAMESPACE: actions-runner-system
-STATUS: deployed
-REVISION: 2
-TEST SUITE: None
-NOTES:
-1. Get the application URL by running these commands:
-  export POD_NAME=$(kubectl get pods --namespace actions-runner-system -l "app.kubernetes.io/name=actions-runner-controller,app.kubernetes.io/instance=actions-runner-controller" -o jsonpath="{.items[0].metadata.name}")
-  export CONTAINER_PORT=$(kubectl get pod --namespace actions-runner-system $POD_NAME -o jsonpath="{.spec.containers[0].ports[0].containerPort}")
-  echo "Visit http://127.0.0.1:8080 to use your application"
-  kubectl --namespace actions-runner-system port-forward $POD_NAME 8080:$CONTAINER_PORT
 
 
-
+https://medium.com/mossfinance/github-self-hosted-runners-on-kubernetes-with-actions-runner-controller-41e30c4cb76e
 
 
 
@@ -86,4 +85,3 @@ NOTES:
 > curl -O -L https://github.com/actions/runner/releases/download/v2.312.0/actions-runner-linux-x64-2.312.2.tar.gz
 > tar xzf ./actions-runner-linux-x64-2.312.2.tar.gz
 
-./config.sh --url https://github.com/everchloe97/argocd-example-apps --token ANYIA6EQ75WOAV32EDF3G7TFYHUVO
