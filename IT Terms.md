@@ -65,6 +65,9 @@
 #Vagrant
 &rarr; virtual box와 연계하여 가상 머신 관리를 자동화해 주는 도구.
 
+#Protocol
+원거리에 있는 기계 사이에 정확한 데이터 송수신을 위한 통신 규약.
+
 #Virtual_box
 &rarr; windows, mac, linux 서버에서 사용 가능한 hyper visor, vagrant의 백엔드로서 학습용 가상 환경 구축에 사용.
 
