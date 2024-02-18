@@ -15,5 +15,7 @@
 #TCP #3-way-handshake
 송수신 호스트가 연결을 설정하고, 데이터를 주고받은 후 연결을 해제하는 과정
 
+- Repeater(리피터) - 감쇠된 신호를 재생시키기 위한 목적으로 사용되는 네트워크 장치
+
 ### Ref
 - [TCP/IP 프로토콜](https://inten.tistory.com/entry/TCP-IP-%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C)
