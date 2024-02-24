@@ -110,6 +110,7 @@ Class E : 240.0.0.0 ~ 255.255.255.255 &rarr; 기타 목적으로 예약되어, �
 - **Secure** - HTTP 요청 및 응답을 SSL 및 TLS 기술에 결합
 
 #SSL vs #TLS
+- OSI 7 layer 중 Layer 6 인 Presentation Layer에서 사용되는 프로토콜
 
 #Busybox
 - 경량의 리눅스 배포 중 하나로, 여러 유틸리티와 명령줄 도구를 제공하는 **작은 이미지**.
@@ -128,7 +129,7 @@ broadcast와 변칙적인 UDP를 사용해서 DHCP server - DHCP client 사이 �
 인터넷 상의 리소스 자체를 식별하는 고유한 문자열 시퀀스
 ex) elancer.co.kr
 - URL (Uniform Resource Locator)
-리소스의 위치를 나타내기 위한 규약.	URI + 프로토콜이 결합된 형태. (http, https)
+리소스의 **위치**를 나타내기 위한 규약.	URI + 프로토콜이 결합된 형태. (http, https)
 ex) https://elancer.co.kr
 
 #L2_Switch
@@ -138,7 +139,7 @@ ex) https://elancer.co.kr
 - uplink : 상위 계층 스위치로 연결되는 Line (= 더 큰 네트워크로 나가는 역할)
 
 #MAC주소  ✅ 기기에 존재하는 NIC를 특정하는 주소 (**NIC에 대한 식별자**)
--  **M**edia **A**ccess **C**ontrol Address
+- **M**edia **A**ccess **C**ontrol Address
 - 48 bit
 - 데이터링크 계층에서 이용된다.
 PC를 비롯한 각종 단말, 프린터 같은 각종 기기에 존재하는 **NIC를 특정하는 주소** <br/> = 이더넷용 주소
@@ -187,7 +188,7 @@ Packet이 Router에 도착하면, 이 Router들 간 특정 프로토콜로 통�
 	-  **BGP** (Border Gateway Protocol) : 유일한 외부 Gateway 프로토콜. 규모가 큰 망을 지원
 	- **MPLS** (Multi Protocol Label Switching) : IP 주소가 아닌 레이블을 사용하여 네트워크 트래픽을 라우팅하는 기술 
 
-#CSMA (**C**arrier **S**ense **M**ultiple **A**ccess)
+#CSMA (**C**arrier **S**ense **M**ultiple **A**ccess) #IEEE802.11
 - 반송파 감지 다중 접근
 - 전송하기 이전에 먼저 매체의 상태를 확인 (전송 이전에 감지)
 - #CSMA/CD (Carrier Sense Multiple Access *with Collision Detection*) : 반송파가 감지되지 않으면 컴퓨터가 전송 매체를 사용하지 않는 것으로 판단하여 데이터를 전송한다.
