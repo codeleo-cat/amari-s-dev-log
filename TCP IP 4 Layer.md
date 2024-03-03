@@ -19,3 +19,4 @@
 
 ### Ref
 - [TCP/IP 프로토콜](https://inten.tistory.com/entry/TCP-IP-%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C)
+- [[실기-네트워크 관리사 2급]]

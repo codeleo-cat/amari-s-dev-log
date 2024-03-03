@@ -39,4 +39,4 @@
 ---
 - [# [10분 테코톡] 🔮 히히의 OSI 7 Layer](https://www.youtube.com/watch?v=1pfTxp25MA8)
 - [네트워크 관리사 2급 필기 정리](https://devbirdfeet.tistory.com/292)
-- [[네트워크 관리사 2급]]
+- [[필기-네트워크 관리사 2급]]
