@@ -7,7 +7,7 @@
 
 도커(docker)를 활용하면 어떤 장점이 있나요?
 - Your answer - 어떤 환경이든 동일하게 실행할 수 있다는 장점이 있고, Guest OS layer가 없기 때문에 VM을 사용했을 때보다 가볍고, overhead가 적습니다. 
-- GPT's - 도커 컨테이너는 어디서든 동일한 환경에서 실해될 수 있고, 가볍고, (컨테이너는 빠르게 시작되고 중지될 수 있기에) 배포 및 확장성이 뛰어납니다. (**환경의 일관성** & **가벼움** & **빠른 배포 및 확장 용이성**)
+- GPT's - 도커 컨테이너는 어디서든 동일한 환경에서 실행될 수 있고, 가볍고, (컨테이너는 빠르게 시작되고 중지될 수 있기에) 배포 및 확장성이 뛰어납니다. (**환경의 일관성** & **가벼움** & **빠른 배포 및 확장 용이성**)
 
 서버리스(serverless)에 대해 설명해주세요
 Your answer - ~~서버리스란 실제로 물리적 서버가 없다는 것을 의미하지는 않습니다. 다만 서버를 직접 물리적으로 설치하지 않는다는 것을 의미합니다. ~~
@@ -23,3 +23,29 @@ Your answer - ~~서버리스란 실제로 물리적 서버가 없다는 것을 �
 
 AWS를 비롯한 클라우드 서비스의 장점은 무엇인가요?
 - GPT's - 사용한 만큼만 요금을 지불하는 방식인 on-demand 방식을 사용하면 비용 절감에도 도움이 될 수 있고 많은 자동화된 서비스와 편리한 관리도구를 제공합니다. ex) DB, Storage, ML, Security, Data Back up etc... 그렇게 된다면 리소스 구축 뿐 아니라 관리도 용이해집니다. 
+
+---
+##### Week 1-1 
+##### scaling을 고려한 아키텍처 설계
+
+AWS EC2, AWS RDS, AWS ElasticCache, AWS ALB, AWS CloudFront, AWS DynamoDB, AWS Lambda  
+- RDS를 활용한 데이터베이스 scaling  
+- ALB + EC2를 활용한 서버 scaling  
+- Serverless 활용 시 장단점
+
+보통 시작은 RDB, 데이터 규모가 크면 NoSQL을 쓴다. ex) 네카라쿠배
+RDB쓰면 천만 row만 되어도 full scan 때리면 15분 이상 걸리기도 한다.
+index도 잘 걸어야 하고, 데이터 양이 많아지고 join 테이블 조회할 양이 많아지면 확실히 속도가 느리다.
+그래서 현업에서는 **read에 NoSQL을 쓰고 write에 RDB**를 쓰는 경우가 종종 있다.
+
+instagram에서 쓰는 카산드라 DB. multi-write가 가능하다. write를 분산시켜서 단일 write server가 죽는 걸 대비한다.
+ 
+
+---
+##### Week 1-2
+##### SNS 뉴스피드 피드 서비스 설계
+
+AWS SQS, AWS SNS, AWS Neptune, AWS Aurora, AWS ElasticCache, AWS CloudFront  
+- Message Queue를 활용한 느슨한 결합이란?  
+- 서비스 운영 방식에 맞는 데이터 스키마 설계와 데이터베이스 선택  
+- 올바른 ElasticCache 활용법
