@@ -8,8 +8,7 @@
 
 # Micro Service Architecture
 주요 비즈니스, 도메인 별 문제를 별도의 독립적인 코드 베이스로 분리
-![MSA | 600](
-https://wac-cdn.atlassian.com/dam/jcr:5308ccab-dc94-46f5-978c-8a77b8d5be57/Microservice%20architecture@2x.png?cdnVersion=1434)
+![MSA | 600](https://wac-cdn.atlassian.com/dam/jcr:5308ccab-dc94-46f5-978c-8a77b8d5be57/Microservice%20architecture@2x.png?cdnVersion=1434)
 ### Ref
 ---
 - [마이크로서비스와 모놀리식 아키텍처](https://www.atlassian.com/microservices/microservices-architecture/microservices-vs-monolith#:~:text=A%20monolithic%20application%20is%20built,of%20smaller%2C%20independently%20deployable%20services.)
