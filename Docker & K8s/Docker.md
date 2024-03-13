@@ -25,7 +25,7 @@
 
  - base image로 [alpine](https://namu.wiki/w/Alpine%20Linux) 을 사용한다.
  - multi stage build를 활용한다.
-- 불필요한 layer의 수를 줄인다.
+ - 불필요한 layer의 수를 줄인다.
  - *.dockerignore*를 활용한다.
  - application data를 별도 volume으로 분리한다.
 
@@ -37,10 +37,8 @@
 	docker exec -it $`container_id` bash
 
 ### [[Docker Compose]]
-
 - 여러 도커 컨테이너를 조합해서 기동할 수 있도록 만든 개발자용 오케스트레이션 tool (=상호 의존하는 여러 도커 컨테이너를 빌드하여 실행한다.)
 ### Docker Swarm
-
 - 복수의 노드로 클러스터를 구성하는 tool
 
 #Mount
