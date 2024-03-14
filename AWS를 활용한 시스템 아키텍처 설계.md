@@ -46,7 +46,7 @@ instagram에서 쓰는 카산드라 DB. multi-write가 가능하다. write를 �
 ##### SNS 뉴스피드 피드 서비스 설계
 
 AWS SQS, AWS SNS, AWS Neptune, AWS Aurora, AWS ElasticCache, AWS CloudFront  
-- Message Queue를 활용한 느슨한 결합이란?  
+- Message Queue를 활용한 느슨한 결합이란? [[Kafka]]
 - 서비스 운영 방식에 맞는 데이터 스키마 설계와 데이터베이스 선택  
 - 올바른 ElasticCache 활용법
 
@@ -54,3 +54,16 @@ AWS SQS, AWS SNS, AWS Neptune, AWS Aurora, AWS ElasticCache, AWS CloudFront
 ##### Week 1-3
 
 Polling이 필요한 http 통신 VS web socket 통신
+
+---
+
+추천 영상은 cache 되어 있을 가능성이 높다.
+
+**transcoding** : 원본 영상을 업로드 &rarr; 화질별로 나눠서 저장
+Lambda는 15분 timeout이 존재하므로, SQS나 SNS를 추천한다.
+
+DAG : https://en.wikipedia.org/wiki/Directed_acyclic_graph
+
+pre-signed url
+- client에서 s3로 바로 업로드
+- server에 부하가 없으므로 대규모 서비스에서 사용할 때 합리적, 일반적으로 많이 사용됨.
