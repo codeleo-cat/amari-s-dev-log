@@ -1,4 +1,5 @@
-#Github_Actions #kubernetes
+#Github_Actions #kubernetes 
+**updated at 2024-03-18**
 # Deploy Actions Runner Controller (ARC) using ArgoCD
 ### ARC (**A**ctions **R**unner **C**ontroller)
 - vm처럼 단일 instance에 Github Actions runner를 설치할 수도 있지만, #ARC 를 사용해 K8s 위에 설치할 수 있다. (= 쿠버네티스 파드로 러너 실행 가능.)
@@ -59,7 +60,6 @@ argocd app create actions-runner-controller-apps \
 
 
 ### Ref
----
 - [Github Actions by ARC](https://tech.buzzvil.com/blog/%EC%BF%A0%EB%B2%84%EB%84%A4%ED%8B%B0%EC%8A%A4%EC%97%90%EA%B2%8C-github-actions-%EC%84%A4%EC%B9%98%EC%97%90-%EB%8C%80%ED%95%B4-%EB%AC%BB%EB%8B%A4/)
 - https://velog.io/@alli-eunbi/Git-EKS-ARC-세팅-방법
 - https://ykarma1996.tistory.com/195
