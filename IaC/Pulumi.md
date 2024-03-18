@@ -1,3 +1,7 @@
+---
+created: 2024-01-04T14:19
+updated: 2024-01-04T17:18
+---
 # Pulumi
 
 [Why pulumi?](https://www.ciokorea.com/news/235799?page=0,1)

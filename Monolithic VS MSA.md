@@ -1,3 +1,7 @@
+---
+created: 2024-02-07T11:31
+updated: 2024-03-07T10:00
+---
 # Monolithic
 하나의 코드 기반을 갖춘 단일의 대규모 컴퓨팅 네트워크
 ![monolithic | 600](https://wac-cdn.atlassian.com/dam/jcr:95b9a276-c524-42b1-8d06-ded56d589858/Monolithic%20architecture@2x.png?cdnVersion=1434)

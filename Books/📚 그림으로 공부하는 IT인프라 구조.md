@@ -1,4 +1,8 @@
-![100](https://image.yes24.com/goods/95800974/XL)
+---
+created: 2024-01-08T14:56
+updated: 2024-03-18T11:53
+---
+![book|300](https://image.yes24.com/goods/95800974/XL)
 
 - 폴링 ( #Polling ) **정기적으로 질의하는 것**
  ex) 집배원이 정기적으로 우편함을 확인하며 편지를 모은 다음 배송한다.

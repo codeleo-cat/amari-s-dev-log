@@ -1,3 +1,7 @@
+---
+created: 2024-01-08T15:02
+updated: 2024-02-05T18:04
+---
 #kubernetes #ArgoCD
 # 쿠버네티스 환경에서의 Application 배포와 관리를 지원하는 GitOps CD tool
 

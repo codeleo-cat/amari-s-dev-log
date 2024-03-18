@@ -1,3 +1,7 @@
+---
+created: 2024-01-09T12:18
+updated: 2024-01-11T09:35
+---
 # [NoSQL](https://namu.wiki/w/NoSQL "NoSQL") [DBMS](https://namu.wiki/w/DBMS "DBMS")의 한 종류.
 
 ### 구성

@@ -1,3 +1,7 @@
+---
+created: 2024-02-02T11:01
+updated: 2024-02-06T11:08
+---
 # Ingress controller 역할을 수행
 
 - service 보호, 연결, 모니터링

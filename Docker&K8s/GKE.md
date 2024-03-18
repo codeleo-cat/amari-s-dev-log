@@ -1,3 +1,7 @@
+---
+created: 2024-01-10T17:04
+updated: 2024-01-18T11:21
+---
 ### GKE (Google Kubernetes Engine)
 
 - 기본적으로 API 활성화가 필요함.

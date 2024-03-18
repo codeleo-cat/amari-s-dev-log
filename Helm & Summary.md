@@ -1,3 +1,7 @@
+---
+created: 2024-01-25T10:34
+updated: 2024-01-30T11:55
+---
 
 - 어플리케이션 코드가 올라가 있는 [App repository](https://github.com/iamchoiz/demo-app-gitaction-argocd)
 	코드를 컨테이너로 빌드하여 Artifact Repository로 PUSH

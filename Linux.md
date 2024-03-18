@@ -1,3 +1,7 @@
+---
+created: 2024-01-17T12:23
+updated: 2024-03-07T09:59
+---
 #Linux
 ## About Linux
 ##### 리눅스는 Swap 파티션 설정을 권장한다.

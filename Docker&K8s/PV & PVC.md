@@ -1,3 +1,7 @@
+---
+created: 2024-01-25T10:57
+updated: 2024-01-25T10:57
+---
 ![](https://blog.kakaocdn.net/dn/b17MGq/btrrP4ojece/PxHCyMhiiak9IyRjQ44Gk0/img.png)
 
 Kubernetes Storage

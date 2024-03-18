@@ -1,3 +1,7 @@
+---
+created: 2024-02-23T15:29
+updated: 2024-02-23T17:41
+---
 terraform azurerm version 3.93.0 에서는 옵션이 제한적이어서 설정 불가.
 
 마이그레이션 유형

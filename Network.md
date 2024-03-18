@@ -1,3 +1,7 @@
+---
+created: 2024-01-16T18:44
+updated: 2024-02-18T14:31
+---
 https://wormwlrm.github.io/2021/01/24/Introducing-WebRTC.html 참조하여 정리
 
 

@@ -1,3 +1,7 @@
+---
+created: 2024-01-09T11:11
+updated: 2024-01-09T11:13
+---
 # 데비안 (Debian GNU/Linux)
 
 

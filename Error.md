@@ -1,3 +1,7 @@
+---
+created: 2024-01-12T09:49
+updated: 2024-02-02T14:56
+---
 ### Address already in use (bind)
 
 - [Address already in use (Bind failed) 문제 해결방법](https://reallinux.co.kr/blog/199)

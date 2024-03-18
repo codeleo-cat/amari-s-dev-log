@@ -1,3 +1,7 @@
+---
+created: 2024-03-05T17:53
+updated: 2024-03-05T17:55
+---
 gRPC는 Cloud Native Computing Foundation에서 관리하는 오픈 소스 API 아키텍처 및 시스템
 
 

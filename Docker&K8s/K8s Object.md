@@ -1,3 +1,7 @@
+---
+created: 2024-01-08T17:27
+updated: 2024-01-17T17:44
+---
 #kubernetes 
 # Object
 [[Kubernetes]] 시스템에서 영속성을 가지는 오브젝트

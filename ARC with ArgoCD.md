@@ -1,3 +1,7 @@
+---
+created: 2024-02-06T11:30
+updated: 2024-02-07T12:02
+---
 ## Create Github App for Organization & Personal User
 
 **Owned by:** [@hnyeom](https://github.com/hnyeom)

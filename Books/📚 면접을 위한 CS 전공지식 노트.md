@@ -1,3 +1,7 @@
+---
+created: 2024-01-08T14:56
+updated: 2024-03-18T11:47
+---
 ![|300](https://image.yes24.com/goods/108887922/XL)
 ### 요약 ⭐️
 
@@ -65,8 +69,9 @@ console.log(ret) // 12
 	- 노드와 링크의 집합체
 - 처리량과 지연 시간
 	- 처리하는 데이터량 & 처리하는 데 걸리는 속도
+
 - 네트워크 토폴로지와 병목 현상
-	- [[network topology.excalidraw]]
+ ![[network topology.excalidraw.png]]
 	- 네트워크 토폴로지
 		- 트리
 		- 버스 - 여러 단말이 하나의 통신 매체를 공유한다.

@@ -1,3 +1,7 @@
+---
+created: 2024-01-28T11:36
+updated: 2024-03-03T15:29
+---
 - Internet Protocol Suite (컴퓨터들이 서로 정보를 주고받는 데 쓰이는 **프로토콜의 집합**)를 4계층으로 설명한 것. <br/> TCP/IP가 가장 많이 쓰여 TCP/IP Protocol Suite라고도 불린다.
 - [[OSI 7 Layer]]보다 먼저 나온 규격. 현재 더 많이 사용된다.
 

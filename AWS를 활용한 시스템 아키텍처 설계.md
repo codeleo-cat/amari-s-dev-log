@@ -1,3 +1,7 @@
+---
+created: 2024-02-18T14:23
+updated: 2024-03-13T21:10
+---
 [프리온보딩 백엔드 챌린지 3월](https://www.wanted.co.kr/events/pre_challenge_be_17)
 
 ### 사전질문
