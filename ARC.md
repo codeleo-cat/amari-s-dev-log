@@ -1,10 +1,12 @@
 ---
-created: 2024-01-30T14:44
-updated: 2024-03-18T11:11
+created: 2024-03-18T12:09
+updated: 2024-03-18T12:12
 ---
-#Github_Actions #kubernetes 
-**updated at 2024-03-18**
+🗓 updated at / 2024-03-18
 # Deploy Actions Runner Controller (ARC) using ArgoCD
+
+#Github_Actions #kubernetes 
+
 ### ARC (**A**ctions **R**unner **C**ontroller)
 - vm처럼 단일 instance에 Github Actions runner를 설치할 수도 있지만, #ARC 를 사용해 K8s 위에 설치할 수 있다. (= 쿠버네티스 파드로 러너 실행 가능.)
 	- 장점 : 비용 효율성 & 확장성 & 속도

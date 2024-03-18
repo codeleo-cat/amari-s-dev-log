@@ -2,7 +2,7 @@
 created: 2024-03-18T12:09
 updated: 2024-03-18T12:12
 ---
-updated at : 2024-03-18
+🗓 updated at / 2024-03-18
 
 # Blob (Binary Large Object)
 
