@@ -10,9 +10,3 @@
   to = "/원하는경로/원하는파일.html"
   status = 200
   force=true
-
-[[redirects]]
-  from = "/docker"
-  to = "/books/면접을 위한 CS 전공지식 노트.md"
-  status = 200
-  force=true
