@@ -121,7 +121,8 @@ console.log(ret) // 12
 	- AP (Access Point) - 패킷을 복사하는 기기
 
 2-4. IP주소
-- ARP
+- ARP (Address Resolution Protocol)
+	- IP -> MAC Address
 - HOP by HOP 통신
 - IP 주소 체계
 - IP 주소를 이용한 위치 정보
