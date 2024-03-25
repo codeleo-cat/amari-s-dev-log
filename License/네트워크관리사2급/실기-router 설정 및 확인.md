@@ -1,3 +1,54 @@
+Reference
+- [네트워크관리사 2급 실기- router 유형 기출문제](https://ohaengsa.tistory.com/entry/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B4%80%EB%A6%AC%EC%82%AC-2%EA%B8%89-%EC%8B%A4%EA%B8%B0-%EB%9D%BC%EC%9A%B0%ED%84%B0-%EB%AC%B8%EC%A0%9C-%EA%B8%B0%EC%B6%9C)
+### 2022 기출
+
+- FastEthernet 0/0 사용 가능하게 ip 주소를 192.168.0.101/24와 두번째 ip를 192.168.102.0/24로 설정하고 활성화 하시오.
+```
+en
+conf t
+interface fastethernet 0/0
+ip add 192.168.0.101 255.255.255.0
+ip add 192.168.102.0 255.255.255.0 secondary
+no shutdown
+exit
+exit
+copy r s
+```
+- dchp pool을 icqa로 설정, 네트워크는 192.168.100.0/24로 설정하시오.
+```
+en 
+conf t
+ip dhcp pool icqa
+network 192.168.100.0 255.255.255.0
+exit
+exit
+copy r s
+```
+- 라우팅 테이블 정보를 확인하고 저장하시오.
+```
+en
+show ip route
+copy r s
+```
+
+- host 정보를 확인하고 저장하시오.
+```
+en
+show host
+copy r s
+```
+- SNMP 통신 시 ICQA라는 Community를 통해 모니터링 할 수 있도록 설정하시오. 대소문자를 구분, 완료된 설정은 저장하시오.
+```
+en
+conf t
+snmp community ICQA
+exit
+copy r s
+```
+- 정적 라우팅을 설정하시오. 목적지 네트워크 ip : 24.48.200.0 / 게이트웨이 ip
+
+
+
 - IP/subnet mask 설정 **ip add**
 ```
 en
