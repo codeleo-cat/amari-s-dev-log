@@ -1,6 +1,32 @@
-Reference
-- [네트워크관리사 2급 실기- router 유형 기출문제](https://ohaengsa.tistory.com/entry/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B4%80%EB%A6%AC%EC%82%AC-2%EA%B8%89-%EC%8B%A4%EA%B8%B0-%EB%9D%BC%EC%9A%B0%ED%84%B0-%EB%AC%B8%EC%A0%9C-%EA%B8%B0%EC%B6%9C)
-- [# 네트워크관리사 2급 실기 라우터 문제 정리](https://doobudubu.tistory.com/33)
+***show***
+show version - 라우터 버전
+show ip route - **라우팅 테이블**
+show host
+show flash
+show process
+show interface
+show user
+
+### 2020 기출
+
+encapsulation frame-relay 설정
+```
+
+```
+
+### 2021 기출
+
+ssh로 접속 가능하도록 설정
+```
+en
+conf t
+line vty 0 4
+transport input ssh
+exit
+exit
+copy r s
+```
+
 ### 2022 기출
 
 - FastEthernet 0/0 사용 가능하게 ip 주소를 192.168.0.101/24와 두번째 ip를 192.168.102.0/24로 설정하고 활성화 하시오.
@@ -15,7 +41,7 @@ exit
 exit
 copy r s
 ```
-- dchp pool을 icqa로 설정, 네트워크는 192.168.100.0/24로 설정하시오.
+- dchp pool의 (서버 이름)을 icqa로 설정, 네트워크는 192.168.100.0/24로 설정하시오.
 ```
 en 
 conf t
@@ -198,14 +224,14 @@ copy r s
 ---
 정보를 확인하고 저장하라 = **show**
 
-- interface 정보를 확인하고 저장 interface
+- interface 정보를 확인하고 저장 **interface**
 ```
 en
 show interface
 copy r s
 ```
 
-- 접속한 사용자 정보를 확인하고 저장 user
+- 접속한 사용자 정보를 확인하고 저장 **user**
 ```
 en
 show user 
@@ -219,14 +245,14 @@ show ip route
 copy r s
 ```
 
-- 플래쉬 내용을 확인하고 저장 flash
+- 플래쉬 내용을 확인하고 저장 **flash**
 ```
 en
 show flash
 copy r s
 ```
 
-- 프로세스 내용을 확인하고 저장 process
+- 프로세스 내용을 확인하고 저장 **process**
 ```
 en
 show process
@@ -234,3 +260,6 @@ copy r s
 ```
 
 ---
+Reference
+- [네트워크관리사 2급 실기- router 유형 기출문제 2019~2022](https://ohaengsa.tistory.com/entry/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B4%80%EB%A6%AC%EC%82%AC-2%EA%B8%89-%EC%8B%A4%EA%B8%B0-%EB%9D%BC%EC%9A%B0%ED%84%B0-%EB%AC%B8%EC%A0%9C-%EA%B8%B0%EC%B6%9C)
+- [# 네트워크관리사 2급 실기 라우터 문제 정리](https://doobudubu.tistory.com/33)
