@@ -1,5 +1,6 @@
 Reference
 - [네트워크관리사 2급 실기- router 유형 기출문제](https://ohaengsa.tistory.com/entry/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B4%80%EB%A6%AC%EC%82%AC-2%EA%B8%89-%EC%8B%A4%EA%B8%B0-%EB%9D%BC%EC%9A%B0%ED%84%B0-%EB%AC%B8%EC%A0%9C-%EA%B8%B0%EC%B6%9C)
+- [# 네트워크관리사 2급 실기 라우터 문제 정리](https://doobudubu.tistory.com/33)
 ### 2022 기출
 
 - FastEthernet 0/0 사용 가능하게 ip 주소를 192.168.0.101/24와 두번째 ip를 192.168.102.0/24로 설정하고 활성화 하시오.
@@ -45,9 +46,17 @@ snmp community ICQA
 exit
 copy r s
 ```
-- 정적 라우팅을 설정하시오. 목적지 네트워크 ip : 24.48.200.0 / 게이트웨이 ip
+- 정적 라우팅을 설정하시오. 
+	- 목적지 네트워크 ip : 24.48.200.0/24 
+	- 게이트웨이 ip : 100.150.100.2
 
-
+```
+en
+conf t
+ip route 24.48.200.0 255.255.255.0 100.150.100.2
+exit
+copy r s
+```
 
 - IP/subnet mask 설정 **ip add**
 ```
