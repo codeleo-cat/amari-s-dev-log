@@ -9,14 +9,24 @@ show user
 
 ### 2020 기출
 
-encapsulation frame-relay 설정
-```
 
-```
 
 ### 2021 기출
 
-ssh로 접속 가능하도록 설정
+- 라우터2의 serial 2/0에 frame-relay 방식으로 캡슐화 하시오. encapsulation frame-relay
+```
+en
+conf t
+interface serial 2/0
+encapsulation frame-relay
+exit
+exit
+copy r s
+```
+
+- 라우터에서 telnet 접속할 때 vty 0 4까지 ssh로 접속 가능하도록 설정하시오. 
+	- **line vty 0 4**
+	- **transport input ssh**
 ```
 en
 conf t
@@ -26,10 +36,9 @@ exit
 exit
 copy r s
 ```
-
 ### 2022 기출
 
-- FastEthernet 0/0 사용 가능하게 ip 주소를 192.168.0.101/24와 두번째 ip를 192.168.102.0/24로 설정하고 활성화 하시오.
+- FastEthernet 0/0 사용 가능하게 ip 주소를 192.168.0.101/24와 두번째 ip를 192.168.102.0/24로 설정하고 **활성화** 하시오.
 ```
 en
 conf t
@@ -141,15 +150,34 @@ exit
 copy r s
 ```
 
-- 기본 gateway 설정 **ip default-gateway** (exit 한 번!)
+- 기본 gateway 설정 **ip default-gateway** (exit 한 번!) 
+	- subnet mask가 없기 때문에 그냥 적용하면 된다. (IP : 192.168.100.0)
 ```
 en
 conf t
-ip default-gateway 192.168.0.10
+ip default-gateway 192.168.100.0
 exit
 copy r s
 ```
-
+- 기본 네트워크를 설정하시오 (IP : 192.168.0.10) **ip default-network**
+```
+en
+conf t 
+ip default-network 192.168.10.0
+exit
+copy r s
+```
+- FastEthernet 0/0에 IP 추가 후 **활성화**
+```
+en
+conf t
+interface fastethernet 0/0
+ip add 192.168.100.1 255.255.255.0
+no shutdown
+exit
+exit
+copy r s
+```
 - DHCP 설정 **ip dhcp pool** + **network** 
 ```
 en
@@ -220,7 +248,6 @@ exit
 exit
 copy r s
 ```
-
 ---
 정보를 확인하고 저장하라 = **show**
 
