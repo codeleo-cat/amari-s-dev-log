@@ -6,11 +6,6 @@ show flash
 show process
 show interface
 show user
-
-### 2020 기출
-
-
-
 ### 2021 기출
 
 - 라우터2의 serial 2/0에 frame-relay 방식으로 캡슐화 하시오. encapsulation frame-relay
@@ -24,7 +19,7 @@ exit
 copy r s
 ```
 
-- 라우터에서 telnet 접속할 때 vty 0 4까지 ssh로 접속 가능하도록 설정하시오. 
+- 라우터에서 telnet 접속할 때 vty 0 4까지 **ssh로 접속 가능하도록** 설정하시오. 
 	- **line vty 0 4**
 	- **transport input ssh**
 ```
@@ -163,7 +158,7 @@ copy r s
 ```
 en
 conf t 
-ip default-network 192.168.10.0
+ip default-network 192.168.0.10
 exit
 copy r s
 ```
