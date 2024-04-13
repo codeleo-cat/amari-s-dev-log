@@ -4,6 +4,7 @@ updated: 2024-02-01T13:56
 ---
 ## **쿠버네티스 개요**
 
+[K8s Tools](https://overcast.blog/13-kubernetes-tools-your-should-know-in-2024-4e857124c176)
 
 - 조타수를 의미하며 CNCF에 소속된 오픈소스이다.
 - 컨테이너 기반의 서비스 운영에 필요한 오케스트레이션 기능을 지원한다. (컨테이너를 쉽고 빠르게 배포, 관리해주는 Tool)
