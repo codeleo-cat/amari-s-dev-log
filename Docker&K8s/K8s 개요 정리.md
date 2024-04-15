@@ -4,12 +4,12 @@ updated: 2024-02-01T13:56
 ---
 ## **쿠버네티스 개요**
 
-[K8s Tools](https://overcast.blog/13-kubernetes-tools-your-should-know-in-2024-4e857124c176)
-
 - 조타수를 의미하며 CNCF에 소속된 오픈소스이다.
 - 컨테이너 기반의 서비스 운영에 필요한 오케스트레이션 기능을 지원한다. (컨테이너를 쉽고 빠르게 배포, 관리해주는 Tool)
 - ### **여러 서버의 자원을 클러스터링해 컨테이너를 배치하는 것**이 K8s의 핵심 기능.
-    
+
+라우터는 패킷의 destination IP 주소인 target 네트워크를 향해 **패킷을 전달**.
+라우팅 테이블에 저장된 라우팅 정보를 검색해야 함.
 
 ## **_Why K8s ?_**
 
@@ -23,14 +23,13 @@ updated: 2024-02-01T13:56
 
 - #### **Pods** : 컨테이너의 집합
     
-    - #### 컨테이너 application의 기본 단위. 
-        
-    - #### 포드에 정의된 여러 개의 컨테이너는 하나의 완전한 애플리케이션으로 동작함.
+    - 컨테이너 application의 기본 단위. 
+    - 포드에 정의된 여러 개의 컨테이너는 하나의 완전한 애플리케이션으로 동작함.
         
 - #### **Replica Set** : Pods를 관리하는 컨트롤러
-    
     - 일정 개수의 포드를 유지하는 컨트롤러
-- **Deployment** : Replica Set, Pod의 배포를 관리
+
+- #### **Deployment** : Replica Set, Pod의 배포를 관리
     
     ![](https://blog.kakaocdn.net/dn/cLoH0P/btq7WVyob2b/MoxhDlL08W61ktDs70cVkk/img.png)
     - Replica Set의 상위 오브젝트
