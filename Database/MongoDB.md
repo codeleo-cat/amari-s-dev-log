@@ -30,7 +30,7 @@ updated: 2024-01-11T09:35
 - database 로그인 : db.auth('ID','Password)
 
 #### *Deprecated* 
-- ~~db.collection.insert()
+- ~~db.collection.insert()~~
 
 ### MacOS에 MongoDB 설치 (feat.brew)
 ```bash
