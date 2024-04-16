@@ -3,7 +3,7 @@ created: 2024-01-04T11:15
 updated: 2024-01-19T16:07
 ---
 #kubernetes 
-# [[Kubernetes]]에서 애플리케이션을 쉽게 배포하기 위해 사용되는 대표적인 패키지 매니저
+# [[Kubernetes 동작]]에서 애플리케이션을 쉽게 배포하기 위해 사용되는 대표적인 패키지 매니저
 
 ### Function as a **Template Engine**
 - Micro service 배포 시 공통된 하나의 template *(yaml)* 을 정의해두고, 그 안의 value만 수정하여 서비스 배포 시 재 사용이 가능하다.

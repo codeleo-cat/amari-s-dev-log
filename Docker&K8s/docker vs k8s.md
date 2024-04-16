@@ -1,1 +1,0 @@
-[### Kubernetes와 Docker의 주요 차이점 및 컨테이너화에서 해당하는 부분](https://www.atlassian.com/ko/microservices/microservices-architecture/kubernetes-vs-docker)

@@ -1,3 +1,9 @@
+---
+created: 2024-03-18T12:09
+updated: 2024-03-18T12:12
+---
+#kubernetes 🗓 *updated at* 2024/04/15
+
 - Kubernetes
 > container orchestration platform.
 > container화된 워크로드를 자동으로 배포, 확장, 관리할 수 있으며, 대규모의 Micro Service Architecture 관리에 필수적이다.
@@ -12,7 +18,7 @@
 
 
 [K8s Tools](https://overcast.blog/13-kubernetes-tools-your-should-know-in-2024-4e857124c176)
-back links  [[ArgoCD]] [[Helm]] [[Kubernetes]]
+back links  [[ArgoCD]] [[Helm]] [[Kubernetes 동작]]
 
 - ArgoCD
 > K8s용 선언적, GitOps CD 도구.

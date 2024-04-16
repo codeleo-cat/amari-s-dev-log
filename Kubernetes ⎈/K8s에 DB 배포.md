@@ -2,6 +2,7 @@
 created: 2024-01-29T11:12
 updated: 2024-01-30T15:21
 ---
+#kubernetes 
 # MySQL
 *MySQL* deployment on a Kubernetes cluster using the _Helm_ package manager
 

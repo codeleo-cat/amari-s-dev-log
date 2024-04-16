@@ -3,8 +3,7 @@ created: 2024-01-08T17:27
 updated: 2024-01-17T17:44
 ---
 #kubernetes 
-# Object
-[[Kubernetes]] 시스템에서 영속성을 가지는 오브젝트
+# Kubernetes 동작 시스템에서 영속성을 가지는 오브젝트
 
 - 오브젝트 spec
 - 오브젝트 status
