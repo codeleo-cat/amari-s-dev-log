@@ -283,7 +283,7 @@ ex) 장애 발생 전인 지난 주 목요일에 백업시켜 둔 복원 시점�
 	ex) 미들웨어 / Back-end. WAS (웹 애플리케이션 서버)
 - Data tier = DB에 접근해서 데이터를 read/write 하는 것. DBMS
 
-#webRTC 🔑 브라우저에서 P2P 통신을 가능하게 해주는 기술 [[Network 전반]]
+#webRTC 🔑 브라우저에서 P2P 통신을 가능하게 해주는 기술 [[⭐️ Network 전반]]
 - Web_ Real-Time Communication
 - 실시간으로 웹에서 데이터를 교환할 수 있는 기술.
 - UDP 위에서 동작한다. 데이터의 빠른 전송은 가능하지만, 데이터 손실이 발생할 수도 있다.
@@ -295,9 +295,10 @@ ex) 장애 발생 전인 지난 주 목요일에 백업시켜 둔 복원 시점�
 - 192.168.0.0 ~ 192.168.255.255
 
 #proxy 🔑 **중계** 역할을 해주는 프로그램 / 컴퓨터
-- Proxy Server![500](https://www.fortinet.com/content/fortinet-com/ko_kr/resources/cyberglossary/proxy-server/_jcr_content/par/c05_container_copy_c/par/c28_image_copy_copy_.img.jpg/1701208391335.jpg)
+- Proxy Server
+![500](https://www.fortinet.com/content/fortinet-com/ko_kr/resources/cyberglossary/proxy-server/_jcr_content/par/c05_container_copy_c/par/c28_image_copy_copy_.img.jpg/1701208391335.jpg)
 - 종류
-	- forword proxy : 인터넷 상에서 어디로든지 요청을 전송해주는 프록시
-	![](https://hudi.blog/static/75cb835d72f618f739d8ef3494bdf579/ca1dc/forward-proxy.png)
-	- reverse proxy : 인터넷에서 요청을 받으면, 내부망 내의 서버로 전송 해주는 프록시
-	![](https://hudi.blog/static/31b3c81452e707e49e4567090c4431b2/ca1dc/reverse-proxy.png)
+**forward proxy** : 인터넷 상에서 어디로든지 요청을 전송해주는 프록시
+![](https://hudi.blog/static/75cb835d72f618f739d8ef3494bdf579/ca1dc/forward-proxy.png)
+ **reverse proxy** : 인터넷에서 요청을 받으면, 내부망 내의 서버로 전송 해주는 프록시
+![](https://hudi.blog/static/31b3c81452e707e49e4567090c4431b2/ca1dc/reverse-proxy.png)

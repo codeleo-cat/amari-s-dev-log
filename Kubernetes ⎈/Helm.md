@@ -2,7 +2,7 @@
 created: 2024-01-04T11:15
 updated: 2024-01-19T16:07
 ---
-#kubernetes 
+#kubernetes #helm 
 # [[Kubernetes 동작]]에서 애플리케이션을 쉽게 배포하기 위해 사용되는 대표적인 패키지 매니저
 
 ### Function as a **Template Engine**
