@@ -8,3 +8,8 @@ for (let i=0; i<길이; i++){}
 ```
 str == str[::-1]
 ```
+
+-  조건식에서 중첩 사용 시 python은 **and** vs js는 **&&**
+- python은 list.**append**() vs js는 list.**push**()
+- index와 value를 묶는 건 python은 for i,v in **enumerate**(list)
+- map.(v=> 조건).reduce ((a, b)=> return a+b
