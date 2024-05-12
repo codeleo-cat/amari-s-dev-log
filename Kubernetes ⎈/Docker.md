@@ -9,9 +9,13 @@ updated: 2024-03-13T09:49
 - Docker 컨테이너는 Host 시스템의 리소스를 공유하고 격리된 환경에서 실행된다.
 
 ### Docker Network
-- Bridge : 기본 네트워크 유형으로, host 내부의 개인 네트워크 *격리와 보안*
-- Host : docker host의 네트워크 stack을 공유하며 격리 없이 직접 통신 가능 (= Docker host와 Docker container 간의 네트워크 격리를 제거) *통신의 용이성 & 네트워크 대기 시간을 단축*
-- Overlay : 서로 다른 host에서 실행되는 Docker container가 마치 동일한 host에서 있는 것처럼 통신 가능 ( #Docker_Swarm)
+[ref](https://www.appsdeveloperblog.com/docker-networking-bridging-host-and-overlay/#Understanding_Docker_Networking)
+bridge는 Docker 컨테이너에 **보안, 격리를 제공**. VS
+host는 해당 **격리를 제거**하여 통신을 용이하게 한다.
+
+- **Bridge** : 기본 네트워크 유형으로, host 내부의 개인 네트워크 격리와 보안
+- **Host** : container에서 실행되는 서비스가 호스트 자체에서 직접 실행되는 것. docker host의 네트워크 stack을 공유하며 격리 없이 직접 통신 가능 (= Docker host와 Docker container 간의 네트워크 격리를 제거) *통신의 용이성 & 네트워크 대기 시간을 단축*
+- **Overlay** : **서로 다른 host**에서 실행되는 Docker container가 마치 동일한 host에서 있는 것처럼 통신 가능 ( #Docker_Swarm)
 
 ### Docker Command
 - docker (container) ps 

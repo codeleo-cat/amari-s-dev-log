@@ -43,7 +43,7 @@ updated: 2024-02-01T13:56
 ==**Master Node**== 🔑 컨테이너 선단을 지휘하는 통제함  
 → 주요 컨트롤 유닛으로서 Worker Nodes를 관리하는 주체
 
-- API Server - 쿠버네티스 [컨트롤 플레인](https://kubernetes.io/ko/docs/reference/glossary/?all=true#term-control-plane)의 핵심. 최종 사용자, 클러스터의 다른 부분 그리고 외부 컴포넌트가 서로 통신할 수 있도록 HTTP API를 제공한다.
+- **APIServer** - 쿠버네티스 [컨트롤 플레인](https://kubernetes.io/ko/docs/reference/glossary/?all=true#term-control-plane)의 핵심. 최종 사용자, 클러스터의 다른 부분 그리고 외부 컴포넌트가 서로 통신할 수 있도록 HTTP API를 제공한다.
 - **Scheduler** - **스케줄링**. pod를 적절한 worker node에 배포(할당)하는 component.  
     즉, 새로운 컨테이너가 어느 노드에서 실행될 지 결정하는 component.
 - **Controller Manager (CM)** - **컨트롤러 관리**. node의 상태 모니터링(직접 하는 것은 아니고 API Server로부터 state 값을 전달받음), 로그 확인 가능
@@ -62,12 +62,12 @@ updated: 2024-02-01T13:56
 
 ## **쿠버네티스 Deployment**
 
-- ==**Rolling update**== - 정해진 비율만큼의 파드만 점진적으로 배포. 최소한의 오버헤드와 다운타임  
+- ==**Rolling update**== - 정해진 비율만큼의 파드만 **점진적**으로 배포. 최소한의 오버헤드와 다운타임  
     ![](https://blog.kakaocdn.net/dn/cr1u0N/btrcHEqx8a9/cCSOcRVlKzBpc89rWjkWY0/img.png)
-- ==**Blue/Green**== - ver 1.0 과 ver 2.0 을 구성하고, 트래픽을 ver 2.0 쪽으로 전환하는 방식  
+- ==**Blue/Green**== - ver 1.0 과 ver 2.0 을 구성하고, 트래픽을 ver 2.0 쪽으로 **일제히** 전환하는 방식  
     구 버전(Blue)과 동일한 환경에 신 버전(Green)의 배포를 전부 구축하고, LB를 수정하여 Green 을 한꺼번에 가리키게 한다.  
     _단점_ - 잠시라도 신 버전을 완전히 새 환경에서 구축해야 되기에 일시적이라도 시스템 자원 2배 필요![](https://blog.kakaocdn.net/dn/6Q47k/btrcEv9a1m0/jfXRvfafjlXPYunkKyuink/img.png)
-- ==**Canary**== - ver 2.0을 일부 배포하고, 트래픽도 일부만 ver 2.0으로 전환한다. 배포에 문제가 없다면 ver 2.0을 점진적으로 배포 및 트래픽을 전환한다.![](https://blog.kakaocdn.net/dn/ektrH9/btrcGkMSpor/iiPKVFeVexp4TV92nNAtDk/img.png)
+- ==**Canary**== - ver 2.0을 일부 배포하고, 트래픽도 일부만 ver 2.0으로 전환한다. **배포에 문제가 없다면** ver 2.0을 점진적으로 배포 및 트래픽을 전환한다.![](https://blog.kakaocdn.net/dn/ektrH9/btrcGkMSpor/iiPKVFeVexp4TV92nNAtDk/img.png)
 
 ---
 - ### Ref
