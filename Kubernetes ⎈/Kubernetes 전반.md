@@ -19,6 +19,7 @@ updated: 2024-02-01T13:56
         
 - #### **Replica Set** : Pods를 관리하는 컨트롤러
     - 일정 개수의 포드를 유지하는 컨트롤러
+    - Creating new pods, Autoscaling of pods
 
 - #### **Deployment** : Replica Set, Pod의 배포를 관리
     ![deployment | 500](https://blog.kakaocdn.net/dn/cLoH0P/btq7WVyob2b/MoxhDlL08W61ktDs70cVkk/img.png)
