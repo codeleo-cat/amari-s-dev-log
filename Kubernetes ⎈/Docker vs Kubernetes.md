@@ -21,6 +21,12 @@ ex)
 	ex) LB (부하 분산), resource 격리 및 할당, pod의 scale up / out
 - **뛰어난 확장성과 유연성**
 
+[# Easy Docker for developers (2024 NEW) | concepts of containers, Docker, and Kubernetes very easily.](https://www.youtube.com/watch?v=eRfHp16qJq8)
+**가상화** - 하나의 컴퓨터(서버)에서 여러 개의 s/w를 실행할 수 있게 한다.
+이전에는 **VM** 방식 (프로그램 실행, 업데이트 시 오래 걸린다.) < **Container** 방식 (가볍고 빠르다!)
+Container만 넣고 빼는 식으로 효율적으로 관리할 수 있다. 이걸 관리를 누가 해주냐? 서버에서 실행되는 컨테이너를 **관리**하는 프로그램인 **Docker**.
+근데 건물 하나에서는 가능한데, 건물이 많아지면 관리가 어렵다. 그래서 이처럼 서버가 여러 대 있는 환경에서 각각의 서버에게 Docker 대신 지시해주는 오케스트레이션 도구가 **Kubernetes**.
+
 ## **_Why K8s ?_**
 
 - 컨테이너가 수가 증가할수록 그 환경이 복잡해진다.
