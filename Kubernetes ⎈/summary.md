@@ -14,7 +14,7 @@ updated: 2024-03-18T12:12
 > 실제 앱을 실행하고 관리하는 역할의 **worker node**로 구성된다.
 
 - pod가 다른 pod와 어떻게 통신하나?
-> service라는 추상화된 layer를 통해서 통신한다.
+> **service**라는 추상화된 layer를 통해서 통신한다.
 
 
 [K8s Tools](https://overcast.blog/13-kubernetes-tools-your-should-know-in-2024-4e857124c176)
@@ -42,3 +42,13 @@ back links  [[ArgoCD]] [[Helm]] [[Kubernetes 동작]]
 
 
 #kubernetes 
+
+**kubernetes가 pod를 삭제하는 법** [](https://leehosu.github.io/kubernetes-delete-pod)
+1. k delete po $po
+2. k8s control plane 내의 **api-server**가 Pod 삭제 요청을 받고, 해당 요청을 cluster 내의 모든 control plane 구성 요소에 전달한다.
+3. k8s control plane 내의 **kube-controller-manager**는 pod가 ReplicaSet / deployment와 같은 object의 소유 Pod인지 확인한다.
+4. api-server가 해당 Node의 kubelet에게 pod 삭제 요청을 전달한다.
+5. pod를 삭제하기 전에 pod 내의 컨테이너에 signal을 보내고 일정 시간 대기한다. 
+6. pod의 모든 container가 종료되면 kubelet은 pod를 완전히 삭제하고, 상태 update를 kube-api-server로 보낸다.
+7. kube-api-server는 pod 삭제 완료를 확인 후, 상태 update 후 요청 클라이언트에 응답한다.
+
