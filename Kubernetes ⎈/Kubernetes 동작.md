@@ -4,6 +4,8 @@ updated: 2024-03-18T11:48
 ---
 #kubernetes 
 
+- updated 📅 2024-06-09 
+
 ## K8s Runtime
 &rarr; 여러 충돌 문제 등이 존재하여 더이상 docker가 K8s 런타임이 아니게 됨. 
 - 현재는 **containerd** 가 사용되고 있음.
@@ -46,8 +48,11 @@ updated: 2024-03-18T11:48
 ### DaemonSet
 - 모든 Node 또는 특정 label을 가진 node에 하나씩의 동일한 pod를 배포해주는 resource
 ### StatefulSet
-- Pod의 상태를 저장하고 관리하는 Resource
-- Deployment와 거의 동일한 특성을 갖지만, 각 Pod의 순서와 고유성을 보장한다.
+- ==Pod의 **상태**==를 저장하고 관리하는 Resource 
+- Deployment와 거의 동일한 특성을 갖지만, 각 Pod의 순서와 고유성을 보장한다. - pod마다 각각 다른 storage를 사용해 각각 다른 state를 유지한다.
+- Stateless Application - APACHE & NGINX
+- Stateful Application - mongoDB & redis
+	
 ### Ingress Controller
 - 들어오는 요청을 적절한 서비스로 전달해야 하는 역할
 - L7
@@ -63,7 +68,7 @@ updated: 2024-03-18T11:48
 	파드 안에서 #proxy 역할을 하는 컨테이너를 추가하는 패턴
 	![300](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F72sMC%2FbtrFTOF7GrA%2FJGmTNSHx6qm7KsPd0kf191%2Fimg.png)
 - Adapter pattern
-	파드 외부로 노출되는 정보를 표준화하는 Adapter 컨테이너를 사용하는 패턴
+	파드 외부로 노출되는 정보를 **표준화**하는 Adapter 컨테이너를 사용하는 패턴
 	(adatper container를 통해 데이터를 변환)
 	![300](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbNncKa%2FbtrFVULU9Bk%2F125IN14ld61lO0SsF9XR3k%2Fimg.png)
 
