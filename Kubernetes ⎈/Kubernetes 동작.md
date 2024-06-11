@@ -34,7 +34,7 @@ updated: 2024-03-18T11:48
 
 ### ReplicaSet
 
--  Container의 집합(Pods)를 관리하는 **컨트롤러**
+- Container의 집합(Pods)를 관리하는 **컨트롤러**
 - 정해진 개수의 pod를 유지해주는 도구.
 - 이 replica set이 삭제 되지 않아 pod를 지워도 다시 살아나는 문제가 발생할 수 있다.
 
