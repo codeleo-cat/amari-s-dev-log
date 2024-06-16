@@ -5,8 +5,11 @@ updated: 2024-03-18T12:12
 #kubernetes 🗓 *updated at* 2024/04/15
 
 - Kubernetes
-> container orchestration platform.
+> K8s는 **container orchestration** platform 입니다.
 > container화된 워크로드를 자동으로 배포, 확장, 관리할 수 있으며, 대규모의 Micro Service Architecture 관리에 필수적이다.
+
+- Kubernetes's container
+
 
 - node
 > 컨테이너 런타임을 탑재하고 있고 쿠버네티스 컴포넌트들이 들어있는 host 시스템.
