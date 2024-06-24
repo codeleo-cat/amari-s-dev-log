@@ -134,21 +134,22 @@ console.log(ret) // 12
 - IP 주소 체계
 - IP 주소를 이용한 위치 정보
 
-2-5. HTTP
-- HTTP/1.0 
-	- 요청과 응단 간에 연결을 매번 새로 열고 닫음.
-- HTTP/1.1
-	- Keep-Alive 연결을 지원하여 여러 요청을 단일 연결로 처리 가능\
-	- 헤더 압축 기능
+2-5. HTTP (Hyper Text Transfer Protocol)
+- HTTP/1.0 (1990년대 나온 버전)
+	- 요청과 응단 간에 연결을 매번 새로 열고 닫음. (하나의 요청 당 하나의 TCP connection 생성 1:1)
+- ==HTTP/1.1 -> 공식 version== (why? 광범위한 호환성, 오랜 기간 사용했기에 안정성 좋음)
+	- Keep-Alive 연결을 지원하여 여러 요청을 단일 연결로 처리 가능
 - HTTP/2
-	- 다중화(multiplexing)을 통해 여러 요청과 응답을 동시에 처리 가능
-	- Server Push 기능
+	- Latency 감소 : 다중화(**multiplexing**) - 하나의 커넥션에서 여러 요청과 응답을 동시에 처리 가능 - 스트림(data의 양방향 흐름)이 여러 개.
+	- 네트워크 통신에 필요한 데이터량 감소 : **헤더 압축** (header compression) - HPACK. 
+	- 페이지 로딩 시간 단축:  **Server Push** - 서버가 클라이언트의 요청 없이도 먼저 client에 필요한 resource를 보낼 수 있는 기능. 말 그대로 server가 push. 
 - HTTPS
 	- 보안이 강화된 HTTP 프로토콜로 SSL/TLS 암호화를 사용함.
 	- 보안 인증서
 - HTTP/3
 	- QUIC 프로토콜 기반으로 개발됨.
-	- TCP보다 빠른 데이터 전송 속도와 연결 설정
+	- TCP보다 빠른 데이터 전송 속도와 연결 설정 (TCP가 아닌 **UDP**를 사용)
+	- 패킷 손실이 발생해도 connection 전체가 아닌 개별 stream에만 영향을 미침.
 
 ---
 ### 3장. 운영체제
