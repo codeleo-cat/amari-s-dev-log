@@ -33,7 +33,7 @@ k create deploy hr-web-app --image=kodekloud/webapp-color --replicas=2
 	k create deploy & k get deploy
 
 
-7. Create a **static** pod named `static-busybox` on the controlplane node that uses the `busybox` image and the command `sleep 1000`.
+7. Create a static pod named `static-busybox` on the controlplane node that uses the `busybox` image and the command `sleep 1000`.
 ```bash
 k run --restart=Never --image=busybox static-busybox --dry-run=client -o yaml --command -- sleep 1000 > /etc/kubernetes/manifests/static-busybox.yaml
 ```
