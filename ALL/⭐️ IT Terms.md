@@ -12,6 +12,10 @@ updated: 2024-03-13T09:51
 
 #DC/OS : the Distributed Cloud Operating System
 - 여러 개의 서버가 함께 운영되는 환경을 하나의 서버처럼 손쉽게 운영하고 관리하기 위한 목적으로 활용되는 솔루션
+#A/B테스트
+위에서 설정한 가설이 원본 A를 대안 B로 바꾸면 지표 X가 Y하게 변할 것이다.
+user A가 보는 넷플릭스 화면과 user B가 보는 넷플릭스 화면을 다르게 표시.
+(일부만)
 
 #Zero-trust
 - 보안 모델
