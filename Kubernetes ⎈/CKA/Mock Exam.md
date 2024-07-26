@@ -112,3 +112,15 @@ spec:
   hostPath:
       path: /pv/data-analytics
 ```
+
+# Mock Exam 3
+## 1. service account & cluster role binding
+k create serviceaccount pvviewer
+k create clusterrole pvviewer-role --verb=list --resource=pv
+k create clusterrolebinding pvviewer-role-binding --clusterrole=pvviewer-role --serviceaccount=default:pvviewer
+k run pvviewer --image=redis --dry-run=client -o yaml > pvvie
+wer.yaml
+```yaml
+serviceAccountName: pvviewer
+```
+k apply -f pvviewer.yaml
