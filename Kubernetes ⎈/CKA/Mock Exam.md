@@ -114,13 +114,174 @@ spec:
 ```
 
 # Mock Exam 3
-## 1. service account & cluster role binding
+## 1. Create a new service account & cluster role binding
 k create serviceaccount pvviewer
 k create clusterrole pvviewer-role --verb=list --resource=pv
 k create clusterrolebinding pvviewer-role-binding --clusterrole=pvviewer-role --serviceaccount=default:pvviewer
-k run pvviewer --image=redis --dry-run=client -o yaml > pvvie
-wer.yaml
+k run pvviewer --image=redis --dry-run=client -o yaml > pvviewer.yaml
+vi pvviewer.yaml
 ```yaml
 serviceAccountName: pvviewer
 ```
 k apply -f pvviewer.yaml
+
+## 2. List the `InternalIp` of all nodes in the cluster and save to a file.
+
+```sh
+k get no -o jsonpath='{.items[*].status.addresses[?(@.type=="InternalIP")].address}' > /root/CKA/node_ips
+
+# [?(@.type=="InternalIP")]
+# 주소 배열에서 type이 "InternalIP"인 요소만 선택합니다.
+# 여기서 @는 현재 요소를 나타내며, ?()는 필터링 조건입니다.
+controlplane ~ ➜  cat CKA/node_ips 
+192.17.58.3 192.17.58.6
+```
+
+## 3. Create a pod called `multi-pod` with two containers.
+- "sleep", "시간"
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: multi-pod
+spec:
+  containers:
+  - image: nginx
+    name: alpha
+    env:
+    - name: name
+      value: alpha
+  - image: busybox
+    name: beta
+    command: ["sleep", "4800"]
+    env:
+    - name: name
+      value: beta
+```
+
+## 4. Create a Pod called `non-root-pod`
+runAsUser 를 search.
+container name은 무엇을 지정하든 괜찮음. 특별한 명시가 없었기 때문에
+
+vi non-root-pod.yaml
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: non-root-pod
+spec:
+  containers:
+  - name: reids
+    image: redis:alpine
+  securityContext:
+	runAsUser: 1000
+	fsGroup: 2000
+```
+k apply -f non-root-pod.yaml 
+
+## 5. Pod & Service incoming connections are not working. Create NetworkPolicy.
+k describe svc np-test-service
+k describe po np-test-1
+vi ingress-to-nptest.yaml
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: ingress-to-nptest
+  namespace: default
+spec:
+  podSelector:
+    matchLabels:
+      run: np-test-1
+  policyTypes:
+  - Ingress
+  ingress:
+  - ports:
+    - protocol: TCP
+      port: 80
+```
+k apply -f ingress-to-nptest.yaml
+## 6. Taint the worker node `node01` to be Unschedulable.
+k taint no node01 env_type=production:NoSchedule 
+k run dev-redis --image=redis:alpine
+vi prod-redis.yaml
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: prod-redis
+  name: prod-redis
+spec:
+  containers:
+  - image: redis:alpine
+    name: prod-redis
+  tolerations:
+  - key: "env_type"
+    operator: "Equal"
+    value: "production"
+    effect: "NoSchedule"
+```
+k apply -f prod-redis.yaml 
+## 7. Create a pod called `hr-pod` in `hr` namespace belonging to the `production` environment and `frontend` tier .  
+image: `redis:alpine`
+
+Use appropriate labels and create all the required objects if it does not exist in the system already.
+
+k get ns
+```plain
+NAME                     STATUS   AGE
+default                    Active      19m
+kube-node-lease   Active      19m
+kube-public            Active      19m
+kube-system          Active      19m
+```
+(없으니 새로 생성)
+k create ns hr
+k run hr-pod --image=redis:alpine -n hr --labels=environment=production,tier=frontend
+k get po -n hr
+
+## 8. A kubeconfig file called `super.kubeconfig` has been created under `/root/CKA`. There is something wrong with the configuration. Troubleshoot and fix it.
+
+k cluster-info --kubeconfig=/root/CKA/super.kubeconfig
+```plain
+E0726 10:04:45.003079   14273 memcache.go:265] couldn't get current server API group list: Get "https://controlplane:9999/api?timeout=32s": dial tcp 192.18.91.3:9999: connect: connection refused
+E0726 10:04:45.003591   14273 memcache.go:265] couldn't get current server API group list: Get "https://controlplane:9999/api?timeout=32s": dial tcp 192.18.91.3:9999: connect: connection refused
+E0726 10:04:45.004973   14273 memcache.go:265] couldn't get current server API group list: Get "https://controlplane:9999/api?timeout=32s": dial tcp 192.18.91.3:9999: connect: connection refused
+E0726 10:04:45.005155   14273 memcache.go:265] couldn't get current server API group list: Get "https://controlplane:9999/api?timeout=32s": dial tcp 192.18.91.3:9999: connect: connection refused
+E0726 10:04:45.006523   14273 memcache.go:265] couldn't get current server API group list: Get "https://controlplane:9999/api?timeout=32s": dial tcp 192.18.91.3:9999: connect: connection refused
+```
+k config view
+- kubectl client에서 사용하는 구성 파일을 표시한다.
+```plain
+clusters:
+- cluster:
+    certificate-authority-data: DATA+OMITTED
+    server: https://controlplane:6443
+  name: kubernetes
+```
+vi /root/CKA/super.kubeconfig
+9999 -> 6443
+
+## 9. We have created a new deployment called `nginx-deploy`. scale the deployment to 3 replicas.
+- etc/kubernetes/manifests/kube-controller-manager.yaml (**ekmk**)
+kubectl scale deploy nginx-deploy --replicas=3
+
+The `controller-manager` is responsible for scaling up pods of a replicaset. If you inspect the control plane components in the `kube-system` namespace, you will see that the `controller-manager` is not running.
+k scale deploy nginx-deploy --replicas=3
+```plain
+controlplane ~ ➜  k get deploy
+NAME           READY   UP-TO-DATE   AVAILABLE   AGE
+nginx-deploy   1/3                1                     1           2m4s
+```
+k get po -n kube-system
+(이름이 잘못된 게 있네.)
+```plain
+kube-contro1ler-manager-controlplane   0/1     ImagePullBackOff   0             22s
+```
+sed -i 's/kube-contro1ler-manager/kube-controller-manager/g' /etc/kubernetes/manifests/kube-controller-manager.yaml
+```plain
+controlplane ~ ➜  k get deploy
+NAME           READY   UP-TO-DATE   AVAILABLE   AGE
+nginx-deploy   1/3             3                       1           2m59s
+```
