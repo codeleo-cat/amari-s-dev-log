@@ -1,4 +1,3 @@
-
 ```bash
 alias k=kubectl
 ```
@@ -113,8 +112,17 @@ spec:
       path: /pv/data-analytics
 ```
 
+----
+# Mock Exam 2
+1. Take a backup of the etcd cluster and save it to `/opt/etcd-backup.db`.
+
+cd /etc/kubernetes/manifests
+
+
+---
+
 # Mock Exam 3
-## 1. Create a new service account & cluster role binding
+### 1. Create a new service account & cluster role binding
 k create serviceaccount pvviewer
 k create clusterrole pvviewer-role --verb=list --resource=pv
 k create clusterrolebinding pvviewer-role-binding --clusterrole=pvviewer-role --serviceaccount=default:pvviewer
@@ -125,7 +133,7 @@ serviceAccountName: pvviewer
 ```
 k apply -f pvviewer.yaml
 
-## 2. List the `InternalIp` of all nodes in the cluster and save to a file.
+### 2. List the `InternalIp` of all nodes in the cluster and save to a file.
 
 ```sh
 k get no -o jsonpath='{.items[*].status.addresses[?(@.type=="InternalIP")].address}' > /root/CKA/node_ips
@@ -137,7 +145,7 @@ controlplane ~ ➜  cat CKA/node_ips
 192.17.58.3 192.17.58.6
 ```
 
-## 3. Create a pod called `multi-pod` with two containers.
+### 3. Create a pod called `multi-pod` with two containers.
 - "sleep", "시간"
 ```yaml
 apiVersion: v1
@@ -159,7 +167,7 @@ spec:
       value: beta
 ```
 
-## 4. Create a Pod called `non-root-pod`
+### 4. Create a Pod called `non-root-pod`
 runAsUser 를 search.
 container name은 무엇을 지정하든 괜찮음. 특별한 명시가 없었기 때문에
 
@@ -179,7 +187,7 @@ spec:
 ```
 k apply -f non-root-pod.yaml 
 
-## 5. Pod & Service incoming connections are not working. Create NetworkPolicy.
+### 5. Pod & Service incoming connections are not working. Create NetworkPolicy.
 k describe svc np-test-service
 k describe po np-test-1
 vi ingress-to-nptest.yaml
@@ -223,7 +231,7 @@ spec:
     effect: "NoSchedule"
 ```
 k apply -f prod-redis.yaml 
-## 7. Create a pod called `hr-pod` in `hr` namespace belonging to the `production` environment and `frontend` tier .  
+### 7. Create a pod called `hr-pod` in `hr` namespace belonging to the `production` environment and `frontend` tier .  
 image: `redis:alpine`
 
 Use appropriate labels and create all the required objects if it does not exist in the system already.
@@ -237,11 +245,13 @@ kube-public            Active      19m
 kube-system          Active      19m
 ```
 (없으니 새로 생성)
+```sh
 k create ns hr
 k run hr-pod --image=redis:alpine -n hr --labels=environment=production,tier=frontend
 k get po -n hr
+```
 
-## 8. A kubeconfig file called `super.kubeconfig` has been created under `/root/CKA`. There is something wrong with the configuration. Troubleshoot and fix it.
+### 8. A kubeconfig file called `super.kubeconfig` has been created under `/root/CKA`. There is something wrong with the configuration. Troubleshoot and fix it.
 
 k cluster-info --kubeconfig=/root/CKA/super.kubeconfig
 ```plain
@@ -263,11 +273,12 @@ clusters:
 vi /root/CKA/super.kubeconfig
 9999 -> 6443
 
-## 9. We have created a new deployment called `nginx-deploy`. scale the deployment to 3 replicas.
+### 9. We have created a new deployment called `nginx-deploy`. scale the deployment to 3 replicas.
 - etc/kubernetes/manifests/kube-controller-manager.yaml (**ekmk**)
 kubectl scale deploy nginx-deploy --replicas=3
 
 The `controller-manager` is responsible for scaling up pods of a replicaset. If you inspect the control plane components in the `kube-system` namespace, you will see that the `controller-manager` is not running.
+
 k scale deploy nginx-deploy --replicas=3
 ```plain
 controlplane ~ ➜  k get deploy
