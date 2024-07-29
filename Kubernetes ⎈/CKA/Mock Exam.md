@@ -1,6 +1,9 @@
-```bash
+```sh
 alias k=kubectl
+export do="--dry-run=client -o yaml"
 ```
+
+# Mock Exam 1
 1) Deploy a pod named `nginx-pod` using the `nginx:alpine` image.
 ```bash
 k run nginx-pod --image=nginx:alpine
@@ -58,7 +61,7 @@ k replace -f orange.yaml --force
 ```
 
 10) Expose the `hr-web-app` as service `hr-web-app-service` application on port `30082` on the nodes on the cluster. The web application listens on port `8080`.
-```bash
+```sh
 k expose deploy hr-web-app --type=NodePort --port=8080 --name=hr-web-app-service --dry-run=client -o yaml > hr-web-app-service.yaml
 
 vi hr-web-app-service.yaml
@@ -116,24 +119,225 @@ spec:
 # Mock Exam 2
 1. Take a backup of the etcd cluster and save it to `/opt/etcd-backup.db`.
 
+- docs ) etcdctl 검색 > snapshot save 검색
+**Example**
+```shell
+ETCDCTL_API=3 etcdctl --endpoints=https://127.0.0.1:2379 \
+  --cacert=<trusted-ca-file> --cert=<cert-file> --key=<key-file> \
+  snapshot save <backup-file-location>
+```
+
+```sh
 cd /etc/kubernetes/manifests
 
+cat etcd.yaml | grep trusted-ca-file
+# --trusted-ca-file=/etc/kubernetes/pki/etcd/ca.crt
+
+cat etcd.yaml | grep cert-file
+# --cert-file=/etc/kubernetes/pki/etcd/server.crt
+
+cat etcd.yaml | grep cert-file
+# --key-file=/etc/kubernetes/pki/etcd/server.key
+
+ETCDCTL_API=3 etcdctl --endpoints=https://127.0.0.1:2379 \
+  --cacert=/etc/kubernetes/pki/etcd/ca.crt --cert=/etc/kubernetes/pki/etcd/server.crt --key=/etc/kubernetes/pki/etcd/server.key \
+  snapshot save /opt/etcd-backup.db
+```
+
+2. Create a Pod called `redis-storage` with image: `redis:alpine` with a Volume of type `emptyDir` that lasts for the life of the Pod.
+
+- docs) emptyDir config 검색
+```sh
+k run redis-storage --image=redis:alpine --dry-run=client -o yaml > redis-storage.yaml
+```
+vi redis-storage.yaml
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: redis-storage
+  name: redis-storage
+spec:
+  containers:
+  - image: redis:alpine
+    name: redis-storage
+    volumeMounts:
+    - mountPath: /data/redis
+      name: sample-volume
+  volumes:
+    - name: sample-volume
+      emptyDir: {}
+```
+
+```sh
+k apply -f redis-storage.yaml
+```
+
+3. Create a new pod called `super-user-pod` with image `busybox:1.28`. Allow the pod to be able to set `system_time`.  
+
+>The container should sleep for 4800 seconds.
+
+- docs) SYS_TIME 검색
+- sleep, 시간 모두 " " 안에 감싸주기.
+- yaml file이므로 tree 구조 잘 확인하기.
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: super-user-pod
+  name: super-user-pod
+spec:
+  containers:
+  - image: busybox:1.28
+    name: super-user-pod
+    command: ["sleep", "4800"]
+    securityContext:
+      capabilities:
+        add: ["SYS_TIME"]
+```
+
+4. A pod definition file is created at `/root/CKA/use-pv.yaml`. Make use of this manifest file and mount the persistent volume called `pv-1`. Ensure the pod is running and the PV is bound.
+
+>mountPath: `/data`    
+persistentVolumeClaim Name: `my-pvc`
+
+- docs) persistent volume claims 검색
+- accessModes 값과 resource.requests.storage가 **필수로** 들어가야 함.
+```yaml
+# my-pvc.yaml
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: my-pvc
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+       storage: 10Mi
+```
+
+```yaml
+# /root/CKA/use-pv.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: use-pv
+spec:
+  volumes:
+    - name: my-pvc
+      persistentVolumeClaim:
+        claimName: my-pvc
+  containers:
+  - image: nginx
+    name: use-pv
+    volumeMounts:
+    - mountPath: "/data"
+      name: my-pvc
+```
+
+5. Create a new deployment called `nginx-deploy`, with image `nginx:1.16` and `1` replica. Next upgrade the deployment to version `1.17` using rolling update.
+- docs) upgrade the deploy
+```sh
+# Step 1: Create the Deployment
+k create deploy nginx-deploy --image=nginx:1.16 --replicas=1 --dry-run=client -o yaml > deploy.yaml
+
+k apply -f deploy.yaml --record
+
+k rollout history deployment nginx-deploy
+
+# Step 2: Upgrade the Deployment & Record
+k set image deployment/nginx-deploy nginx=nginx:1.17 --record
+
+k rollout history deployment nginx-deploy
+```
+
+6. Create a new user called `john`. Grant him access to the cluster. John should have permission to `create, list, get, update and delete pods` in the `development` namespace . The private key exists in the location: `/root/CKA/john.key` and csr at `/root/CKA/john.csr`.  
+
+>`Important Note`: As of kubernetes 1.19, the CertificateSigningRequest object expects a `signerName`.  
+  
+>Please refer the documentation to see an example. The documentation tab is available at the top right of terminal.
+
+>CSR: john-developer 
+>Status:Approved
+Role Name: developer, namespace: development, 
+Resource: Pods
+Access: User 'john' has appropriate permissions
+
+- **Service account** - which runs in Pod. VS **User** - 실제 사용자
+- cluster role을 만들라는 건지, role을 만들라는 건지, CSR이 무엇인지 명확하게 파악.
+```yaml
+apiVersion: certificates.k8s.io/v1
+kind: CertificateSigningRequest
+metadata:
+  name: john-developer
+spec:
+  signerName: kubernetes.io/kube-apiserver-client
+  request: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURSBSRVFVRVNULS0tLS0KTUlJQ1ZEQ0NBVHdDQVFBd0R6RU5NQXNHQTFVRUF3d0VhbTlvYmpDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRApnZ0VQQURDQ0FRb0NnZ0VCQUt2Um1tQ0h2ZjBrTHNldlF3aWVKSzcrVVdRck04ZGtkdzkyYUJTdG1uUVNhMGFPCjV3c3cwbVZyNkNjcEJFRmVreHk5NUVydkgyTHhqQTNiSHVsTVVub2ZkUU9rbjYra1NNY2o3TzdWYlBld2k2OEIKa3JoM2prRFNuZGFvV1NPWXBKOFg1WUZ5c2ZvNUpxby82YU92czFGcEc3bm5SMG1JYWpySTlNVVFEdTVncGw4bgpjakY0TG4vQ3NEb3o3QXNadEgwcVpwc0dXYVpURTBKOWNrQmswZWhiV2tMeDJUK3pEYzlmaDVIMjZsSE4zbHM4CktiSlRuSnY3WDFsNndCeTN5WUFUSXRNclpUR28wZ2c1QS9uREZ4SXdHcXNlMTdLZDRaa1k3RDJIZ3R4UytkMEMKMTNBeHNVdzQyWVZ6ZzhkYXJzVGRMZzcxQ2NaanRxdS9YSmlyQmxVQ0F3RUFBYUFBTUEwR0NTcUdTSWIzRFFFQgpDd1VBQTRJQkFRQ1VKTnNMelBKczB2czlGTTVpUzJ0akMyaVYvdXptcmwxTGNUTStsbXpSODNsS09uL0NoMTZlClNLNHplRlFtbGF0c0hCOGZBU2ZhQnRaOUJ2UnVlMUZnbHk1b2VuTk5LaW9FMnc3TUx1a0oyODBWRWFxUjN2SSsKNzRiNnduNkhYclJsYVhaM25VMTFQVTlsT3RBSGxQeDNYVWpCVk5QaGhlUlBmR3p3TTRselZuQW5mNm96bEtxSgpvT3RORStlZ2FYWDdvc3BvZmdWZWVqc25Yd0RjZ05pSFFTbDgzSkljUCtjOVBHMDJtNyt0NmpJU3VoRllTVjZtCmlqblNucHBKZWhFUGxPMkFNcmJzU0VpaFB1N294Wm9iZDFtdWF4bWtVa0NoSzZLeGV0RjVEdWhRMi80NEMvSDIKOWk1bnpMMlRST3RndGRJZjAveUF5N05COHlOY3FPR0QKLS0tLS1FTkQgQ0VSVElGSUNBVEUgUkVRVUVTVC0tLS0tCg==
+  usages:
+  - digital signature
+  - key encipherment
+  - client auth
+```
+
+```sh
+k certificate approve john-developer
+
+k create role developer --resource=pods --verb=create,list,get,update,delete --n=development
+
+k create rolebinding developer-role-binding --role=developer --user=john --namespace=development
+
+k auth can-i update pods --as=john --n=development
+```
+
+7. Create a nginx pod called `nginx-resolver` using image `nginx`, expose it internally with a service called `nginx-resolver-service`. 
+Test that you are able to look up the service and pod names from within the cluster. 
+Use the image: `busybox:1.28` for dns lookup. Record results in `/root/CKA/nginx.svc` and `/root/CKA/nginx.pod`
+
+- pod를 생성하고 노출시켜라. (k run > k expose)
+
+```sh
+k run nginx-resolver --image=nginx  
+k expose po nginx-resolver --name=nginx-resolver-service --port=80 --target-port=80 --type=ClusterIP
+
+
+controlplane ~ ➜  kubectl get pod nginx-resolver -o wide
+NAME             READY   STATUS    RESTARTS   AGE    IP             NODE     NOMINATED NODE   READINESS GATES
+nginx-resolver   1/1     Running   0          113s   10.244.192.5   node01   <none>           <none>
+
+```
+
+8. Create a static pod on `node01` called `nginx-critical` with image `nginx` and make sure that it is recreated/restarted automatically in case of a failure. 
+Use `/etc/kubernetes/manifests` as the Static Pod path for example.
+
+**5-8 학습 필요.**
+- role / CSR
+- static pod
+- rolling update + record
+- dns resolver
 
 ---
-
 # Mock Exam 3
-### 1. Create a new service account & cluster role binding
+1. Create a new service account & cluster role binding
+```sh
 k create serviceaccount pvviewer
 k create clusterrole pvviewer-role --verb=list --resource=pv
 k create clusterrolebinding pvviewer-role-binding --clusterrole=pvviewer-role --serviceaccount=default:pvviewer
 k run pvviewer --image=redis --dry-run=client -o yaml > pvviewer.yaml
 vi pvviewer.yaml
+```
+
 ```yaml
 serviceAccountName: pvviewer
 ```
-k apply -f pvviewer.yaml
 
-### 2. List the `InternalIp` of all nodes in the cluster and save to a file.
+```sh
+k apply -f pvviewer.yaml
+```
+
+2. List the `InternalIp` of all nodes in the cluster and save to a file.
 
 ```sh
 k get no -o jsonpath='{.items[*].status.addresses[?(@.type=="InternalIP")].address}' > /root/CKA/node_ips
@@ -145,7 +349,7 @@ controlplane ~ ➜  cat CKA/node_ips
 192.17.58.3 192.17.58.6
 ```
 
-### 3. Create a pod called `multi-pod` with two containers.
+3. Create a pod called `multi-pod` with two containers.
 - "sleep", "시간"
 ```yaml
 apiVersion: v1
@@ -167,7 +371,7 @@ spec:
       value: beta
 ```
 
-### 4. Create a Pod called `non-root-pod`
+4. Create a Pod called `non-root-pod`
 runAsUser 를 search.
 container name은 무엇을 지정하든 괜찮음. 특별한 명시가 없었기 때문에
 
@@ -187,10 +391,13 @@ spec:
 ```
 k apply -f non-root-pod.yaml 
 
-### 5. Pod & Service incoming connections are not working. Create NetworkPolicy.
+5. Pod & Service incoming connections are not working. Create NetworkPolicy.
+
+```sh
 k describe svc np-test-service
 k describe po np-test-1
 vi ingress-to-nptest.yaml
+```
 ```yaml
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
@@ -208,11 +415,17 @@ spec:
     - protocol: TCP
       port: 80
 ```
+```sh
 k apply -f ingress-to-nptest.yaml
-## 6. Taint the worker node `node01` to be Unschedulable.
+```
+
+6. Taint the worker node `node01` to be Unschedulable.
+```sh
 k taint no node01 env_type=production:NoSchedule 
 k run dev-redis --image=redis:alpine
 vi prod-redis.yaml
+```
+
 ```yaml
 apiVersion: v1
 kind: Pod
@@ -230,9 +443,11 @@ spec:
     value: "production"
     effect: "NoSchedule"
 ```
+```sh
 k apply -f prod-redis.yaml 
-### 7. Create a pod called `hr-pod` in `hr` namespace belonging to the `production` environment and `frontend` tier .  
-image: `redis:alpine`
+```
+7. Create a pod called `hr-pod` in `hr` namespace belonging to the `production` environment and `frontend` tier .  
+>image: `redis:alpine`
 
 Use appropriate labels and create all the required objects if it does not exist in the system already.
 
@@ -251,7 +466,7 @@ k run hr-pod --image=redis:alpine -n hr --labels=environment=production,tier=fro
 k get po -n hr
 ```
 
-### 8. A kubeconfig file called `super.kubeconfig` has been created under `/root/CKA`. There is something wrong with the configuration. Troubleshoot and fix it.
+8. A kubeconfig file called `super.kubeconfig` has been created under `/root/CKA`. There is something wrong with the configuration. Troubleshoot and fix it.
 
 k cluster-info --kubeconfig=/root/CKA/super.kubeconfig
 ```plain
@@ -273,7 +488,7 @@ clusters:
 vi /root/CKA/super.kubeconfig
 9999 -> 6443
 
-### 9. We have created a new deployment called `nginx-deploy`. scale the deployment to 3 replicas.
+9. We have created a new deployment called `nginx-deploy`. scale the deployment to 3 replicas.
 - etc/kubernetes/manifests/kube-controller-manager.yaml (**ekmk**)
 kubectl scale deploy nginx-deploy --replicas=3
 
