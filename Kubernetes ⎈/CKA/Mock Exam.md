@@ -118,26 +118,27 @@ spec:
 ----
 # Mock Exam 2
 1. Take a backup of the etcd cluster and save it to `/opt/etcd-backup.db`.
-
 - docs ) etcdctl 검색 > snapshot save 검색
-**Example**
-```shell
+```sh
 ETCDCTL_API=3 etcdctl --endpoints=https://127.0.0.1:2379 \
   --cacert=<trusted-ca-file> --cert=<cert-file> --key=<key-file> \
   snapshot save <backup-file-location>
 ```
 
 ```sh
-cd /etc/kubernetes/manifests
+controlplane ~ ➜  cd /etc/kubernetes/manifests
 
-cat etcd.yaml | grep trusted-ca-file
-# --trusted-ca-file=/etc/kubernetes/pki/etcd/ca.crt
+controlplane /etc/kubernetes/manifests ➜  cat etcd.yaml | grep trusted-ca-file
+    - --peer-trusted-ca-file=/etc/kubernetes/pki/etcd/ca.crt
+    - --trusted-ca-file=/etc/kubernetes/pki/etcd/ca.crt
 
-cat etcd.yaml | grep cert-file
-# --cert-file=/etc/kubernetes/pki/etcd/server.crt
+controlplane /etc/kubernetes/manifests ➜  cat etcd.yaml | grep cert-file
+    - --cert-file=/etc/kubernetes/pki/etcd/server.crt
+    - --peer-cert-file=/etc/kubernetes/pki/etcd/peer.crt
 
-cat etcd.yaml | grep cert-file
-# --key-file=/etc/kubernetes/pki/etcd/server.key
+controlplane /etc/kubernetes/manifests ➜  cat etcd.yaml | grep key-file
+    - --key-file=/etc/kubernetes/pki/etcd/server.key
+    - --peer-key-file=/etc/kubernetes/pki/etcd/peer.key
 
 ETCDCTL_API=3 etcdctl --endpoints=https://127.0.0.1:2379 \
   --cacert=/etc/kubernetes/pki/etcd/ca.crt --cert=/etc/kubernetes/pki/etcd/server.crt --key=/etc/kubernetes/pki/etcd/server.key \
@@ -145,7 +146,9 @@ ETCDCTL_API=3 etcdctl --endpoints=https://127.0.0.1:2379 \
 ```
 
 2. Create a Pod called `redis-storage` with image: `redis:alpine` with a Volume of type `emptyDir` that lasts for the life of the Pod.
-
+- Pod named 'redis-storage' created
+- Pod 'redis-storage' uses Volume type of emptyDir
+- Pod 'redis-storage' uses volumeMount with mountPath = /data/redis
 - docs) emptyDir config 검색
 ```sh
 k run redis-storage --image=redis:alpine --dry-run=client -o yaml > redis-storage.yaml
@@ -175,12 +178,19 @@ k apply -f redis-storage.yaml
 ```
 
 3. Create a new pod called `super-user-pod` with image `busybox:1.28`. Allow the pod to be able to set `system_time`.  
+The container should sleep for 4800 seconds.
 
->The container should sleep for 4800 seconds.
+- Pod: super-user-pod
+- Container Image: busybox:1.28
+- Is SYS_TIME capability set for the container?
 
 - docs) SYS_TIME 검색
-- sleep, 시간 모두 " " 안에 감싸주기.
+- **sleep, 시간 모두 " " 안에 감싸주기.**
 - yaml file이므로 tree 구조 잘 확인하기.
+
+```sh
+vi super-user-pod.yaml
+```
 ```yaml
 apiVersion: v1
 kind: Pod
@@ -197,11 +207,14 @@ spec:
       capabilities:
         add: ["SYS_TIME"]
 ```
+```sh
+k apply -f super-user-pod.yaml
+```
 
 4. A pod definition file is created at `/root/CKA/use-pv.yaml`. Make use of this manifest file and mount the persistent volume called `pv-1`. Ensure the pod is running and the PV is bound.
 
->mountPath: `/data`    
-persistentVolumeClaim Name: `my-pvc`
+- mountPath: `/data`    
+- persistentVolumeClaim Name: `my-pvc`
 
 - docs) persistent volume claims 검색
 - accessModes 값과 resource.requests.storage가 **필수로** 들어가야 함.
@@ -217,6 +230,12 @@ spec:
   resources:
     requests:
        storage: 10Mi
+```
+
+```
+# 순서대로 apply
+k apply -f my-pvc.yaml
+k apply -f /root/CKA/use-pv.yaml
 ```
 
 ```yaml
@@ -239,6 +258,11 @@ spec:
 ```
 
 5. Create a new deployment called `nginx-deploy`, with image `nginx:1.16` and `1` replica. Next upgrade the deployment to version `1.17` using rolling update.
+
+- Deployment : nginx-deploy. Image: nginx:1.16
+- Image: nginx:1.16
+- Task: Upgrade the version of the deployment to 1:17
+- Task: Record the changes for the image upgrade
 - docs) upgrade the deploy
 ```sh
 # Step 1: Create the Deployment
@@ -256,19 +280,21 @@ k rollout history deployment nginx-deploy
 
 6. Create a new user called `john`. Grant him access to the cluster. John should have permission to `create, list, get, update and delete pods` in the `development` namespace . The private key exists in the location: `/root/CKA/john.key` and csr at `/root/CKA/john.csr`.  
 
->`Important Note`: As of kubernetes 1.19, the CertificateSigningRequest object expects a `signerName`.  
-  
->Please refer the documentation to see an example. The documentation tab is available at the top right of terminal.
+`Important Note`: As of kubernetes 1.19, the CertificateSigningRequest object expects a `signerName`.  
+  Please refer the documentation to see an example. The documentation tab is available at the top right of terminal.
 
->CSR: john-developer 
->Status:Approved
-Role Name: developer, namespace: development, 
-Resource: Pods
-Access: User 'john' has appropriate permissions
+- CSR: john-developer, Status:Approved
+- Role Name: developer, namespace: development, Resource: Pods
+- Access: User 'john' has appropriate permissions
+- docs) [Create a CertificateSigningRequest](https://kubernetes.io/docs/reference/access-authn-authz/certificate-signing-requests/#create-certificatessigningrequest)
 
-- **Service account** - which runs in Pod. VS **User** - 실제 사용자
-- cluster role을 만들라는 건지, role을 만들라는 건지, CSR이 무엇인지 명확하게 파악.
+
+```sh
+controlplane ~/CKA ➜  cat john.csr | base64 -w 0
+LS0tLS1CRUdJTiBDRVJUSUZJQ0FURSBSRVFVRVNULS0tLS0KTUlJQ1ZEQ0NBVHdDQVFBd0R6RU5NQXNHQTFVRUF3d0VhbTlvYmpDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRApnZ0VQQURDQ0FRb0NnZ0VCQUxCUm9hY25seTYxNnZoeklpcXVUTER2VFV1bEVyM2JHd1NlcCsxVHhxVU1kRVpGCnRHZzZISnluUTl1UThTZExJakV2NjF4VGYxRHp0WDdxVVI0M0ZFZTFPNEYrc1lYeVhUNC9oSi9hWlUxSWRhaUIKU2hmWW9rMmlaWmt5SEU4NU1xdDVSN2p2eS9FdjBpTHl4QTRPRWdYd2UxUncydk53U2p1ZEZNS3lpVVRCVlNqUgpCQlU3L0YwOVB5T1RSRldibnU4dkNMRXJqNCtxckNHVVlNZm1CcFJad25tWjVCZ082aVJGNktoQ2s2dHk4NEF1Ckl1OXVXWlhyQTIwTG4ycWFIQkFZSFl5U3Q5ZWhYbitiaWtXN2tWN0ZwNzZ5NlZ4aDkwNXdpUWc0OXZlcDY3VFcKeG5jWlBJcDlyeXdLK2RMcDNROUlPWEpocGNISnJpTlJ4Y0QxUVc4Q0F3RUFBYUFBTUEwR0NTcUdTSWIzRFFFQgpDd1VBQTRJQkFRQ3N1dk9JUjZzMmpPWXJxZlRsL0Noc1FDN0J0ODVHVlRIdUc1eTcyUlpTTzUyR0FyczJ2QTB6ClRVT1pFWU9yT1dlRTFCM1hDdUpBTFpmdVNZM2pqcUlZUGIzQ2lOZW55Lzk4SUt0Z2dtckdwdEhKdC84Z0JDa0sKcGhZWGgwc3NoL29FYXkrSDlqc3B5QkxNQThmRVF3TkJBZDFXR3lnWEVpWlZucXZ5UEpNZ1JOT1h4eENtOXVjYwo3V0ROSTBsOW1xM1VPMGE0N1UrL1FDcXphWmZ6Mis4Tkc3citHL2pwTmxZYTNBQlU5cWFLS1lMeFl6YVR5dWpXCkVhdFhJRjRWRktSbzg4ZkFYcVA1Z0NRdkpOSkYyMkd5V2YxeDg0OUl4a3Y5Uy9vdXZ3YTVxOStseEhCNVgxSk8KWUo5OEUzZzdIb1JmemJ6WDh3T1FPK1JpVnJveG0yNHkKLS0tLS1FTkQgQ0VSVElGSUNBVEUgUkVRVUVTVC0tLS0tCg==
+```
 ```yaml
+# john-developer.yaml
 apiVersion: certificates.k8s.io/v1
 kind: CertificateSigningRequest
 metadata:
@@ -283,38 +309,72 @@ spec:
 ```
 
 ```sh
+k apply -f john-developer.yaml
+
 k certificate approve john-developer
 
-k create role developer --resource=pods --verb=create,list,get,update,delete --n=development
+k create role developer --resource=pods --verb=create,list,get,update,delete -n=development
 
-k create rolebinding developer-role-binding --role=developer --user=john --namespace=development
+k create rolebinding developer-role-binding --role=developer --user=john -n=development
 
-k auth can-i update pods --as=john --n=development
+k auth can-i update pods --as=john -n=development
+# yes
 ```
 
 7. Create a nginx pod called `nginx-resolver` using image `nginx`, expose it internally with a service called `nginx-resolver-service`. 
 Test that you are able to look up the service and pod names from within the cluster. 
 Use the image: `busybox:1.28` for dns lookup. Record results in `/root/CKA/nginx.svc` and `/root/CKA/nginx.pod`
 
+- Pod: nginx-resolver created
+- Service DNS Resolution recorded correctly
+- Pod DNS resolution recorded correctly
+
 - pod를 생성하고 노출시켜라. (k run > k expose)
 
 ```sh
-k run nginx-resolver --image=nginx  
-k expose po nginx-resolver --name=nginx-resolver-service --port=80 --target-port=80 --type=ClusterIP
+kubectl run nginx-resolver --image=nginx
+kubectl expose pod nginx-resolver --name=nginx-resolver-service --port=80 --target-port=80 --type=ClusterIP
 
+kubectl run test-nslookup --image=busybox:1.28 --rm -it --restart=Never -- nslookup nginx-resolver-service
+kubectl run test-nslookup --image=busybox:1.28 --rm -it --restart=Never -- nslookup nginx-resolver-service > /root/CKA/nginx.svc
 
-controlplane ~ ➜  kubectl get pod nginx-resolver -o wide
-NAME             READY   STATUS    RESTARTS   AGE    IP             NODE     NOMINATED NODE   READINESS GATES
-nginx-resolver   1/1     Running   0          113s   10.244.192.5   node01   <none>           <none>
-
+kubectl get pod nginx-resolver -o wide
+kubectl run test-nslookup --image=busybox:1.28 --rm -it --restart=Never -- nslookup <P-O-D-I-P.default.pod> > /root/CKA/nginx.pod
 ```
 
 8. Create a static pod on `node01` called `nginx-critical` with image `nginx` and make sure that it is recreated/restarted automatically in case of a failure. 
 Use `/etc/kubernetes/manifests` as the Static Pod path for example.
 
-**5-8 학습 필요.**
-- role / CSR
-- static pod
+- static pod configured under /etc/kubernetes/manifests ?
+- Pod nginx-critical-node01 is up and running
+
+```sh
+controlplane ~ ➜ k run nginx-critical --image=nginx-critical --dry-run=client -o yaml > static.yaml
+
+controlplane ~ ➜ scp static.yaml node01:/root/
+
+ssh node01
+
+# staticPodPath 위치 확인
+node01 ~ ➜ cat /var/lib/kubelet/config.yaml | grep -i staticpodpath
+
+node01 ~ ➜ cp /root/static.yaml /etc/kubernetes/manifests/
+
+node01 ~ ➜ exit
+
+controlplane ~ ➜ k get po
+```
+
+---
+### static pod 
+[따배씨 03. Static Pod 생성하기](https://www.youtube.com/watch?v=u0Wg0HBVmmk)
+_Static Pods_ are managed directly by the kubelet daemon on a specific node, without the [API server](https://kubernetes.io/docs/concepts/overview/components/#kube-apiserver) observing them.
+- 일반적인 Pod의 실행 흐름 : 
+	- kubectl -> Master Node의 etcd -> scheduler -> API -> Worker Node의 kubelet -> container engine -> kubelet
+- API의 도움을 받지 않는다. **Worker Node에 kubelet에게 요청한다.** kubelet은 daemon. /var/lib/confgi.yaml 을 기반으로 Kubelet이 동작을 한다. 구성 정보이고, **static pod의 위치 정보**가 들어있다. 기본적으로 etcd/kubernetes/manifest
+
+---
+
 - rolling update + record
 - dns resolver
 
