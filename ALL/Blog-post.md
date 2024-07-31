@@ -10,8 +10,7 @@ updated: 2024-03-18T11:36
 - Mysql replication - m/s
 - Github Actions 
 - CI/CD Tool 선택 기준
-- Azure DMS
-- AWS DMS
+- Azure DMS + AWS DMS
 - AWS DataSync
 - Azure DataFactory
 - Tool - obsidian & Icloud & git [참고](https://velog.io/@qkqkwl147/Obsidian-git-sync-%EB%8F%99%EA%B8%B0%ED%99%94)
