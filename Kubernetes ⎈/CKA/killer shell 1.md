@@ -7,9 +7,6 @@ reserving a persistentvolume
 persistent volumes
 
 
-배라 스트로베리 딸기맛.
-이제는 아이스크림도 못 시키는 세상이 되었다.
-
 pod에서 volumeMounts 하는 부분과 똑같다.
 
 role 생성할 때 --verb=단수, 단수 --resource=단수
