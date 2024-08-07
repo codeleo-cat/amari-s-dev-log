@@ -21,6 +21,7 @@ k create ns apx-x9984574
 k get no -o json > /opt/outputs/nodes-z3444kd9.json
 ```
 5) Create a service `messaging-service` to expose the `messaging` application within the cluster on port `6379`.
+#expose
 ```bash
 k expose po messaging --name messaging-service --port=6379
 ```

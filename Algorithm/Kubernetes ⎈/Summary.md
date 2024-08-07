@@ -96,10 +96,7 @@ open source **모니터링 시스템**.
 - [[ArgoCD]] [[Helm]] [[Kubernetes 동작]]
 
 
-### [Kubernetes가 pod를 실행하면 발생하는 일](https://medium.com/daangn/kubectl-create-pod%EB%A5%BC-%EC%8B%A4%ED%96%89%ED%95%98%EB%A9%B4-%EB%B0%9C%EC%83%9D%ED%95%98%EB%8A%94-%EC%9D%BC-kube-apiserver-%EA%B0%90%EC%82%AC-%EB%A1%9C%EA%B7%B8-audig-log-%EB%A1%9C-%EC%97%BF%EB%B3%B4%EA%B8%B0-6f01487abdda)
-
-
-
+### [[Kubernetes가 pod를 실행하면 발생하는 일]]
 ### [kubernetes가 pod를 삭제하는 법](https://leehosu.github.io/kubernetes-delete-pod)
 1. k delete po $po
 2. k8s control plane 내의 **api-server**가 Pod 삭제 요청을 받고, 해당 요청을 cluster 내의 모든 control plane 구성 요소에 전달한다.
