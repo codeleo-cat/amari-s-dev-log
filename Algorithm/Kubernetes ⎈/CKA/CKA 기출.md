@@ -40,7 +40,6 @@ https://taronko.tistory.com/17
 		2. k get po -A
 
 - ﻿﻿notReady 상태인 Node를 ready 상태로 변경 ( kubelet restart )
-- ﻿﻿Pod의 1og 확인 후 특정 경로에 저장하기 (kubectl 1ogs )
 - ﻿﻿특정 node를 drain 후 uncordon 하기 ( kubectl drain , kubectl uncordon )
 - ﻿﻿run 상태인 특정 파드에 sidecar container 생성 하여 로그 저장하기 (volumes mount)
 - ﻿﻿각각 다른 ENV를 가진 multi container pod 생성하기
@@ -48,15 +47,19 @@ https://taronko.tistory.com/17
 - ﻿﻿CPU 가장 많이 할당된 Pod 이름 특정 경로에 저장하기 ( kubectl top )
 - ﻿﻿ETCD Backup & Restore
 - ﻿﻿kubeadm version 업그레이드 & kubelet, kubectl 업그레이드
-- Pod에서 특정 log만 추출하여 파일로 저장
 - ServiceAccount 생성, Role 생성, Role Binding 생성 후 확인
 - ETCD snapshot save & restore
 - Cluster Upgrade (Controlplane Node만 진행)
 - Pod에 nodeSelector (disktype=ssd) 추가
 - Pod를 생성하고 포트는 80, NodePort는 30020인 서비스를 배포
+
+---
+Q. 특정 조건에 맞게 파일로 저장
 - Taint가 없는 Node의 개수를 파일로 저장
 - Node의 상태가 ready 개수를 파일로 저장
 - 사용률이 가장 높은 Pod를 특정 label로만 조회해서 파일로 저장
+- Pod에서 특정 log만 추출하여 파일로 저장
+---
 - 특정 Node를 Pod를 다른 Node로 Reschedule하고 해당 Node는 SchedulingDisabled
 - 특정 Node가 NotReady 상태인데 Ready가 되도록 TroubleShooting
 - 특정 Deployment에 대해 replicas 수정
