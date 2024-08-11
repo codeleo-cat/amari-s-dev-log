@@ -129,21 +129,8 @@ ETCDCTL_API=3 etcdctl --endpoints=https://127.0.0.1:2379 \
 ```sh
 controlplane ~ ➜  cd /etc/kubernetes/manifests
 
-controlplane /etc/kubernetes/manifests ➜  cat etcd.yaml | grep trusted-ca-file
-    - --peer-trusted-ca-file=/etc/kubernetes/pki/etcd/ca.crt
-    - --trusted-ca-file=/etc/kubernetes/pki/etcd/ca.crt
+controlplane /etc/kubernetes/manifests ➜  cat etcd.yaml | grep -E "url trusted | cert | key"
 
-controlplane /etc/kubernetes/manifests ➜  cat etcd.yaml | grep cert-file
-    - --cert-file=/etc/kubernetes/pki/etcd/server.crt
-    - --peer-cert-file=/etc/kubernetes/pki/etcd/peer.crt
-
-controlplane /etc/kubernetes/manifests ➜  cat etcd.yaml | grep key-file
-    - --key-file=/etc/kubernetes/pki/etcd/server.key
-    - --peer-key-file=/etc/kubernetes/pki/etcd/peer.key
-
-ETCDCTL_API=3 etcdctl --endpoints=https://127.0.0.1:2379 \
-  --cacert=/etc/kubernetes/pki/etcd/ca.crt --cert=/etc/kubernetes/pki/etcd/server.crt --key=/etc/kubernetes/pki/etcd/server.key \
-  snapshot save /opt/etcd-backup.db
 ```
 
 2. Create a Pod called `redis-storage` with image: `redis:alpine` with a Volume of type `emptyDir` that lasts for the life of the Pod.
@@ -219,6 +206,23 @@ k apply -f super-user-pod.yaml
 
 - docs) persistent volume claims 검색
 - accessModes 값과 resource.requests.storage가 **필수로** 들어가야 함.
+
+```yaml
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: my-pv
+spec:
+  capacity:
+    storage: 8Gi  # PVC에서 요청한 것과 동일한 크기
+  accessModes:
+    - ReadWriteOnce  # PVC에서 요청한 것과 동일한 접근 모드
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: "기본2"  # PVC에서 지정한 StorageClass가 있다면 동일하게 설정
+  hostPath:
+    path: "/mnt/data"  # 로컬 스토리지 경로 (클라우드 환경에서는 NFS, AWS EBS 등으로 대체 가능)
+```
+
 ```yaml
 # my-pvc.yaml
 apiVersion: v1
@@ -232,6 +236,7 @@ spec:
     requests:
        storage: 10Mi
 ```
+k get pvc -> status : Bound 확인!
 
 ```
 # 순서대로 apply
@@ -265,17 +270,22 @@ spec:
 - Task: Upgrade the version of the deployment to 1:17
 - Task: Record the changes for the image upgrade
 - docs) upgrade the deploy
+
+create dry run > record, rollout > upgrade > rollout
 ```sh
 # Step 1: Create the Deployment
 k create deploy nginx-deploy --image=nginx:1.16 --replicas=1 --dry-run=client -o yaml > deploy.yaml
 
+# record 
 k apply -f deploy.yaml --record
 
+# rollout
 k rollout history deployment nginx-deploy
 
 # Step 2: Upgrade the Deployment & Record
 k set image deployment/nginx-deploy nginx=nginx:1.17 --record
 
+# rollout
 k rollout history deployment nginx-deploy
 ```
 
@@ -289,6 +299,11 @@ k rollout history deployment nginx-deploy
 - Access: User 'john' has appropriate permissions
 - docs) [Create a CertificateSigningRequest](https://kubernetes.io/docs/reference/access-authn-authz/certificate-signing-requests/#create-certificatessigningrequest)
 
+**순서 정리**
+1. key와 csr이 필요하고 해당 csr을 base64 형태로 추출한다.
+2. sed -i 's//g' $filepath 를 통해 csr의 name, spec.request 값을 변경한 후 해당 file을 apply
+3. k get csr 후 k certificate approve
+4. namespace를 잊지 말고 적어주면서 role과 rolebinding 생성.
 
 ```sh
 controlplane ~/CKA ➜  cat john.csr | base64 -w 0
@@ -312,10 +327,12 @@ spec:
 ```sh
 k apply -f john-developer.yaml
 
+k get csr
 k certificate approve john-developer
 
 k create role developer --resource=pods --verb=create,list,get,update,delete -n=development
 
+# clusterrole 이라는 말에 헷갈리지 말자.
 k create rolebinding developer-role-binding --role=developer --user=john -n=development
 
 k auth can-i update pods --as=john -n=development
@@ -329,18 +346,24 @@ Use the image: `busybox:1.28` for dns lookup. Record results in `/root/CKA/ng
 - Pod: nginx-resolver created
 - Service DNS Resolution recorded correctly
 - Pod DNS resolution recorded correctly
+- pod를 생성하고, 노출시켜라. (k run > k **expose**) 일단 port 
+- ***test 용 pod를 생성하고 --nslookup 해당 service / pod ip address***
 
-- pod를 생성하고 노출시켜라. (k run > k expose)
+--rm -it 옵션으로 한번 쓰고 삭제한다. restart=Never
 
 ```sh
-kubectl run nginx-resolver --image=nginx
-kubectl expose pod nginx-resolver --name=nginx-resolver-service --port=80 --target-port=80 --type=ClusterIP
+k run nginx-resolver --image=nginx
+k expose po nginx-resolver --name=nginx-resolver-service --port=80 --target-port=80 --type=ClusterIP
 
-kubectl run test-nslookup --image=busybox:1.28 --rm -it --restart=Never -- nslookup nginx-resolver-service
-kubectl run test-nslookup --image=busybox:1.28 --rm -it --restart=Never -- nslookup nginx-resolver-service > /root/CKA/nginx.svc
+k run test-nslookup --image=busybox:1.28 --rm -it --restart=Never -- nslookup nginx-resolver-service
+# 저장 1
+k run test-nslookup --image=busybox:1.28 --rm -it --restart=Never -- nslookup nginx-resolver-service > /root/CKA/nginx.svc
 
-kubectl get pod nginx-resolver -o wide
-kubectl run test-nslookup --image=busybox:1.28 --rm -it --restart=Never -- nslookup <P-O-D-I-P.default.pod> > /root/CKA/nginx.pod
+k get po nginx-resolver -o wide
+# k run test-nslookup --image=busybox:1.28 --rm -it --restart=Never -- nslookup <P-O-D-I-P.default.pod> > /root/CKA/nginx.pod
+
+# 저장 2
+k run test-nslookup --image=busybox:1.28 --rm -it --restart=Never -- nslookup 10.244.192.6 > /root/CKA/nginx.pod
 ```
 
 8. Create a static pod on `node01` called `nginx-critical` with image `nginx` and make sure that it is recreated/restarted automatically in case of a failure. 
@@ -351,33 +374,25 @@ Use `/etc/kubernetes/manifests` as the Static Pod path for example.
 
 ```sh
 controlplane ~ ➜ k run nginx-critical --image=nginx-critical --dry-run=client -o yaml > static.yaml
-
 controlplane ~ ➜ scp static.yaml node01:/root/
 
-ssh node01
-
 # staticPodPath 위치 확인
-node01 ~ ➜ cat /var/lib/kubelet/config.yaml | grep -i staticpodpath
+ssh node01
+# node01 ~ ➜ cat /var/lib/kubelet/config.yaml | grep -i staticpodpath
 
 node01 ~ ➜ cp /root/static.yaml /etc/kubernetes/manifests/
-
 node01 ~ ➜ exit
-
 controlplane ~ ➜ k get po
 ```
 
 ---
 ### static pod 
+#따배쿠
 [따배씨 03. Static Pod 생성하기](https://www.youtube.com/watch?v=u0Wg0HBVmmk)
 _Static Pods_ are managed directly by the kubelet daemon on a specific node, without the [API server](https://kubernetes.io/docs/concepts/overview/components/#kube-apiserver) observing them.
 - 일반적인 Pod의 실행 흐름 : 
 	- kubectl -> Master Node의 etcd -> scheduler -> API -> Worker Node의 kubelet -> container engine -> kubelet
 - API의 도움을 받지 않는다. **Worker Node에 kubelet에게 요청한다.** kubelet은 daemon. /var/lib/confgi.yaml 을 기반으로 Kubelet이 동작을 한다. 구성 정보이고, **static pod의 위치 정보**가 들어있다. 기본적으로 etcd/kubernetes/manifest
-
----
-
-- rolling update + record
-- dns resolver
 
 ---
 # Mock Exam 3
@@ -404,11 +419,12 @@ k apply -f pvviewer.yaml
 k get no -o jsonpath='{.items[*].status.addresses[?(@.type=="InternalIP")].address}' > /root/CKA/node_ips
 
 # [?(@.type=="InternalIP")]
-# 주소 배열에서 type이 "InternalIP"인 요소만 선택합니다.
 # 여기서 @는 현재 요소를 나타내며, ?()는 필터링 조건입니다.
 controlplane ~ ➜  cat CKA/node_ips 
 192.17.58.3 192.17.58.6
 ```
+?() : 괄호 안을 필터링한다. type=="InternalIP"
+@ 는 현재 요소를 의미한다.
 
 3. Create a pod called `multi-pod` with two containers.
 - "sleep", "시간"
@@ -472,7 +488,8 @@ spec:
   policyTypes:
   - Ingress
   ingress:
-  - ports:
+  - from: # 모든 incoming traffic 허용
+	ports:
     - protocol: TCP
       port: 80
 ```
