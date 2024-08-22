@@ -35,9 +35,28 @@ updated: 2024-03-07T09:59
 - df -h (디스크 사용량, 단위 포함해서 쉽게 보여줌)
 - free
 
-#### 권한 확인
+#### 확인
 - ls -a
+- cat -ln `file` # row number 확인
+```vim
+     1 apple
+     2 banana
+     3 blueberry
+     4 kiwi
+```
+- head -1 `fiile`
+위에서부터 한 줄 출력 (head -n `fiile` )
+```vim
+apple
+```
 
+- tail -1 `fiile`
+아래에서부터 한 줄 출력 (tail -n `fiile` )
+```vim
+kiwi
+```
+
+---
 #### 파일 권한 변경
 - chmod 700 `file` 
 	: 사용자(본인)에게만 모든 권한을 준다.
@@ -99,3 +118,27 @@ updated: 2024-03-07T09:59
 	- init
 - 부팅 시 필요한 마운트 정보를 가지고 있는 것
 	- etc/fstab
+
+
+
+cd /opt/homebrew/etc/nginx 
+
+^ / $ 각각 행 맨 앞/ 맨 뒤
+dd / 해당 행 삭제
+yy / p 해당 행 복사 / 붙여넣기
+
+찾기
+ps -af | grep 찾을꺼
+
+포트 찾기
+sudo lsof -i : 포트번호
+sudo kill -9 포트번호
+
+cat acr.tf | pbcopy : 복사 붙여넣기
+
+---
+# 데비안 (Debian GNU/Linux)
+
+
+- 데비안은 전 세계에서 가장 많이 서버로 이용되는 OS였으나 2016년 이후로 [우분투](https://namu.wiki/w/%EC%9A%B0%EB%B6%84%ED%88%AC "우분투")서버에게 그 자리를 내주었다.
+- 데비안은 프로그램들을 deb란 패키지로 묶어서 관리
