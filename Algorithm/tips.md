@@ -14,20 +14,5 @@ str == str[::-1]
 - index와 value를 묶는 건 python은 for i,v in **enumerate**(list)
 - map.(v=> 조건).reduce ((a, b)=> return a+b
 
-자료 구조
-- 배열
-- 해시 테이블
-- 연결 리스트
-- 스택 - LIFO
-- 큐 - FIFO
-- 힙
-- 트리 & 그래프
+
 ---
-알고리즘
-- 이진 탐색
-- 정렬
-- 재귀
-- 너비 우선 탐색 (BFS)
-- 깊이 우선 탐색 (DFS)
-- 백트래킹
-- 동적계획법
