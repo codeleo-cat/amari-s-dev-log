@@ -2,7 +2,7 @@
 created: 2024-01-08T14:56
 updated: 2024-03-18T11:47
 ---
-![|300](https://image.yes24.com/goods/108887922/XL)
+![book](https://image.yes24.com/goods/108887922/XL)
 ### 요약 ⭐️
 
 가장 중요한 전산 자원은 CPU와 메모리(RAM)이다. 
