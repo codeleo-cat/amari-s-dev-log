@@ -2,7 +2,7 @@
 created: 2024-01-08T14:56
 updated: 2024-03-18T11:47
 ---
-![|300](https://image.yes24.com/goods/108887922/XL)
+![book](https://image.yes24.com/goods/108887922/XL)
 ### 요약 ⭐️
 
 가장 중요한 전산 자원은 CPU와 메모리(RAM)이다. 
@@ -185,7 +185,11 @@ firmware - OS와 유사하지만 s/w를 추가로 설치할 수 없는 것.
 >- I/O 디바이스 관리
 
 >구조도
+<<<<<<< HEAD
 ![[구조도| 500]]
+=======
+![[구조도| 700]]
+>>>>>>> origin/main
 
 >컴퓨터의 요소
 >- DMA Controller - I/O device가 메모리에 직접 접근 (*D*irect *M*emory *A*ccess)할 수 있도록 하는 H/W 장치 (CPU 부하 방지. CPU 보조)
@@ -290,8 +294,16 @@ firmware - OS와 유사하지만 s/w를 추가로 설치할 수 없는 것.
 - 연결 리스트
 - 배열
 - 벡터
-- 스택
-- 큐
+- 스택 (Stack)
+- 큐 (Queue)
+
+Queue - FIFO 구조
+- Deque (double-ended queue) - 양방향 queue.
+	- 앞, 뒤 양 방향에서 element를 추가/삭제할 수 있어서 연산 속도가 월등하게 빠르다.
+	- 기본적으로 append / pop 이 삽입&삭제
+	- appendleft / popleft 가 왼쪽 끝에 삽입/삭제하는 것을 의미한다.
+
+Stack - LIFO 구조
 
 **5-3. 비선형 자료 구조**
 - 그래프
@@ -301,3 +313,9 @@ firmware - OS와 유사하지만 s/w를 추가로 설치할 수 없는 것.
 - 맵
 - 셋
 - 해시 테이블
+
+그래프 - 노드과 간선으로 구성된 비선형 데이터 구조
+![[BFS & DFS| 600]]
+
+- BFS (그래프의 너비 우선 검색, Breadth First Search) - 시작 노드에서 가까운 노드부터 탐색한다. 방문하지 않은 정점(노드)가 없을 때까지.
+- DFS (그래프의 깊이 우선 검색, Depth First Search)
