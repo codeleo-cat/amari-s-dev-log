@@ -1,4 +1,7 @@
-![book](https://image.yes24.com/goods/108887922/XL)
+---
+updated: 2024-09-17T16:10:00
+---
+![book |500](https://image.yes24.com/goods/108887922/XLm)
 
 ### 요약 ⭐️
 
@@ -179,7 +182,7 @@ NAT(Network Address Translation) - 사설 IP > 공인 IP / 혹은 그 반대로 
 
 TCP 연결에는 3-way handshake / 연결 해제에는 4-way handshake
 +TLS 연결은 TCP 연결 이후 TLS handshake가 구축됨. [TLS handshake](https://www.cloudflare.com/learning/ssl/what-happens-in-a-tls-handshake/)
-![[TCP connection| 1000]]
+![[TCP connection|1000]]
 
 HTTPS - TCP/IP L4와 L3 사이에 SSL/TLS Layer가 추가된 프로토콜. **통신을 암호화**한다.
 
